@@ -8,7 +8,7 @@ import OurStories from "@/components/our-stories";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Công nghệ sáng tạo và đáng tin cậy | Bosch tại Việt Nam",
+  title: "GS/OSD6 | Bosch tại Việt Nam",
   description: "Khám phá những công nghệ tiên tiến và giải pháp đáng tin cậy từ Bosch. Chúng tôi tạo ra công nghệ có ích cho cuộc sống tại Việt Nam.",
   keywords: "Bosch, Việt Nam, công nghệ, sáng tạo, đáng tin cậy, automotive, mobility, industrial technology, consumer goods, energy",
   openGraph: {
