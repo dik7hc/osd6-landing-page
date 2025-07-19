@@ -4,7 +4,7 @@ import { Button } from "../ui/button"
 
 const NewsGrid = () => {
     return <>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+        <div className='grid grid-cols-1 gap-6 md:grid-cols-3'>
             <NewsCard />
             <NewsCard />
             <NewsCard />
@@ -12,8 +12,8 @@ const NewsGrid = () => {
             <NewsCard />
             <NewsCard />
         </div>
-        <div className="mt-10 w-full flex justify-center">
-            <Button variant="outline" className='border-bosch_blue text-bosch_blue rounded-none hover:text-bosch_blue hover:bg-blue-200'>Tải thêm</Button>
+        <div className="mt-10 flex w-full justify-center">
+            <Button variant="outline" className='rounded-none border-bosch_blue text-bosch_blue hover:bg-blue-200 hover:text-bosch_blue'>Tải thêm</Button>
         </div>
     </>
 }

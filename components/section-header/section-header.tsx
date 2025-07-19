@@ -12,7 +12,7 @@ const SectionHeader = ({ children, className, id }: SectionHeaderProps) => {
         <h2 
             id={id}
             className={cn(
-                "font-semibold text-2xl md:text-4xl tracking-wide",
+                "text-2xl font-semibold tracking-wide md:text-4xl",
                 className
               )}
         >

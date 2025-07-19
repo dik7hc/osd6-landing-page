@@ -7,7 +7,7 @@ import StoryCard from '../story-card/story-card'
 
 
 const SpotlightStories = () => {
-    return <div className='grid grid-cols-1 md:grid-cols-2 gap-10 mb-10'>
+    return <div className='mb-10 grid grid-cols-1 gap-10 md:grid-cols-2'>
         <StoryCard />
         <StoryCard />
     </div>
@@ -15,13 +15,13 @@ const SpotlightStories = () => {
 
 const StoriesGrid = () => {
     return <>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-6'>
+        <div className='grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3'>
             <StoryCard />
             <StoryCard />
             <StoryCard />
         </div>
-        <div className="mt-10 w-full flex justify-center">
-            <Button variant="outline" className='border-bosch_blue text-bosch_blue rounded-none hover:text-bosch_blue hover:bg-blue-200'>Tải thêm</Button>
+        <div className="mt-10 flex w-full justify-center">
+            <Button variant="outline" className='rounded-none border-bosch_blue text-bosch_blue hover:bg-blue-200 hover:text-bosch_blue'>Tải thêm</Button>
         </div>
     </>
 }

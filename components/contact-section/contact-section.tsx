@@ -3,14 +3,14 @@ import { Linkedin, Facebook, Twitter, ChevronRight, ExternalLink } from 'lucide-
 
 const ContactSection = () => {
     return (
-        <div className="py-6 lg:py-12 md:px-20 xl:px-[10rem]">
+        <div className="py-6 md:px-20 lg:py-12 xl:px-40">
             {/* Contact section */}
-            <div className="bg-gray-100 mb-10 lg:mb-20">
-                <div className="flex flex-col md:flex-row md:py-10 md:px-12">
+            <div className="mb-10 bg-gray-100 lg:mb-20">
+                <div className="flex flex-col md:flex-row md:px-12 md:py-10">
                     {/* Left column */}
                     <div className="p-8 md:w-1/2">
-                        <h2 className="text-2xl font-bold mb-4">Liên hệ với Bosch</h2>
-                        <p className="text-gray-700 mb-6">
+                        <h2 className="mb-4 text-2xl font-bold">Liên hệ với Bosch</h2>
+                        <p className="mb-6 text-gray-700">
                             Chúng tôi mong nhận được phản hồi của bạn
                         </p>
 
@@ -29,8 +29,8 @@ const ContactSection = () => {
 
                     {/* Right column */}
                     <div className="p-8 md:w-1/2 ">
-                        <h2 className="text-2xl font-bold mb-6">Gửi tin nhắn cho chúng tôi</h2>
-                        <a href="#" className="text-blue-600 flex items-center hover:underline">
+                        <h2 className="mb-6 text-2xl font-bold">Gửi tin nhắn cho chúng tôi</h2>
+                        <a href="#" className="flex items-center text-blue-600 hover:underline">
                             Đến trang biểu mẫu
                             <ChevronRight size={16} className="ml-1" />
                         </a>
@@ -44,21 +44,21 @@ const ContactSection = () => {
 
 const ActionCard = () => {
     return <>
-        <div className="lg:mt-8 grid md:grid-cols-2 gap-10 px-8 md:px-0">
+        <div className="grid gap-10 px-8 md:grid-cols-2 md:px-0 lg:mt-8">
 
-            <div className="bg-bosch_blue text-white p-8 hover:bg-[#00578d]" >
-                <h2 className="text-xl lg:text-3xl font-bold mb-1 ">Tìm kiếm công việc?</h2>
-                <h2 className="text-xl lg:text-3xl font-bold mb-6">Ứng tuyển ngay.</h2>
-                <a href="#" className="text-white flex items-center hover:underline">
+            <div className="bg-bosch_blue p-8 text-white hover:bg-[#00578d]" >
+                <h2 className="mb-1 text-xl font-bold lg:text-3xl ">Tìm kiếm công việc?</h2>
+                <h2 className="mb-6 text-xl font-bold lg:text-3xl">Ứng tuyển ngay.</h2>
+                <a href="#" className="flex items-center text-white hover:underline">
                     Cơ hội nghề nghiệp tại Bosch
                     <ChevronRight size={16} className="ml-1" />
                 </a>
             </div>
 
-            <div className="bg-bosch_blue text-white px-8 pt-8 pb-8 lg:pb-40 hover:bg-[#00578d]" >
-                <h2 className="text-xl lg:text-3xl font-bold mb-6 ">Trở thành một đối tác kinh doanh.</h2>
+            <div className="bg-bosch_blue p-8 text-white hover:bg-[#00578d] lg:pb-40" >
+                <h2 className="mb-6 text-xl font-bold lg:text-3xl ">Trở thành một đối tác kinh doanh.</h2>
                 {/* <h2 className="text-3xl font-bold mb-6">doanh.</h2> */}
-                <a href="#" className="text-white flex items-center hover:underline">
+                <a href="#" className="flex items-center text-white hover:underline">
                     Mua hàng và hậu cần
                     <ExternalLink size={16} className="ml-1" />
                 </a>

@@ -8,7 +8,7 @@ const BackToTopBtn = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     return (
-        <Button size={'icon'} className="absolute right-0 -top-4 bg-gray-700 rounded-full p-1"
+        <Button size={'icon'} className="absolute -top-4 right-0 rounded-full bg-gray-700 p-1"
             aria-label="Scroll to top" onClick={scrollToTop}>
             <ChevronUp size={20} />
         </Button>

@@ -7,7 +7,7 @@ const Header = () => {
         <>
             <HeaderBg />
             <header className="relative bg-background">
-                <div className="w-full flex items-center justify-between gap-4 h-5 md:h-20 px-2 md:px-20 2xl:px-[10rem] py-10 pb-7 md:py-14" >
+                <div className="flex h-5 w-full items-center justify-between gap-4 px-2 py-10 pb-7 md:h-20 md:px-20 md:py-14 2xl:px-40" >
                     <Image
                         width={144}
                         height={96}
@@ -20,20 +20,20 @@ const Header = () => {
                         <Menu />
                     </Button>
 
-                    <div className="hidden md:flex gap-2 items-center h-full ">
+                    <div className="hidden h-full items-center gap-2 md:flex ">
                         {/* <h2 className="text-xl text-black font-bold leading-tight tracking-wide">
                             Supplier Bundling - Bottleneck Prevention
                         </h2> */}
                         {/* <div className="flex h-full "> */}
                         {/* <IconButton icon={CircleQuestionMark} >Help</IconButton> */}
-                        <Button variant={'link'} className="text-md">Sản phẩm và dịch vụ</Button>
-                        <Button variant={'link'} className="text-md">Về công ty</Button>
-                        <Button variant={'link'} className="text-md">Nghề nghiệp</Button>
+                        <Button variant={'link'}>Sản phẩm và dịch vụ</Button>
+                        <Button variant={'link'}>Về công ty</Button>
+                        <Button variant={'link'}>Nghề nghiệp</Button>
                     </div>
                 </div>
 
             </header>
-            <h6 className=" text-right pr-4 md:pr-24 2xl:pr-[11rem] font-bold">GS/OSD6 Landing Page Demo</h6>    
+            <h6 className=" pr-4 text-right font-bold md:pr-24 2xl:pr-44">GS/OSD6 Landing Page Demo</h6>
         </>
 
     )
@@ -41,7 +41,7 @@ const Header = () => {
 
 const HeaderBg = () => {
     return (<div
-        className="absolute top-0 left-0 w-full h-[0.375rem] z-20 bg-no-repeat bg-cover bg-center bg-[url('/images/header-cover.svg')]"
+        className="absolute left-0 top-0 z-20 h-1.5 w-full bg-[url('/images/header-cover.svg')] bg-cover bg-center bg-no-repeat"
     />)
 }
 

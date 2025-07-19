@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "settings": {
+    "tailwindcss": {
+      "config": "./tailwind.config.ts",
+      "callees": ["cn", "cva", "clsx"]
+    }
+  },
+  "rules": {
+    "tailwindcss/classnames-order": "warn"
+  }
+}
