@@ -17,16 +17,16 @@ const SolutionFindOutMoreLink = () => {
 }
 
 const Solution = ({description, img, title, imageAlt} : SolutionProps) => {
-    return <article className='flex flex-col gap-6 md:gap-8 lg:flex-row even:lg:flex-row-reverse'>
+    return <article className='flex flex-col gap-6 md:gap-8 lg:flex-row lg:items-center lg:justify-between even:lg:flex-row-reverse'>
         <Image
             alt={imageAlt ?? 'Bosch hydrogen energy solutions - clean energy for the future'}
             src={img}
             width={550}
             height={300}
             unoptimized
-            className='w-full lg:w-1/2'
+            className='w-full lg:flex-1'
         />
-        <div className='flex flex-col gap-2 md:gap-6 md:px-12 lg:w-1/2 lg:gap-8 lg:px-0'>
+        <div className='flex flex-col gap-2 md:gap-6 md:px-12 lg:flex-1 lg:gap-8 lg:px-0'>
             <h3 className='text-2xl font-semibold tracking-wide md:text-3xl lg:text-4xl'>{title}</h3>
             <p>{description}</p>
             <SolutionFindOutMoreLink />
