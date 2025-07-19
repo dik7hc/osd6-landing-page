@@ -3,7 +3,7 @@ import { Linkedin, Facebook, Twitter, ChevronRight, ExternalLink } from 'lucide-
 
 const ContactSection = () => {
     return (
-        <div className="py-6 md:px-20 lg:py-12 xl:px-40">
+        <div className="py-6 md:px-20 lg:py-12 xl:px-40 3xl:px-[40rem]">
             {/* Contact section */}
             <div className="mb-10 bg-gray-100 lg:mb-20">
                 <div className="flex flex-col md:flex-row md:px-12 md:py-10">

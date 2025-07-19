@@ -7,7 +7,7 @@ const Header = () => {
         <>
             <HeaderBg />
             <header className="relative bg-background">
-                <div className="flex h-5 w-full items-center justify-between gap-4 px-2 py-10 pb-7 md:h-20 md:px-20 md:py-14 2xl:px-40" >
+                <div className="flex h-5 w-full items-center justify-between gap-4 px-2 py-10 pb-7 md:h-20 md:px-20 md:py-14 2xl:px-40 3xl:px-[40rem]" >
                     <Image
                         width={144}
                         height={96}
@@ -33,7 +33,7 @@ const Header = () => {
                 </div>
 
             </header>
-            <h6 className=" pr-4 text-right font-bold md:pr-24 2xl:pr-44">GS/OSD6 Landing Page Demo</h6>
+            <h6 className=" pr-4 text-right font-bold md:pr-24 2xl:pr-44 3xl:pr-[41rem]">GS/OSD6 Landing Page Demo</h6>
         </>
 
     )
