@@ -99,6 +99,60 @@ const News: NewsProps[] = [
     title: "Bosch Việt Nam chia sẻ những ứng dụng phát triển bền vững tại sự kiện GEFE 2024 ",
     createdAt: "23/10/2024"
   },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/bosch_relies_on_its_strengths_as_a_technology_leader/1920x1080_main_res_400x225.webp",
+    imageAlt: "Description for image 1",
+    title: "Tập đoàn Bosch tiếp tục khẳng định vị thế dẫn đầu công nghệ",
+    createdAt: "08/05/2025"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/bosch_marks_10_consecutive_years_in_vietnam_s_top_100_best_workplaces/1920x1080_main1_res_400x225.webp",
+    imageAlt: "Description for image 2",
+    title: "Bosch 10 năm liên tiếp góp mặt trong danh sách Top 100 môi trường làm việc tốt nhất tại Việt Nam",
+    createdAt: "29/11/2024"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/gefe_2024/1920x1080_cover_res_400x225.webp",
+    imageAlt: "Description for image 3",
+    title: "Bosch Việt Nam chia sẻ những ứng dụng phát triển bền vững tại sự kiện GEFE 2024 ",
+    createdAt: "23/10/2024"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/bosch_relies_on_its_strengths_as_a_technology_leader/1920x1080_main_res_400x225.webp",
+    imageAlt: "Description for image 1",
+    title: "Tập đoàn Bosch tiếp tục khẳng định vị thế dẫn đầu công nghệ",
+    createdAt: "08/05/2025"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/bosch_marks_10_consecutive_years_in_vietnam_s_top_100_best_workplaces/1920x1080_main1_res_400x225.webp",
+    imageAlt: "Description for image 2",
+    title: "Bosch 10 năm liên tiếp góp mặt trong danh sách Top 100 môi trường làm việc tốt nhất tại Việt Nam",
+    createdAt: "29/11/2024"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/gefe_2024/1920x1080_cover_res_400x225.webp",
+    imageAlt: "Description for image 3",
+    title: "Bosch Việt Nam chia sẻ những ứng dụng phát triển bền vững tại sự kiện GEFE 2024 ",
+    createdAt: "23/10/2024"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/bosch_relies_on_its_strengths_as_a_technology_leader/1920x1080_main_res_400x225.webp",
+    imageAlt: "Description for image 1",
+    title: "Tập đoàn Bosch tiếp tục khẳng định vị thế dẫn đầu công nghệ",
+    createdAt: "08/05/2025"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/bosch_marks_10_consecutive_years_in_vietnam_s_top_100_best_workplaces/1920x1080_main1_res_400x225.webp",
+    imageAlt: "Description for image 2",
+    title: "Bosch 10 năm liên tiếp góp mặt trong danh sách Top 100 môi trường làm việc tốt nhất tại Việt Nam",
+    createdAt: "29/11/2024"
+  },
+  {
+    img: "https://www.bosch.com.vn/media/vn/news/gefe_2024/1920x1080_cover_res_400x225.webp",
+    imageAlt: "Description for image 3",
+    title: "Bosch Việt Nam chia sẻ những ứng dụng phát triển bền vững tại sự kiện GEFE 2024 ",
+    createdAt: "23/10/2024"
+  },
 ]
 
 const Mock = {

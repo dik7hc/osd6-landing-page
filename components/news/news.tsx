@@ -2,6 +2,7 @@ import Mock from "@/lib/mock-data"
 import NewsCard, { NewsProps } from "../news-card/news-card"
 import SectionHeader from "../section-header"
 import { Button } from "../ui/button"
+import CarouselWithProgress from "../news-carousel"
 
 const NewsGrid = ({news} : {news: NewsProps[]}) => {
     return <>
@@ -20,7 +21,8 @@ const News = () => {
     return (
         <section id="highlights">
             <SectionHeader className='mb-10'>Highlights of the month</SectionHeader>
-            <NewsGrid news={Mock.News}/>
+            {/* <NewsGrid news={Mock.News}/> */}
+            <CarouselWithProgress />
         </section>
     )
 }

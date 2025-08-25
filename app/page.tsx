@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero";
 import News from "@/components/news";
+import CarouselWithProgress from "@/components/news-carousel";
 import OurSolutions from "@/components/our-solution";
 import OurStories from "@/components/our-stories";
 import { Metadata } from "next";
