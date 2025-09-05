@@ -1,37 +1,37 @@
 import { Users, Euro, FlaskConical, MapPin } from 'lucide-react';
 import SectionHeader from '../section-header';
 
-const BoschStats = () => {
+const Achievements = () => {
     return (
         <section>
-            <SectionHeader className='mb-10'>Achivements</SectionHeader>
+            <SectionHeader>Achivements</SectionHeader>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-200">
+        <div className="grid grid-cols-2 gap-4 bg-gray-200 md:grid-cols-4">
             <div className="flex flex-col items-center p-6 py-16 ">
-                    <Users className="w-8 h-8 text-blue-600 mb-2" />
+                    <Users className="mb-2 size-8 text-blue-600" />
                 <div className="text-4xl font-bold text-blue-600">417,900</div>
-                <div className="text-sm text-gray-600 text-center">
+                <div className="text-center text-sm text-gray-600">
                     associates worldwide
                 </div>
             </div>
             <div className="flex flex-col items-center p-6  py-16 ">
-                <Euro className="w-8 h-8 text-green-600 mb-2" />
+                <Euro className="mb-2 size-8 text-green-600" />
                 <div className="text-4xl font-bold text-green-600">90.3</div>
-                <div className="text-sm text-gray-600 text-center">
+                <div className="text-center text-sm text-gray-600">
                     billion euros sales revenue
                 </div>
             </div>
             <div className="flex flex-col items-center p-6  py-16 ">
-                    <FlaskConical className="w-8 h-8 text-purple-600 mb-2" />
+                    <FlaskConical className="mb-2 size-8 text-purple-600" />
                 <div className="text-4xl font-bold text-purple-600">86,800</div>
-                <div className="text-sm text-gray-600 text-center">
+                <div className="text-center text-sm text-gray-600">
                     associates in research and development
                 </div>
             </div>
             <div className="flex flex-col items-center p-6  py-16 ">
-                    <MapPin className="w-8 h-8 text-yellow-600 mb-2" />
+                    <MapPin className="mb-2 size-8 text-yellow-600" />
                 <div className="text-4xl font-bold text-yellow-600">150+</div>
-                <div className="text-sm text-gray-600 text-center">
+                <div className="text-center text-sm text-gray-600">
                     locations globally
                 </div>
             </div>
@@ -40,4 +40,4 @@ const BoschStats = () => {
     );
 };
 
-export default BoschStats;
+export default Achievements;

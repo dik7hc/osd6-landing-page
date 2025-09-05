@@ -19,7 +19,7 @@ const NewsGrid = ({news} : {news: NewsProps[]}) => {
 const News = () => {
     return (
         <section id="highlights">
-            <SectionHeader className='mb-10'>Highlights of the month</SectionHeader>
+            <SectionHeader>Highlights of the month</SectionHeader>
             <NewsGrid news={Mock.News}/>
         </section>
     )

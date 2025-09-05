@@ -1,16 +1,12 @@
-import BoschStats from "@/components/achivements";
-import BentoGrid from "@/components/bento";
-import ContactSection from "@/components/contact-section";
-import Footer from "@/components/footer";
+import Achievements from "@/components/achivements";
 import Header from "@/components/header";
 import HeroSection from "@/components/hero";
-import News from "@/components/news";
-import OurSolutions from "@/components/our-solution";
-import OurStories from "@/components/our-stories";
+import Highlights from "@/components/hightlights/highlights";
+import Opex from "@/components/opex";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "GS/OSD6 | Bosch tại Việt Nam",
+  title: "GS/OSD | Bosch tại Việt Nam",
   description: "Khám phá những công nghệ tiên tiến và giải pháp đáng tin cậy từ Bosch. Chúng tôi tạo ra công nghệ có ích cho cuộc sống tại Việt Nam.",
   keywords: "Bosch, Việt Nam, công nghệ, sáng tạo, đáng tin cậy, automotive, mobility, industrial technology, consumer goods, energy",
   openGraph: {
@@ -44,19 +40,16 @@ export default function Home() {
           <HeroSection />
         </div>
         <div className="px-4 md:px-6 md:py-2 lg:p-20  2xl:px-96 3xl:px-[40rem]" id='achievements'>
-          {/* <OurStories /> */}
-          <BoschStats />
+          <Achievements />
         </div>
-        {/* <div className="px-4 md:px-6 md:py-10 lg:px-20 2xl:px-96 3xl:px-[40rem]">
-          <News />
-        </div> */}
-        <BentoGrid />
+        <div className="min-h-screen bg-gray-900 p-8 font-sans text-gray-100 md:p-16 2xl:px-96 3xl:px-[40rem]" id="highlights">
+          <Highlights />
+        </div>
         <div className="px-4 py-0 md:px-6 md:py-2 xl:p-20 2xl:px-96 3xl:px-[40rem]" id='opex'>
-          <OurSolutions />
+          <Opex />
         </div>
         {/* <ContactSection /> */}
       </main>
-      <Footer />
     </>
   );
 }
