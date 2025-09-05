@@ -1,37 +1,37 @@
 import { Users, Euro, FlaskConical, MapPin } from 'lucide-react';
 import SectionHeader from '../section-header';
 
-const BoschStats = () => {
+const Achievements = () => {
     return (
-        <section id='achievements'>
-            <SectionHeader className='mb-10'>Achivements</SectionHeader>
+        <section>
+            <SectionHeader>Achivements</SectionHeader>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="flex flex-col items-center p-6 bg-gray-200 py-16 rounded-md shadow-sm">
-                <Users className="w-8 h-8 text-gray-700 mb-2" />
-                <div className="text-xl font-bold text-gray-900">417,900</div>
-                <div className="text-sm text-gray-600 text-center">
+        <div className="grid grid-cols-2 gap-4 bg-gray-200 md:grid-cols-4">
+            <div className="flex flex-col items-center p-6 py-16 ">
+                    <Users className="mb-2 size-8 text-blue-600" />
+                <div className="text-4xl font-bold text-blue-600">417,900</div>
+                <div className="text-center text-sm text-gray-600">
                     associates worldwide
                 </div>
             </div>
-            <div className="flex flex-col items-center p-6 bg-gray-200 py-16 rounded-md shadow-sm">
-                <Euro className="w-8 h-8 text-gray-700 mb-2" />
-                <div className="text-xl font-bold text-gray-900">90.3</div>
-                <div className="text-sm text-gray-600 text-center">
+            <div className="flex flex-col items-center p-6  py-16 ">
+                <Euro className="mb-2 size-8 text-green-600" />
+                <div className="text-4xl font-bold text-green-600">90.3</div>
+                <div className="text-center text-sm text-gray-600">
                     billion euros sales revenue
                 </div>
             </div>
-            <div className="flex flex-col items-center p-6 bg-gray-200 py-16 rounded-md shadow-sm">
-                <FlaskConical className="w-8 h-8 text-gray-700 mb-2" />
-                <div className="text-xl font-bold text-gray-900">86,800</div>
-                <div className="text-sm text-gray-600 text-center">
+            <div className="flex flex-col items-center p-6  py-16 ">
+                    <FlaskConical className="mb-2 size-8 text-purple-600" />
+                <div className="text-4xl font-bold text-purple-600">86,800</div>
+                <div className="text-center text-sm text-gray-600">
                     associates in research and development
                 </div>
             </div>
-            <div className="flex flex-col items-center p-6 bg-gray-200 py-16 rounded-md shadow-sm">
-                <MapPin className="w-8 h-8 text-gray-700 mb-2" />
-                <div className="text-xl font-bold text-gray-900">150+</div>
-                <div className="text-sm text-gray-600 text-center">
+            <div className="flex flex-col items-center p-6  py-16 ">
+                    <MapPin className="mb-2 size-8 text-yellow-600" />
+                <div className="text-4xl font-bold text-yellow-600">150+</div>
+                <div className="text-center text-sm text-gray-600">
                     locations globally
                 </div>
             </div>
@@ -40,4 +40,4 @@ const BoschStats = () => {
     );
 };
 
-export default BoschStats;
+export default Achievements;

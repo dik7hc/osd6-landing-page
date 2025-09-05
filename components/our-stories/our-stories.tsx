@@ -28,7 +28,7 @@ const OurStories = () => {
     const [spotlight1, spotlight2 , ...stories] = Mock.Stories
     return (
         <section>
-            <SectionHeader className='mb-10'>Những câu chuyện</SectionHeader>
+            <SectionHeader>Những câu chuyện</SectionHeader>
             <SpotlightStories stories={[spotlight1, spotlight2]}/>
             <StoriesGrid stories={stories}/>
         </section>

@@ -1,6 +1,7 @@
 import { boschsans, boschUiIconFont } from '@/lib/bosch-fonts';
 import type { Metadata } from "next";
 import "./globals.css";
+import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
   title: "GS/OSD6 | Bosch tại Việt Nam",
@@ -150,6 +151,7 @@ export default function RootLayout({
         className={`${boschsans.variable} ${boschUiIconFont.variable} antialiased`}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );
