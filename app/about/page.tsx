@@ -20,9 +20,6 @@ const AboutUsPage = () => {
                         <h1 className="mb-4 text-5xl font-extrabold leading-tight md:text-6xl">
                             About Us
                         </h1>
-                        <p className="mb-6 text-lg font-light leading-relaxed md:text-xl">
-                            Boston Consulting Group is a global consulting firm that partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities.
-                        </p>
                         <p className="text-md font-normal leading-relaxed md:text-lg">
                             GS/OSD3 and GS/OSD6 Vietnam teams are parts of the GS/OSD organization at Bosch Vietnam Co., Ltd, specialized in Global Transportation and Planning services.
                         </p>

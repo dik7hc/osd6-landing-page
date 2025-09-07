@@ -92,9 +92,9 @@ const ServicePortfolioPage = () => {
                 <h1 className="mb-4 text-5xl font-extrabold leading-tight md:text-6xl">
                     Our service portfolio
                 </h1>
-                <p className="mb-6 text-lg font-light leading-relaxed md:text-xl">
+                {/* <p className="mb-6 text-lg font-light leading-relaxed md:text-xl">
                     Boston Consulting Group is a global consulting firm that partners with leaders in business and society to tackle their most important challenges and capture their greatest opportunities.
-                </p>
+                </p> */}
             </section>
             <div className='mb-20 flex flex-col gap-12 lg:gap-20'>
                 {Mock.Solutions.map((sol, i) => <Solution key={i} {...sol} />)}

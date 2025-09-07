@@ -4,33 +4,33 @@ const HeroSection = () => {
   return (
     <section className='relative'>
       <Image
-        alt='bosch-hero-section'
+        alt='GS_grey_withstars'
         src={'/images/GS_grey_withstars.png'}
         width={50}
         height={80}
-        className='right-[21%] top-20 hidden md:absolute md:block'
+        className='md:right-[6rem] md:top-0 2xl:right-[25rem] 2xl:-top-2 hidden md:absolute md:block'
         priority
 
       />
-      <div className="'flex flex-col gap-4 px-7 py-8 md:px-20 md:pb-14 2xl:px-96 3xl:px-[40rem]" >
-        <h6 className="text-center text-2xl">Welcome To GS/OSD3 & GS/OSD6 Vietnam </h6>
+      <div className="flex flex-col gap-4 px-7 py-8 md:px-20 md:pb-14 2xl:px-96 3xl:px-[40rem]" >
+        <h6 className="text-center text-2xl tracking-tighter sm:tracking-normal">Welcome To GS/OSD3 & GS/OSD6 Vietnam </h6>
         <div className='group'>
-          <h1 className='text-center text-3xl font-extralight leading-3 tracking-tighter group-hover:text-bosch_blue md:mt-10 md:text-[4rem]'>
+          <h1 className='text-center text-2xl sm:text-[3rem] md:text-[3.9rem] font-extralight md:leading-3 tracking-tighter group-hover:text-bosch_blue md:mt-10 lg:text-[4rem]'>
             Global Service
             {/* <ExternalLink className='md::h-12 -mt-4 md:w-12' /> */}
           </h1>
-          <h1 className='text-center text-3xl font-extralight leading-3 tracking-tighter group-hover:text-bosch_blue md:mt-12 md:text-[4rem]'>
+          <h1 className='text-center text-2xl sm:text-[3rem] md:text-[3.9rem] font-extralight md:leading-3 tracking-tighter group-hover:text-bosch_blue md:mt-12 lg:text-[4rem]'>
             Operation Source To Deliver
           </h1>
         </div>
       </div>
-      <div className='mt-16 flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:pr-10 xl:grid-cols-12 xl:gap-0 xl:pr-0 2xl:px-96 3xl:px-[40rem]'>
+      <div className='md:mt-16 flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-0 lg:grid-cols-4 lg:pr-10 xl:grid-cols-12 xl:gap-0 xl:pr-0 2xl:px-96 3xl:px-[40rem]'>
         <Image
           alt='bosch-hero-section'
           src={'/images/be-likabosch.webp'}
           width={1600}
           height={900}
-          className='min-h-[25.5rem] md:col-span-1 lg:col-span-3 lg:shrink xl:col-span-7 xl:col-start-1 xl:w-full'
+          className='sm:min-h-[25.5rem] md:col-span-1 lg:col-span-3 lg:shrink xl:col-span-7 xl:col-start-1 xl:w-full'
           priority
 
         />

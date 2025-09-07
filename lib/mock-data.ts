@@ -19,7 +19,7 @@ const Solutions: SolutionProps[] = [
     img: "https://www.bosch.com.vn/media/products_and_services/20230719_find_your_way_to_our_solutions/power_tools_res_640x360.webp",
     title: "Planning & Consulting",
     description:
-      "Là thương hiệu cung cấp cả dụng cụ cầm tay và phụ kiện hàng đầu thế giới, Bosch đáp ứng mọi yêu cầu khó khăn nhất và cung cấp hiệu suất vượt trội phục vụ cho ngành xây dựng, chế biến gỗ và ngành công nghiệp kim loại."
+      "PaaS (planning as a service), Expert services, i.e., system key user, Kinaxis, S4 Hana, Logistics operations services for JP/KR. Our customer are MA APAC, JP - PS, VM, ME, DC, MA and PT via GS OSD1, AU- HC"
   },
   // {
   //   img: "https://www.bosch.com.vn/media/products_and_services/20230719_find_your_way_to_our_solutions/aquaeasy_res_640x360.webp",

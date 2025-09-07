@@ -10,34 +10,38 @@ const bentoItems = [
         date: '20 Aug 2025',
         description: 'Exploring the top logistics trends in the chemicals industry: supply chain diversification, supply chain visibility, IoT and more for 2025 and beyond.',
         author: 'Emma Kirsh',
-        title: "Bosch 10 năm liên tiếp góp mặt trong danh sách Top 100 môi trường làm việc tốt nhất tại Việt Nam",
+        title: "As of June 12th, OSD6 VOC has collected 31 voices from customers, with average rating ...",
+        titleFull: "As of June 12th, OSD6 VOC has collected 31 voices from customers, with average rating of perfect 5/5. With the target of total 80 voices and average rating at 4.5 or great, we hope to achive by end of 2025.",
         videoIcon: false,
         image: "https://www.bosch.com.vn/media/vn/news/bosch_relies_on_its_strengths_as_a_technology_leader/1920x1080_main_res_400x225.webp"
     },
     {
         id: 2,
         type: 'article',
-        category: 'Growth',
-        date: '19 Aug 2025',
-        title: 'Bosch Rexroth và Trung tâm Đổi mới sáng tạo Công nghiệp 4.0 (IIC) hợp tác kiến tạo nền tảng cho Nhà máy thông minh',
+        category: 'Supply Chain Consulting',
+        date: '12 June 2025',
+        title: 'Kicked start in August 2024, all team members had the chance to learn about the current Bosch Industry ...',
+        titleFull: 'Kicked start in August 2024, all team members had the chance to learn about the current Bosch Industry consulting services,, with focused topics on Supply Chain management consulting.',
         image: 'https://www.bosch.com.vn/media/vn/news/smart_factories/1920x1080_main_res_400x225.webp',
         videoIcon: false,
     },
     {
         id: 3,
         type: 'article',
-        category: 'Resilience',
-        date: '16 Aug 2025',
-        title: "Bosch Việt Nam chia sẻ những ứng dụng phát triển bền vững tại sự kiện GEFE 2024 ",
+        category: 'BMP Project',
+        date: '12 June 2025',
+        title: "Kicked off in July 2024, Billing Management ...",
+        titleFull: "Kicked off in July 2024, Billing Management Platform (BMP) is now the key system for OSD3 - LCC team for their services and daily operations.",
         image: 'https://www.bosch.com.vn/media/vn/news/gefe_2024/1920x1080_cover_res_400x225.webp',
         videoIcon: false,
     },
     {
         id: 4,
         type: 'article',
-        category: 'Resilience',
-        date: '14 Aug 2025',
-        title: 'Tập đoàn Bosch tiếp tục khẳng định vị thế dẫn đầu công nghệ',
+        category: 'ME-JP LCC Expansion',
+        date: '12 June 2025',
+        title: 'In expending our scope of work for ME-JP, OSD6 & ...',
+        titleFull: 'In expending our scope of work for ME-JP, OSD6 & OSD3 will collaborate on opening up a new route for monitoring air shipments.',
         image: 'https://www.bosch.com.vn/media/vn/news/bosch_marks_10_consecutive_years_in_vietnam_s_top_100_best_workplaces/1920x1080_main1_res_400x225.webp',
         videoIcon: false,
     },
@@ -72,7 +76,7 @@ const GridItem = ({ item }: { item: any }) => {
                 {/* Title and description with hover effect */}
                 <div className="relative flex flex-col justify-end">
                     {/* Title that slides up on hover */}
-                    <h3 className={`font-bold leading-tight transition-transform duration-500 ease-in-out ${item.description ? 'group-hover:-translate-y-24' : ''} ${item.id === 1 ? 'text-3xl lg:text-4xl' : 'text-xl'}`}>
+                    <h3 className={`font-bold leading-tight transition-transform duration-500 ease-in-out ${item.description ? 'group-hover:-translate-y-24' : ''} ${item.id === 1 ? 'text-3xl lg:text-4xl' : 'text-xl'}`} title={item.titleFull}>
                         {item.title}
                     </h3>
 

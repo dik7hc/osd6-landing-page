@@ -18,7 +18,8 @@ export default {
     },
     extend: {
       screens: {
-        "3xl": "1921px"
+        "3xl": "1921px",
+        "xs": "550px"
       },
       fontFamily: {
         sans: [
