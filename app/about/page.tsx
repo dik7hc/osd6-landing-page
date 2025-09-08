@@ -1,5 +1,5 @@
 import Header from '@/components/header';
-import { Award, Handshake, Target, TrendingUp, Users } from 'lucide-react';
+import { Award, Handshake, MailIcon, Target, TrendingUp, Users } from 'lucide-react';
 import Image from 'next/image';
 import React from 'react';
 
@@ -48,8 +48,58 @@ const AboutUsPage = () => {
                     </div>
                 </section>
                 <OurValue />
+                <section className="bg-white px-8 py-24 md:px-20 md:py-14 lg:px-24 2xl:px-96 3xl:px-[40rem]">
+                <LeaderAndOrgChart />
+                        </section>
+
             </div>
         </>
+    );
+};
+
+const LeaderAndOrgChart = () => {
+    return <>
+        <h2 className="mb-8 text-4xl font-extrabold text-gray-900 md:text-5xl">
+            Meet Our Leader & Our Team
+        </h2>
+        <LeaderCard
+            name="Hu Qian"
+            title="Head of Department GS/OSD3 & GS/OSD6 Vietnam"
+            location="HCM"
+            imageUrl="/images/Hu_Qian.jpg"
+        />
+        <Image
+            alt={'OrgChart'}
+            src={"/images/VN_OSD_Org_Chart.png"}
+            width={1920}
+            height={1080}
+            unoptimized
+            className='w-full'
+        />
+    </>
+}
+
+const LeaderCard = ({ name, title, location, imageUrl }: { name: string, title: string, location: string, imageUrl: string }) => {
+    return (
+        <div className="my-4 flex max-w-lg items-center space-x-6 rounded-xl bg-white p-6 shadow-md">
+            <div className="shrink-0">
+                <img
+                    className="size-24 rounded-full object-cover"
+                    src={imageUrl}
+                    alt={`Portrait of ${name}`}
+                />
+            </div>
+            <div>
+                <div className="text-xl font-semibold text-gray-900">
+                    <span className="border-b-2 border-gray-300">{name}</span>
+                </div>
+                <p className="mt-1 text-sm text-gray-600">{title}</p>
+                <p className="text-xs text-gray-500">{location}</p>
+                <div className="mt-2">
+                    <MailIcon className="size-5 text-gray-500" />
+                </div>
+            </div>
+        </div>
     );
 };
 

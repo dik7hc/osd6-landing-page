@@ -51,9 +51,9 @@ const bentoItems = [
 const GridItem = ({ item }: { item: any }) => {
     return (
         <div className={`
-      relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-300 ease-in-out hover:scale-[1.01]
-      ${item.id === 1 ? 'h-[48rem] md:col-span-2 md:row-span-2 md:h-full lg:row-span-2' : 'h-64'}
-      ${item.id === 2 ? 'h-[48rem] md:col-span-2 md:row-span-1 md:h-full lg:row-span-1' : 'h-64'}
+      relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-300 ease-in-out hover:scale-[1.01] h-64
+      ${item.id === 1 ? ' lg:col-span-2 lg:row-span-2 lg:h-full' : ''}
+      ${item.id === 2 ? ' lg:col-span-2 lg:row-span-1 lg:h-full' : ''}
       group flex flex-col justify-end bg-gray-900 p-6
       `}>
             {/* Background image */}
@@ -76,7 +76,7 @@ const GridItem = ({ item }: { item: any }) => {
                 {/* Title and description with hover effect */}
                 <div className="relative flex flex-col justify-end">
                     {/* Title that slides up on hover */}
-                    <h3 className={`font-bold leading-tight transition-transform duration-500 ease-in-out ${item.description ? 'group-hover:-translate-y-24' : ''} ${item.id === 1 ? 'text-3xl lg:text-4xl' : 'text-xl'}`} title={item.titleFull}>
+                    <h3 className={`font-bold leading-tight transition-transform duration-500 ease-in-out ${item.description ? 'group-hover:-translate-y-24' : ''} ${item.id === 1 ? 'text-xl lg:text-4xl' : 'text-xl'}`} title={item.titleFull}>
                         {item.title}
                     </h3>
 
@@ -101,14 +101,14 @@ const GridItem = ({ item }: { item: any }) => {
 // Main App component
 const Highlights = () => {
     return (
-        <div className="mx-auto max-w-7xl" >
+        <div className="" >
             {/* Header section */}
-            <div className="mb-12">
+            <div className="mb-8 md:mb-12">
                 {/* <h1 className="text-4xl md:text-5xl font-extrabold mb-2 text-white leading-tight">Highlights of the month</h1> */}
                 <SectionHeader>Highlights of the month</SectionHeader>
 
-                <div className='flex justify-between'>
-                    <p className="max-w-2xl text-lg text-gray-400">
+                <div className='flex flex-col gap-4 md:flex-row justify-between'>
+                    <p className=" max-w-2xl text-lg text-gray-400">
                         Access the latest articles, trends and research to guide your strategy and keep you updated on what’s new in the supply chain world.
                     </p>
                     <Button variant={'secondary'} className='shadow-lg hover:bg-bosch_blue hover:text-white' >See all news</Button>
