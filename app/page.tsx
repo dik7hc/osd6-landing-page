@@ -42,7 +42,7 @@ export default function Home() {
         <div className="px-4 md:px-6 md:py-2 lg:p-20  2xl:px-96 3xl:px-[40rem]" id='achievements'>
           <Achievements />
         </div>
-        <div className="min-h-screen bg-gray-900 p-8 font-sans text-gray-100 md:p-16 2xl:px-96 3xl:px-[40rem]" id="highlights">
+        <div className="min-h-screen bg-gray-900 font-sans text-gray-100 px-4 md:px-6 md:py-2 lg:p-20  2xl:px-96 3xl:px-[40rem]" id="highlights">
           <Highlights />
         </div>
         <div className="px-4 py-0 md:px-6 md:py-2 xl:p-20 2xl:px-96 3xl:px-[40rem]" id='opex'>

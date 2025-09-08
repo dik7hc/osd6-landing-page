@@ -25,23 +25,23 @@ const carouselItems: CarouselItem[] = [
 
     {
         title: "Service Mindset",
-        src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "/images/cMy.jfif",
     },
     {
         title: "Accountability",
-        src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "/images/cDung.jfif",
     },
     {
         title: "Collaboration",
-        src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "/images/cHan.jfif",
     },
     {
         title: "Standardization",
-        src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "/images/aTung.jfif",
     },
     {
         title: "Process Orientation",
-        src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: "/images/aHung.jfif",
     },
 ];
 
@@ -188,8 +188,22 @@ const Carousel = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center overflow-hidden p-4 px-0 font-sans">
-            <div className="relative flex w-full items-center justify-center pb-20">
+        <div className="flex flex-col items-center justify-center overflow-hidden px-0 font-sans">
+            <div className="mr-10 flex w-full items-end justify-end gap-2">
+                <button
+                    className="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
+                    onClick={handlePrev}
+                >
+                    <ArrowLeft className="size-6 " />
+                </button>
+                <button
+                    className="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
+                    onClick={handleNext}
+                >
+                    <ArrowRight className="size-6" />
+                </button>
+            </div>
+            <div className="relative flex w-full items-center justify-center pt-10">
                 <div className=" w-full">
                     <div
                         ref={carouselRef}
@@ -206,20 +220,7 @@ const Carousel = () => {
                     </div>
                 </div>
             </div>
-            <div className="mr-10 flex w-full items-end justify-end gap-2">
-                <button
-                    className="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
-                    onClick={handlePrev}
-                >
-                    <ArrowLeft className="size-6 " />
-                </button>
-                <button
-                    className="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
-                    onClick={handleNext}
-                >
-                    <ArrowRight className="size-6" />
-                </button>
-            </div>
+            
         </div>
     );
 };

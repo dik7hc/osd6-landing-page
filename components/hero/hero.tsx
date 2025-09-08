@@ -8,7 +8,7 @@ const HeroSection = () => {
         src={'/images/GS_grey_withstars.png'}
         width={50}
         height={80}
-        className='md:right-[6rem] md:top-0 2xl:right-[25rem] 2xl:-top-2 hidden md:absolute md:block'
+        className='md:right-[6rem] md:top-0 2xl:right-[25rem] 3xl:right-[41rem] 2xl:-top-2 hidden md:absolute md:block'
         priority
 
       />
