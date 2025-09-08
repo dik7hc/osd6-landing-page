@@ -1,4 +1,5 @@
 import { ChevronRight } from 'lucide-react'
+import Image from 'next/image';
 import React from 'react'
 
 export type BannerItem = {
@@ -26,18 +27,20 @@ function BannerCard({ title, imageUrl, href, onClick }: BannerItem) {
 
     return (
         <Wrapper>
-            <div
-                className="group relative h-28 w-full overflow-hidden shadow-md md:h-28"
-                style={{ backgroundImage: `url(${imageUrl})` }}
-            >
-                <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${imageUrl})` }} />
+            <div className="group relative h-28 w-full overflow-hidden shadow-md md:h-28">
+                <Image
+                src={imageUrl}
+                alt={title}
+                fill
+                quality={40}
+                className="object-cover"
+                />
                 <div className="absolute inset-0 bg-black/40 backdrop-brightness-75 transition-colors group-hover:bg-black/50" />
-
                 <div className="relative z-10 flex h-full items-center justify-between px-4 md:px-6">
-                    <h3 className="text-lg font-extrabold uppercase tracking-wide text-white drop-shadow md:text-xl">
-                        {title}
-                    </h3>
-                    <ChevronRight className="size-6 shrink-0 translate-x-0 text-white transition-transform group-hover:translate-x-1 md:size-7" />
+                <span className="text-lg font-extrabold uppercase tracking-wide text-white drop-shadow md:text-xl">
+                    {title}
+                </span>
+                <ChevronRight className="size-6 shrink-0 translate-x-0 text-white transition-transform group-hover:translate-x-1 md:size-7" />
                 </div>
             </div>
         </Wrapper>

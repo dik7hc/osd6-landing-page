@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '../ui/button';
 import SectionHeader from '../section-header';
+import Image from 'next/image';
 
 const bentoItems = [
     {
@@ -57,10 +58,12 @@ const GridItem = ({ item }: { item: any }) => {
       group flex flex-col justify-end bg-gray-900 p-6
       `}>
             {/* Background image */}
-            <img
+            <Image
                 src={item.image}
                 alt={item.title}
                 className="absolute inset-0 z-0 size-full object-cover brightness-75 transition-transform duration-300 ease-in-out group-hover:scale-105"
+                fill
+                fetchPriority='low'
             />
 
             {/* Overlay to create the gradient effect */}

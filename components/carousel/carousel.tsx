@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { ImageProps } from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import { cn } from '@/lib/utils';
 
 interface CarouselItem {
@@ -60,11 +60,11 @@ const CarouselCard = React.forwardRef<HTMLDivElement, CarouselCardProps>(({ item
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
         <div className="absolute top-4  z-40 p-8">
-            <p
+            <h4
                 className="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-white transition-transform duration-500 ease-in-out [text-wrap:balance] group-hover:-translate-y-4 md:text-3xl"
             >
                 {item.title}
-            </p>
+            </h4>
         </div>
     </div>
 ));
@@ -79,7 +79,7 @@ const BlurImage = ({
 }: ImageProps) => {
     const [isLoading, setLoading] = useState(true);
     return (
-        <img
+        <Image
             className={cn(
                 "size-full transition duration-300 group-hover:scale-105",
                 isLoading ? "blur-sm" : "blur-0",
@@ -91,6 +91,8 @@ const BlurImage = ({
             height={height}
             loading="lazy"
             decoding="async"
+            fetchPriority='low'
+            quality={100}
             // blurDataURL={typeof src === "string" ? src : undefined}
             alt={alt ? alt : "Background of a beautiful view"}
             {...rest}
@@ -193,14 +195,16 @@ const Carousel = () => {
                 <button
                     className="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
                     onClick={handlePrev}
+                    aria-label="Previous Image"
                 >
-                    <ArrowLeft className="size-6 " />
+                    <ArrowLeft className="size-6 " aria-hidden="true" />
                 </button>
                 <button
                     className="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
                     onClick={handleNext}
+                    aria-label="Next Image"
                 >
-                    <ArrowRight className="size-6" />
+                    <ArrowRight className="size-6" aria-hidden="true" />
                 </button>
             </div>
             <div className="relative flex w-full items-center justify-center pt-10">

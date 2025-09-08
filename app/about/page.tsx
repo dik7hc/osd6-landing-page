@@ -66,7 +66,7 @@ const LeaderAndOrgChart = () => {
             name="Hu Qian"
             title="Head of Department GS/OSD3 & GS/OSD6 Vietnam"
             location="HCM"
-            imageUrl="/images/Hu_Qian.jpg"
+            imageUrl="/images/Hu_Qian.png"
         />
         <Image
             alt={'OrgChart'}
