@@ -79,7 +79,7 @@ const BlurImage = ({
 }: ImageProps) => {
     const [isLoading, setLoading] = useState(true);
     return (
-        <Image
+        <img
             className={cn(
                 "size-full transition duration-300 group-hover:scale-105",
                 isLoading ? "blur-sm" : "blur-0",
@@ -92,7 +92,7 @@ const BlurImage = ({
             loading="lazy"
             decoding="async"
             fetchPriority='low'
-            quality={100}
+            // quality={100}
             // blurDataURL={typeof src === "string" ? src : undefined}
             alt={alt ? alt : "Background of a beautiful view"}
             {...rest}
