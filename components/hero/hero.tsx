@@ -30,7 +30,7 @@ const HeroSection = () => {
           src={'/images/be-likabosch.webp'}
           width={1600}
           height={900}
-          className='sm:min-h-[25.5rem] md:col-span-1 lg:col-span-6 lg:col-start-2 ' // lg:col-span-3 lg:shrink
+          className='sm:min-h-[25.5rem] md:col-span-1 lg:col-span-6 lg:col-start-2  3xl:col-span-7 3xl:col-start-1' // lg:col-span-3 lg:shrink
           priority
           fetchPriority='high'
         />
