@@ -82,7 +82,7 @@ const BlurImage = ({
         <img
             className={cn(
                 "size-full transition duration-300 group-hover:scale-105",
-                isLoading ? "blur-sm" : "blur-0",
+                // isLoading ? "blur-sm" : "blur-0",
                 className,
             )}
             onLoad={() => setLoading(false)}
