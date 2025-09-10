@@ -52,7 +52,7 @@ const bentoItems = [
 const GridItem = ({ item }: { item: any }) => {
     return (
         <div className={`
-      relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-300 ease-in-out hover:scale-[1.01] h-64
+      relative h-64 overflow-hidden rounded-3xl shadow-2xl transition-all duration-300 ease-in-out hover:scale-[1.01]
       ${item.id === 1 ? ' lg:col-span-2 lg:row-span-2 lg:h-full' : ''}
       ${item.id === 2 ? ' lg:col-span-2 lg:row-span-1 lg:h-full' : ''}
       group flex flex-col justify-end bg-gray-900 p-6
@@ -110,7 +110,7 @@ const Highlights = () => {
                 {/* <h1 className="text-4xl md:text-5xl font-extrabold mb-2 text-white leading-tight">Highlights of the month</h1> */}
                 <SectionHeader>Highlights of the month</SectionHeader>
 
-                <div className='flex flex-col gap-4 md:flex-row justify-between'>
+                <div className='flex flex-col justify-between gap-4 md:flex-row'>
                     <p className=" max-w-2xl text-lg text-gray-400">
                         Access the latest articles, trends and research to guide your strategy and keep you updated on what’s new in the supply chain world.
                     </p>
