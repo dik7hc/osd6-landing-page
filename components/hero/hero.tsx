@@ -24,17 +24,17 @@ const HeroSection = () => {
           </h1>
         </div>
       </div>
-      <div className='flex flex-col gap-6 md:mt-16 md:grid md:grid-cols-2 md:gap-0 lg:grid-cols-12 lg:pr-10 xl:grid-cols-12 xl:gap-0 xl:pr-0 2xl:px-96 3xl:px-[40rem]'>
+      <div className='flex flex-col gap-6 md:mt-16 md:grid md:grid-cols-12 md:gap-0 lg:grid-cols-12 lg:pr-10 xl:grid-cols-12 xl:gap-0 xl:pr-0 2xl:px-96 3xl:px-[40rem]'>
         <Image
           alt='bosch-hero-section'
-          src={'/images/be-likabosch.webp'}
+          src={'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1757663285/be-likabosch_yet7y1.webp'}
           width={1600}
           height={900}
-          className='sm:min-h-[25.5rem] md:col-span-1 lg:col-span-8 lg:col-start-1  3xl:col-span-7 3xl:col-start-1' // lg:col-span-3 lg:shrink
+          className='sm:min-h-[25.5rem] md:col-span-8 lg:col-span-8 lg:col-start-1  3xl:col-span-7 3xl:col-start-1' // lg:col-span-3 lg:shrink
           priority
           fetchPriority='high'
         />
-        <div className="m-auto min-w-full space-y-3 bg-transparent p-4 md:min-w-80 lg:col-span-4  2xl:min-w-[25rem] 3xl:min-w-[38rem]">
+        <div className="m-auto min-w-full space-y-3 md:col-span-4 bg-transparent p-4 md:min-w-80 lg:col-span-4  2xl:pr-0">
           <BannerStack />
         </div>
       </div>
