@@ -1,0 +1,164 @@
+---
+import { ArrowLeft, ArrowRight } from "lucide-astro";
+
+interface CarouselItem {
+  src: string;
+  title: string;
+}
+
+const carouselItems: CarouselItem[] = [
+  { title: "Continuous Improvement", src: "/images/aQuan.jfif" },
+  { title: "Leadership", src: "/images/cHang.jfif" },
+  { title: "Transparency", src: "/images/baoVy.jfif" },
+  { title: "Service Mindset", src: "/images/cMy.jfif" },
+  { title: "Accountability", src: "/images/cDung.jfif" },
+  { title: "Collaboration", src: "/images/cHan.jfif" },
+  { title: "Standardization", src: "/images/aTung.jfif" },
+  { title: "Process Orientation", src: "/images/aHung.jfif" },
+];
+
+// Duplicate items for infinite loop
+const duplicatedItems = [...carouselItems, ...carouselItems, ...carouselItems];
+---
+
+<div class="flex flex-col items-center justify-center overflow-hidden px-0 font-sans">
+  <!-- Controls -->
+  <div class="mr-10 flex w-full items-end justify-end gap-2">
+    <button
+      id="prevBtn"
+      class="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
+      aria-label="Previous Image"
+    >
+      <ArrowLeft class="size-6" aria-hidden="true" />
+    </button>
+    <button
+      id="nextBtn"
+      class="relative z-40 flex size-10 items-center justify-center rounded-full bg-gray-200 text-gray-500 hover:bg-bosch_blue hover:text-white"
+      aria-label="Next Image"
+    >
+      <ArrowRight class="size-6" aria-hidden="true" />
+    </button>
+  </div>
+
+  <!-- Track -->
+  <div class="relative flex w-full items-center justify-center pt-10">
+    <div class="w-full overflow-hidden">
+      <div
+        id="carouselTrack"
+        class="flex gap-3 transition-transform duration-500 ease-in-out"
+        style="transform: translateX(0px)"
+      >
+        {duplicatedItems.map((item, index) => (
+          <div
+            class="group relative h-80 w-56 shrink-0 overflow-hidden rounded-3xl shadow-lg md:h-[30rem] md:w-[23rem]"
+          >
+            <!-- Gradient overlays -->
+            <div class="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent"></div>
+            <img
+              src={item.src}
+              alt={item.title}
+              class="absolute inset-0 z-10 h-full w-full object-cover transition duration-300 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div>
+            <div class="absolute top-4 z-40 p-8">
+              <h4
+                class="mt-2 max-w-xs text-left font-sans text-xl font-semibold text-white transition-transform duration-500 ease-in-out [text-wrap:balance] group-hover:-translate-y-4 md:text-3xl"
+              >
+                {item.title}
+              </h4>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const track = document.getElementById("carouselTrack");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (!track || !prevBtn || !nextBtn) {
+    console.error("Carousel elements not found");
+  } else {
+    const items = track.children;
+    let index = Math.floor(items.length / 3); // start in middle set
+    let isTransitioning = false;
+    let cardWidth = 0;
+
+    const updateCardWidth = () => {
+      if (items.length > 0) {
+        const card = items[0] as HTMLElement;
+        const style = window.getComputedStyle(card);
+        const margin =
+          parseFloat(style.marginLeft) + parseFloat(style.marginRight) + 12;
+        cardWidth = card.offsetWidth + margin;
+      }
+    };
+
+    const setTransform = (withTransition = true) => {
+      track.style.transition = withTransition
+        ? "transform 0.5s ease-in-out"
+        : "none";
+      track.style.transform = `translateX(-${index * cardWidth}px)`;
+    };
+
+    const handlePrev = () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      index--;
+      setTransform(true);
+    };
+
+    const handleNext = () => {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      index++;
+      setTransform(true);
+    };
+
+    track.addEventListener("transitionend", (e) => {
+      if (e.propertyName !== "transform") return;
+      const len = Math.floor(items.length / 3);
+      if (index >= len * 2) {
+        index = len;
+        setTransform(false);
+      } else if (index < len) {
+        index = len + (index % len);
+        setTransform(false);
+      }
+      isTransitioning = false;
+    });
+
+    prevBtn.addEventListener("click", () => {
+      handlePrev();
+      resetTimer();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      handleNext();
+      resetTimer();
+    });
+
+    // Auto-play
+    let timer = setInterval(handleNext, 3000);
+    const resetTimer = () => {
+      clearInterval(timer);
+      timer = setInterval(handleNext, 3000);
+    };
+
+    // Resize observer
+    window.addEventListener("resize", () => {
+      updateCardWidth();
+      setTransform(false);
+    });
+
+    // Init
+    updateCardWidth();
+    setTransform(false);
+  }
+</script>
+

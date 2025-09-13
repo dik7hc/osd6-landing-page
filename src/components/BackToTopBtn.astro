@@ -1,0 +1,17 @@
+---
+import { ChevronUp } from "lucide-astro";
+---
+
+<button
+  type="button"
+  aria-label="Scroll to top"
+  class="absolute -top-4 right-0 rounded-full bg-gray-700 p-1 w-9 h-9 flex items-center justify-center hover:bg-gray-600 transition"
+  id="back-to-top-btn"
+>
+  <ChevronUp class="w-5 h-5" />
+</button>
+<script is:inline>
+  document.getElementById('back-to-top-btn')?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
