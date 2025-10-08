@@ -1,4 +1,4 @@
-import { ChevronRight } from 'lucide-react'
+import { ChevronDown } from 'lucide-react'
 import Image from 'next/image';
 import React from 'react'
 
@@ -40,7 +40,7 @@ function BannerCard({ title, imageUrl, href, onClick }: BannerItem) {
                 <span className="text-lg font-extrabold uppercase tracking-wide text-white drop-shadow md:text-xl">
                     {title}
                 </span>
-                <ChevronRight className="size-6 shrink-0 translate-x-0 text-white transition-transform group-hover:translate-x-1 md:size-7" />
+                    <ChevronDown className="size-6 shrink-0 translate-x-0 text-white transition-transform group-hover:translate-x-1 md:size-7" />
                 </div>
             </div>
         </Wrapper>
