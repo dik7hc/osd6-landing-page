@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import HeroSection from "@/components/hero";
 import Highlights from "@/components/hightlights/highlights";
 import Opex from "@/components/opex";
+import PortfolioTabs from "@/components/portfolios-tabs";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -36,17 +37,18 @@ export default function Home() {
     <>
       <Header />
       <main>
-        <div className="mb-0 md:mb-10">
+        <div className="mb-0 md:mb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
           <HeroSection />
+          <PortfolioTabs />
         </div>
-        <div className="px-8 py-10 md:px-6 md:py-10 lg:p-20  2xl:px-96 3xl:px-[40rem]" id='achievements'>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16" id='achievements'>
           <Achievements />
         </div>
         <div className=" bg-gray-900 font-sans text-gray-100 px-8 py-10 md:px-6 md:py-10 lg:p-20  2xl:px-96 3xl:px-[40rem]" id="highlights">
-          <Highlights />
+          {/* <Highlights /> */}
         </div>
         <div className="px-8 py-10 md:px-6 md:py-10 xl:p-20 2xl:px-96 3xl:px-[40rem]" id='opex'>
-          <Opex />
+          {/* <Opex /> */}
         </div>
         {/* <ContactSection /> */}
       </main>

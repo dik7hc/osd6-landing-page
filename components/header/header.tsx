@@ -5,10 +5,10 @@ import Link from "next/link";
 
 const Header = () => {
     return (
-        <>
+        <div className="sticky top-0 z-50 shadow-sm">
             <HeaderBg />
-            <header className="relative bg-background">
-                <div className="flex h-5 w-full items-center justify-between gap-4 px-2 py-10 pb-7 md:h-20 md:px-20 md:py-14 2xl:px-96 3xl:px-[40rem]" >
+            <header className="relative bg-background max-w-7xl mx-auto ">
+                <div className="flex flex-row-reverse h-5 w-full items-center justify-between gap-4 py-10 pb-7 md:h-20  md:py-14 px-4 sm:px-6 lg:px-8" >
                     <Link href={"/"}>
                         <Image
                             width={144}
@@ -23,21 +23,17 @@ const Header = () => {
                         <Menu />
                     </Button>
 
-                    <div className="hidden h-full items-center gap-2 md:flex ">
-                        <Button variant={'link'}><Link href={'/about'}>About us</Link></Button>
-                        <Button variant={'link'}><Link href={'/service-portfolio'}>Our service portfolio</Link></Button>
-                    </div>
                 </div>
 
             </header>
-        </>
+        </div>
 
     )
 }
 
 const HeaderBg = () => {
     return (<div
-        className="absolute left-0 top-0 z-20 h-1.5 w-full bg-[url('/images/header-cover.svg')] bg-cover bg-center bg-no-repeat"
+        className="absolute left-0 top-0 z-20 h-4 w-full bg-[url('/images/header-cover.svg')] bg-cover bg-center bg-no-repeat"
     />)
 }
 

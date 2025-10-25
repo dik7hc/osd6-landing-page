@@ -66,6 +66,15 @@ export default {
         bosch_blue: {
           DEFAULT: "hsl(var(--bosch-blue))"
         },
+        bosch_purple: {
+          DEFAULT: "hsl(var(--bosch-purple))"
+        },
+        bosch_green: {
+          DEFAULT: "hsl(var(--bosch-green))"
+        },
+        bosch_teal: {
+          DEFAULT: "hsl(var(--bosch-teal))"
+        },
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))"
