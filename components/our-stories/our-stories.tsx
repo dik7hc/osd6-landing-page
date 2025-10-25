@@ -1,38 +1,72 @@
-import Mock from '@/lib/mock-data'
-import SectionHeader from '../section-header'
-import StoryCard, { StoryProps } from '../story-card/story-card'
-import { Button } from '../ui/button'
+import { ArrowRight } from 'lucide-react';
+import { Button } from '../ui/button';
+import Image from 'next/image';
+// Assuming Button and cn are imported from your utility files
+// import { Button } from '@/components/ui/button'; 
+// import { cn } from '@/lib/utils'; 
 
-const SpotlightStories = ({stories} : {stories: StoryProps[]}) => {
-    const [spotlight1, spotlight2] = stories
-    return <div className='mb-10 grid grid-cols-1 gap-10 md:grid-cols-2'>
-        <StoryCard {...spotlight1}/>
-        <StoryCard {...spotlight2}/>
-    </div>
-}
 
-const StoriesGrid = ({stories} : {stories: StoryProps[]}) => {
-    return <>
-        <div className='grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-6 lg:grid-cols-3'>
-            {
-                stories.map((story, i) => <StoryCard key={i} {...story}/>)
-            }
-        </div>
-        <div className="mt-10 flex w-full justify-center">
-            <Button variant="outline" className='rounded-none border-bosch_blue text-bosch_blue hover:bg-blue-200 hover:text-bosch_blue'>Tải thêm</Button>
-        </div>
-    </>
-}
 
-const OurStories = () => {
-    const [spotlight1, spotlight2 , ...stories] = Mock.Stories
+// Sample data matching the style of the user's image
+const cardData = [
+    {
+        title: "Lorem ipsum dolor sit amet,",
+        date: "10/25/2025",
+        tags: ["#Collaboration", "#OSD6", "#OSD3"]
+    },
+    {
+        title: "Lorem ipsum dolor sit amet,",
+        date: "10/25/2025",
+        tags: ["#Collaboration", "#OSD6", "#OSD3"]
+    },
+    {
+        title: "Lorem ipsum dolor sit amet,",
+        date: "10/25/2025",
+        tags: ["#Collaboration", "#OSD6", "#OSD3"]
+    },
+];
+
+const StoryCardsSection = () => {
     return (
-        <section>
-            <SectionHeader>Những câu chuyện</SectionHeader>
-            <SpotlightStories stories={[spotlight1, spotlight2]}/>
-            <StoriesGrid stories={stories}/>
-        </section>
-    )
-}
+        <section className="bg-white py-12">
 
-export default OurStories
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                {cardData.map((card, index) => (
+                    <div key={index} className="flex flex-col">
+                        {/* Card Content: Title, Date, Tags */}
+                        <div className="mb-3 flex items-start justify-between">
+                            <h3 className="max-w-[200px] text-xl font-bold leading-snug text-gray-900">
+                                {card.title}
+                            </h3>
+                            <span className="shrink-0 pt-1 text-xs text-gray-500">
+                                {card.date}
+                            </span>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-5">
+                            <div className='col-span-1'>
+                                <div className="mb-4 flex flex-col gap-4 text-xs font-semibold text-gray-500">
+                                    {card.tags.map((tag, i) => (
+                                        <span key={i}>{tag}</span>
+                                    ))}
+                                </div>
+                                <div className='mt-[4.rem] flex h-full'>
+                                    <Button
+                                        className="w-32 px-4 py-2"
+                                    >
+                                        Read More
+                                        <ArrowRight size={16} />
+                                    </Button>
+                                </div>
+                                
+                            </div>
+                            <Image alt='adsd' width={243} height={98} className="col-span-2 mb-4 h-48 w-full" src="/images/be-likabosch.webp"></Image>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+export default StoryCardsSection;

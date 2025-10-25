@@ -37,7 +37,7 @@ export default function Home() {
     ];
 
     const testimonials = [
-        { quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla.", author: "J.S. Country" },
+        { quote: "Lorem ipsum dolor sit amet, consconsectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla.", author: "J.S. Country" },
         { quote: "Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit. Praesent vitae nisl nec erat.", author: "A.B. Country" },
         { quote: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", author: "C.D. Country" },
         { quote: "Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.", author: "E.F. Country" },
@@ -56,7 +56,7 @@ export default function Home() {
     const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
         return (
             <div className={`flex items-end gap-2 ${className}`}>
-                <span className="text-4xl font-bold text-brand-dark">GS.</span>
+                <span className="text-brand-dark text-4xl font-bold">GS.</span>
                 <span className="text-5xl font-extrabold" style={{ color: '#6a0dad' }}>
                     OSD<span className="text-brand-teal">%</span>
                 </span>
@@ -65,7 +65,7 @@ export default function Home() {
     };
 
     const StatCard = ({ value, label, Icon }: { value: string, label: string, Icon: React.ElementType }) => (
-        <div className="flex justify-between items-center p-4 border border-gray-200 rounded-lg shadow-sm">
+        <div className="flex items-center justify-between rounded-lg border border-gray-200 p-4 shadow-sm">
             <div>
                 <div className="text-3xl font-bold text-gray-900">{value}</div>
                 <div className="text-sm text-gray-500">{label}</div>
@@ -84,23 +84,23 @@ export default function Home() {
     }
 
     const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, role = "Role", company = "Company" }) => (
-        <div className="flex-shrink-0 w-72 bg-white border border-gray-200 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div className="w-72 shrink-0 rounded-lg border border-gray-200 bg-white p-6 shadow-md transition-shadow duration-300 hover:shadow-lg">
 
             {/* 1. Corrected the invalid tag.
       2. Used blockquote for semantic HTML, which is best practice for testimonials.
     */}
-            <blockquote className="text-gray-600 text-sm italic mb-4">
-                "{quote}"
+            <blockquote className="mb-4 text-sm italic text-gray-600">
+                &ldquo;{quote}&rdquo;
             </blockquote>
 
             <div className="flex items-center gap-3">
                 {/* Placeholder for an actual avatar image */}
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white text-lg font-bold">
+                <div className="flex size-10 items-center justify-center rounded-full bg-blue-500 text-lg font-bold text-white">
                     {author.charAt(0)}
                 </div>
 
                 <div>
-                    <div className="font-semibold text-sm text-gray-900">{author}</div>
+                    <div className="text-sm font-semibold text-gray-900">{author}</div>
                     {/* Used optional props with defaults */}
                     <div className="text-xs text-gray-500">{role}, {company}</div>
                 </div>
@@ -109,15 +109,15 @@ export default function Home() {
     );
 
     const StoryCard = ({ category, title, color }: { category: string, title: string, color: string }) => (
-        <div className="flex-shrink-0 w-72 border border-gray-200 rounded-lg overflow-hidden">
-            <div className={`w-full h-40 ${color}`}></div>
+        <div className="w-72 shrink-0 overflow-hidden rounded-lg border border-gray-200">
+            <div className={`h-40 w-full ${color}`}></div>
             <div className="p-4">
-                <div className="text-xs font-semibold text-brand-blue mb-1">{category}</div>
-                <h4 className="text-lg font-bold text-gray-900 mb-2">{title}</h4>
-                <p className="text-sm text-gray-500 mb-4 h-10 overflow-hidden">
+                <div className="text-brand-blue mb-1 text-xs font-semibold">{category}</div>
+                <h4 className="mb-2 text-lg font-bold text-gray-900">{title}</h4>
+                <p className="mb-4 h-10 overflow-hidden text-sm text-gray-500">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit...
                 </p>
-                <a href="#" className="flex justify-between items-center text-sm font-semibold text-brand-blue hover:underline">
+                <a href="#" className="text-brand-blue flex items-center justify-between text-sm font-semibold hover:underline">
                     Read More
                     <ArrowRight size={16} />
                 </a>
@@ -156,19 +156,19 @@ export default function Home() {
     return (
         <>
             {/* ===== HEADER ===== */}
-            <header className="sticky top-0 bg-white z-50 shadow-sm">
+            <header className="sticky top-0 z-50 bg-white shadow-sm">
                 {/* Top color bar */}
                 <div className="flex h-1.5">
-                    <div className="flex-1 bg-brand-teal"></div>
-                    <div className="flex-1 bg-brand-blue"></div>
-                    <div className="flex-1 bg-brand-dark"></div>
+                    <div className="bg-brand-teal flex-1"></div>
+                    <div className="bg-brand-blue flex-1"></div>
+                    <div className="bg-brand-dark flex-1"></div>
                 </div>
                 {/* Main navigation */}
-                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-20">
+                <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="flex h-20 items-center justify-between">
                         <Logo />
                         <div>
-                            <span className="font-bold text-xl text-blue-700">BOSCH</span>
+                            <span className="text-xl font-bold text-blue-700">BOSCH</span>
                         </div>
                     </div>
                 </nav>
@@ -176,8 +176,8 @@ export default function Home() {
 
             <main>
                 {/* ===== HERO ===== */}
-                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                         {/* Left Content */}
                         <div className="flex flex-col gap-6">
                             <h1 className="text-5xl font-bold text-gray-900">
@@ -189,28 +189,28 @@ export default function Home() {
                             </p>
                             <a
                                 href="#"
-                                className="flex items-center gap-2 text-brand-blue font-semibold hover:underline"
+                                className="text-brand-blue flex items-center gap-2 font-semibold hover:underline"
                             >
                                 About Us <ArrowRight size={18} />
                             </a>
                         </div>
                         {/* Right Placeholder */}
-                        <div className="w-full h-80 bg-gray-200 rounded-lg"></div>
+                        <div className="h-80 w-full rounded-lg bg-gray-200"></div>
                     </div>
                 </section>
 
                 {/* ===== TABS ===== */}
                 <div className="border-b border-gray-200">
-                    <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mb-px">
-                        <div className="flex space-x-8 overflow-x-auto horizontal-scroll">
+                    <nav className="mx-auto -mb-px max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div className="horizontal-scroll flex space-x-8 overflow-x-auto">
                             {tabs.map((tab, index) => (
                                 <a
                                     key={tab}
                                     href="#"
-                                    className={`py-4 px-1 whitespace-nowrap text-sm font-medium
+                                    className={`whitespace-nowrap px-1 py-4 text-sm font-medium
                     ${index === 0
-                                            ? 'border-b-2 border-brand-blue text-brand-blue'
-                                            : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                            ? 'border-brand-blue text-brand-blue border-b-2'
+                                            : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
                                         }
                   `}
                                 >
@@ -222,21 +222,21 @@ export default function Home() {
                 </div>
 
                 {/* ===== TAB CONTENT ===== */}
-                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
                     <div className="flex items-start gap-8">
-                        <div className="flex-grow grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                        <div className="grid grow grid-cols-1 items-center gap-12 md:grid-cols-2">
                             {/* Left Image Placeholder */}
-                            <div className="w-full h-64 bg-gray-200 rounded-lg overflow-hidden">
-                                <div className="w-full h-full bg-gray-300 flex items-center justify-center text-gray-500">
+                            <div className="h-64 w-full overflow-hidden rounded-lg bg-gray-200">
+                                <div className="flex size-full items-center justify-center bg-gray-300 text-gray-500">
                                     Container Ship Image
                                 </div>
                             </div>
                             {/* Right Content */}
                             <div>
-                                <p className="text-gray-600 mb-6">
+                                <p className="mb-6 text-gray-600">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit.
                                 </p>
-                                <button className="bg-brand-green text-white font-semibold px-6 py-2.5 rounded-md hover:bg-opacity-90 transition-colors">
+                                <button className="bg-brand-green rounded-md px-6 py-2.5 font-semibold text-white transition-colors hover:bg-opacity-90">
                                     Learn More
                                 </button>
                             </div>
@@ -250,10 +250,10 @@ export default function Home() {
 
                 {/* ===== ACHIEVEMENTS ===== */}
                 <section className="bg-gray-50 py-16">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
                         {/* Left Content */}
                         <div className="flex flex-col gap-4">
-                            <span className="text-lg font-semibold text-brand-blue">Our</span>
+                            <span className="text-brand-blue text-lg font-semibold">Our</span>
                             <h2 className="text-5xl font-extrabold text-gray-900">
                                 ACHIEVEMENTS
                             </h2>
@@ -262,7 +262,7 @@ export default function Home() {
                             </p>
                         </div>
                         {/* Right Stats Grid */}
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                             {stats.map((stat) => (
                                 <StatCard key={stat.label} value={stat.value} label={stat.label} Icon={stat.icon} />
                             ))}
@@ -272,14 +272,14 @@ export default function Home() {
 
                 {/* ===== TESTIMONIALS ===== */}
                 <section className="py-16">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="text-center mb-4">
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div className="mb-4 text-center">
                             <h2 className="text-3xl font-bold text-gray-900">Customer Testimonies</h2>
                         </div>
-                        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-8">
+                        <p className="mx-auto mb-8 max-w-2xl text-center text-gray-600">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit
                         </p>
-                        <div className="flex overflow-x-auto space-x-6 pb-4 horizontal-scroll">
+                        <div className="horizontal-scroll flex space-x-6 overflow-x-auto pb-4">
                             {testimonials.map((item, index) => (
                                 <TestimonialCard key={index} quote={item.quote} author={item.author} />
                             ))}
@@ -288,20 +288,20 @@ export default function Home() {
                 </section>
 
                 {/* ===== FEATURED (Blog + Highlights) ===== */}
-                <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
                         {/* Left Column: Blog Post */}
                         <div className="flex flex-col justify-center">
-                            <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                            <h3 className="mb-3 text-3xl font-bold text-gray-900">
                                 Lorem ipsum dolor sit amet,
                             </h3>
-                            <div className="text-sm text-gray-500 mb-1">10/25/2025</div>
-                            <div className="text-sm font-semibold text-gray-700 mb-4">
+                            <div className="mb-1 text-sm text-gray-500">10/25/2025</div>
+                            <div className="mb-4 text-sm font-semibold text-gray-700">
                                 Author Name | ROLE - XXXX
                             </div>
                             <a
                                 href="#"
-                                className="flex items-center gap-2 text-brand-blue font-semibold hover:underline"
+                                className="text-brand-blue flex items-center gap-2 font-semibold hover:underline"
                             >
                                 Read More <ArrowRight size={18} />
                             </a>
@@ -309,18 +309,18 @@ export default function Home() {
                         {/* Right Column: Image + Service Highlights */}
                         <div className="flex flex-col gap-8">
                             {/* Image Placeholder */}
-                            <div className="w-full h-80 bg-gray-200 rounded-lg"></div>
+                            <div className="h-80 w-full rounded-lg bg-gray-200"></div>
                             {/* Service Highlights */}
                             <div>
-                                <h3 className="text-3xl font-bold text-gray-900 mb-3">
+                                <h3 className="mb-3 text-3xl font-bold text-gray-900">
                                     Service <span className="font-extralight">HIGHLIGHTS</span>
                                 </h3>
-                                <p className="text-gray-600 mb-4">
+                                <p className="mb-4 text-gray-600">
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum.
                                 </p>
                                 <a
                                     href="#"
-                                    className="flex items-center gap-2 text-brand-blue font-semibold hover:underline"
+                                    className="text-brand-blue flex items-center gap-2 font-semibold hover:underline"
                                 >
                                     Read More <ArrowRight size={18} />
                                 </a>
@@ -329,23 +329,81 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* ===== FEATURED (Blog + Highlights) ===== */}
+                <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+                    {/* Changed to 3 columns and aligned items to the top */}
+                    <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-3 md:gap-12">
+
+                        {/* Left Column: Blog Post */}
+                        <div className="flex flex-col">
+                            <div className="mb-3 flex items-start justify-between">
+                                <h3 className="max-w-[250px] text-3xl font-bold leading-tight text-gray-900">
+                                    Lorem ipsum dolor sit amet,
+                                </h3>
+                                <span className="shrink-0 pt-2 text-xs text-gray-500">10/25/2025</span>
+                            </div>
+                            <p className="mb-4 text-sm text-gray-600">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, eleifend sit amet fringilla aliquam, molestie eget velit
+                            </p>
+                            <div className="mb-6 flex gap-4 text-sm font-semibold text-gray-500">
+                                <span>#Collaboration</span>
+                                <span>#OSD6</span>
+                                <span>#OSD3</span>
+                            </div>
+                            <a
+                                href="#"
+                                className="flex w-32 items-center justify-between rounded border border-gray-400 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                            >
+                                Read More
+                                <ArrowRight size={16} />
+                            </a>
+                        </div>
+
+                        {/* Center Column: Image Placeholder */}
+                        {/* On mobile, this image appears first */}
+                        <div className="order-first h-80 w-full rounded-lg bg-gray-200 md:order-none">
+                            {/* This is the image placeholder */}
+                        </div>
+
+                        {/* Right Column: Service Highlights */}
+                        <div className="flex flex-col">
+                            <h3 className="text-4xl font-light text-gray-900">
+                                Service
+                            </h3>
+                            <h3 className="mb-4 text-4xl font-bold text-gray-900">
+                                HIGHLIGHTS
+                            </h3>
+                            <p className="mb-6 text-sm text-gray-600">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum,
+                            </p>
+                            <a
+                                href="#"
+                                className="flex w-32 items-center gap-2 rounded border border-gray-400 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                            >
+                                See More
+                                <span className="text-lg font-bold">+</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
                 {/* ===== OPEX STORIES ===== */}
                 <section className="bg-gray-50 py-16">
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <div className="flex justify-between items-center mb-8">
+                    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                        <div className="mb-8 flex items-center justify-between">
                             <h2 className="text-3xl font-bold text-gray-900">
                                 Our Stories in OPEX
                             </h2>
                             <div className="flex gap-2">
-                                <button className="p-2 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100">
+                                <button className="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-100">
                                     <ChevronLeft size={20} />
                                 </button>
-                                <button className="p-2 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100">
+                                <button className="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-100">
                                     <ChevronRight size={20} />
                                 </button>
                             </div>
                         </div>
-                        <div className="flex overflow-x-auto space-x-6 pb-4 horizontal-scroll">
+                        <div className="horizontal-scroll flex space-x-6 overflow-x-auto pb-4">
                             {stories.map((story) => (
                                 <StoryCard key={story.title} {...story} />
                             ))}
@@ -355,19 +413,19 @@ export default function Home() {
             </main>
 
             {/* ===== FOOTER ===== */}
-            <footer className="bg-white border-t border-gray-200">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <footer className="border-t border-gray-200 bg-white">
+                <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+                    <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
                         {/* Left Side: Logo and Slogan */}
                         <div className="flex items-center gap-4">
                             <Logo />
-                            <div className="w-px h-12 bg-gray-300 hidden md:block"></div>
-                            <span className="text-gray-600 text-sm max-w-[150px]">
+                            <div className="hidden h-12 w-px bg-gray-300 md:block"></div>
+                            <span className="max-w-[150px] text-sm text-gray-600">
                                 We Engineer the Routes where Commerce Flows Freely
                             </span>
                         </div>
                         {/* Right Side: Links */}
-                        <nav className="flex flex-wrap justify-center md:justify-end gap-6 text-sm font-semibold text-gray-700">
+                        <nav className="flex flex-wrap justify-center gap-6 text-sm font-semibold text-gray-700 md:justify-end">
                             <a href="#" className="hover:text-brand-blue">About Us</a>
                             <a href="#" className="hover:text-brand-blue">OSD3</a>
                             <a href="#" className="hover:text-brand-blue">OSD6</a>
@@ -382,7 +440,7 @@ export default function Home() {
                 {isVisible && (
                     <button
                         onClick={scrollToTop}
-                        className="p-3 rounded-full bg-gray-700 text-white shadow-lg hover:bg-gray-900 transition-all"
+                        className="rounded-full bg-gray-700 p-3 text-white shadow-lg transition-all hover:bg-gray-900"
                         aria-label="Scroll to top"
                     >
                         <ArrowUp size={20} />

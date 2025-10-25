@@ -128,7 +128,7 @@ const PortfolioTabs: React.FC = () => {
 
             <div className="mt-10 relative overflow-hidden">
                 <div
-                    className="flex transition-transform duration-500 ease-in-out"
+                    className="flex transition-transform duration-1000 ease-in-out"
                     style={{
                         transform: `translateX(-${(activeTab - 1) * 100}%)`,
                     }}
@@ -137,6 +137,11 @@ const PortfolioTabs: React.FC = () => {
                         <div
                             key={tab.id}
                             className="w-full flex-shrink-0"
+                            onMouseEnter={() => {
+                                setIsPausing(true)
+                                setActiveTab(tab.id)
+                            }}
+                            onMouseLeave={() => setIsPausing(false)}
                         >
                             <TabContent
                                 image={tab.image}

@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { Button } from '../ui/button';
 const HeroSection = () => {
   return (
-    <section>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative">
-          <Logo className="absolute top-0 left-10" />
+    <section >
+      <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2">
+          <Logo className="absolute left-10 top-0" />
         <div className="flex flex-col gap-6 ">
           <h1 className="text-5xl font-semibold text-gray-900">
             <div> Welcome to</div><div>GS.</div>
@@ -17,13 +17,13 @@ const HeroSection = () => {
             </p>
             <Button
               variant={"outline"}
-              className="flex items-center gap-2 text-bosch_blue font-semibold hover:underline w-1/3 bg-white border-bosch_blue"
+              className="flex w-1/3 items-center gap-2 border-bosch_blue bg-white font-semibold text-bosch_blue hover:underline"
             >
               About Us <ArrowRight size={18} />
             </Button>
           </div>
         </div>
-        <div className="w-full h-80 bg-gray-200 rounded-lg">
+        <div className="h-80 w-full rounded-lg bg-gray-200">
           <Image
             alt='bosch-hero-section'
             src={'/images/be-likabosch.webp'}

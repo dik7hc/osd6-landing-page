@@ -24,19 +24,18 @@ const stats = [
     { value: "+30%", label: "Productivity", icon: shuffledIcons[5] },
 ];
 const StatCard = ({ value, label, icon }: { value: string, label: string, icon: string }) => (
-    <div className="flex justify-between items-center p-4 border border-gray-200 rounded-lg shadow-sm">
+    <div className="flex items-center justify-between border border-gray-200 p-4  shadow-sm">
         <div>
             <div className="text-3xl font-bold text-gray-900">{value}</div>
             <div className="text-sm text-gray-500">{label}</div>
         </div>
         <div className="flex items-center gap-1 text-gray-400">
-            <User size={20} />
             <Image
                 src={icon}
                 alt={`${label} icon`}
                 width={28}
                 height={28}
-                className="w-7 h-7"
+                className="size-7"
             />
         </div>
     </div>
@@ -58,15 +57,15 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, role = "Role", company = "Company" }) => (
-    <div className="flex-shrink-0 w-72 bg-gray-200 p-6 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between">
+    <div className="flex w-72 shrink-0 flex-col justify-between bg-gray-200 p-6 shadow-md transition-shadow duration-300 hover:shadow-lg">
 
-        <blockquote className="text-gray-600 text-sm italic mb-4">
-            "{quote}"
+        <blockquote className="mb-4 text-sm italic text-gray-600">
+            &ldquo;{quote}&rdquo;
         </blockquote>
 
         <div className="flex justify-end gap-3">
             <div>
-                <div className="font-semibold text-sm text-gray-900">{author}</div>
+                <div className="text-sm font-semibold text-gray-900">{author}</div>
                 <div className="text-xs text-gray-500">{role}, {company}</div>
             </div>
         </div>
@@ -74,13 +73,13 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, role =
 );
 
 const Testimonial = () => {
-    return <section className="py-16 mt-6">
-        <div className="text-center mb-4">
+    return <section className="mt-6 py-16">
+        <div className="mb-4 text-center">
             <h2 className="text-3xl font-bold text-gray-900">Customer Testimonies</h2>
         </div>
-        <p className="text-center text-gray-600 max-w-5xl mx-auto mb-8">
+        <p className="mx-auto mb-8 max-w-5xl text-center text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit            </p>
-        <div className="flex overflow-x-hidden space-x-6 pb-4 ">
+        <div className="flex space-x-6 overflow-x-hidden pb-4 ">
             {testimonials.map((item, index) => (
                 <TestimonialCard key={index} quote={item.quote} author={item.author} />
             ))}
@@ -90,18 +89,18 @@ const Testimonial = () => {
 const Achievements = () => {
     return (
         <section>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-1 ">
+            <div className="grid grid-cols-1 gap-1 md:grid-cols-2 ">
                 {/* Left Content */}
                 <div className="flex flex-col gap-4 text-5xl">
-                    <span className=" font-normal text-brand-blue">Our</span>
+                    <span className=" text-brand-blue font-light">Our</span>
                     <h2 className=" font-extrabold text-gray-900">
                         ACHIEVEMENTS
                     </h2>
-                    <p className="text-gray-600 text-lg mt-20">
+                    <p className="mt-10 text-lg text-gray-600">
                         We strive to continuously improve every year with a focus on standardization, cost-out, expanding logical capabilities, and maximizing service quality.
                     </p>
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
                     {stats.map((stat) => (
                         <StatCard key={stat.label} value={stat.value} label={stat.label} icon={stat.icon} />
                     ))}

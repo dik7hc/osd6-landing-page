@@ -2,6 +2,7 @@ import { boschsans, boschUiIconFont } from '@/lib/bosch-fonts';
 import type { Metadata } from "next";
 import "./globals.css";
 import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 export const metadata: Metadata = {
   title: "GS/OSD6 | Bosch tại Việt Nam",
@@ -71,23 +72,23 @@ export default function RootLayout({
         <meta itemProp="url" content="https://www.bosch.com.vn/" />
         <meta property="fb:app_id" content="966242223397117" />
         <meta property="article:publisher" content="https://www.facebook.com/OfficialBoschVietnam" />
-        
+
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://dock.ui.bosch.tech/" />
         <link rel="preconnect" href="https://assets.bosch.com" />
-        
+
         {/* Manifest for PWA */}
         <link rel="manifest" href="/manifest.json" />
-        
+
         {/* Humans.txt */}
         <link rel="author" href="/humans.txt" />
-        
+
         {/* Preload fonts */}
         <link rel="preload" href="/fonts/boschsans_regular.woff2" as="font" type="font/woff2" crossOrigin="" />
         <link rel="preload" href="/fonts/boschsans_bold.woff2" as="font" type="font/woff2" crossOrigin="" />
-        
+
         {/* Schema.org JSON-LD */}
-        <script 
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -112,36 +113,36 @@ export default function RootLayout({
             })
           }}
         />
-        
+
         {/* Preload fonts */}
         <link rel="preload" href="/fonts/boschsans_regular.woff2" as="font" type="font/woff2" crossOrigin="" />
         <link rel="preload" href="/fonts/boschsans_bold.woff2" as="font" type="font/woff2" crossOrigin="" />
-        
+
         {/* Preload hero images */}
-        <link 
-          rel="preload" 
-          as="image" 
+        <link
+          rel="preload"
+          as="image"
           imageSrcSet="https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_992x558.webp, https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_1984x1116.webp 2x"
           media="(max-width: 767px)"
           type="image/webp"
         />
-        <link 
-          rel="preload" 
-          as="image" 
+        <link
+          rel="preload"
+          as="image"
           imageSrcSet="https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_992x558.webp, https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_1984x1116.webp 2x"
           media="(min-width: 768px) and (max-width: 991px)"
           type="image/webp"
         />
-        <link 
-          rel="preload" 
-          as="image" 
+        <link
+          rel="preload"
+          as="image"
           imageSrcSet="https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_800x450.webp, https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_1600x900.webp 2x"
           media="(min-width: 992px) and (max-width: 1199px)"
           type="image/webp"
         />
-        <link 
-          rel="preload" 
-          as="image" 
+        <link
+          rel="preload"
+          as="image"
           imageSrcSet="https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_992x558.webp, https://www.bosch.com.vn/media/like_a_bosch/20230508_live_likeabosch/07_live_likeabosch_teaser_1920x1080_res_1984x1116.webp 2x"
           media="(min-width: 1200px)"
           type="image/webp"
@@ -150,6 +151,7 @@ export default function RootLayout({
       <body
         className={`${boschsans.variable} ${boschUiIconFont.variable} antialiased`}
       >
+        <Header />
         {children}
         <Footer />
       </body>

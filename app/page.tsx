@@ -34,24 +34,21 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
-      <Header />
-      <main>
-        <div className="mb-0 md:mb-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
-          <HeroSection />
-          <PortfolioTabs />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16" id='achievements'>
-          <Achievements />
-        </div>
-        <div className=" bg-gray-900 font-sans text-gray-100 px-8 py-10 md:px-6 md:py-10 lg:p-20  2xl:px-96 3xl:px-[40rem]" id="highlights">
-          {/* <Highlights /> */}
-        </div>
-        <div className="px-8 py-10 md:px-6 md:py-10 xl:p-20 2xl:px-96 3xl:px-[40rem]" id='opex'>
-          {/* <Opex /> */}
-        </div>
-        {/* <ContactSection /> */}
-      </main>
-    </>
+    <main>
+      <div className="mx-auto mb-0 max-w-7xl px-4 py-16 sm:px-6 md:mb-10 lg:px-8 ">
+        <HeroSection />
+        <PortfolioTabs />
+      </div>
+      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" >
+        <Achievements />
+      </div>
+      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+        <Highlights />
+      </div>
+      <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" >
+        <Opex />
+      </div>
+      {/* <ContactSection /> */}
+    </main>
   );
 }

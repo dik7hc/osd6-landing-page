@@ -7,8 +7,8 @@ const Header = () => {
     return (
         <div className="sticky top-0 z-50 shadow-sm">
             <HeaderBg />
-            <header className="relative bg-background max-w-7xl mx-auto ">
-                <div className="flex flex-row-reverse h-5 w-full items-center justify-between gap-4 py-10 pb-7 md:h-20  md:py-14 px-4 sm:px-6 lg:px-8" >
+            <header className="relative mx-auto max-w-7xl bg-background ">
+                <div className="flex h-5 w-full flex-row-reverse items-center justify-between gap-4 px-4 py-10 pb-7  sm:px-6 md:h-20 md:py-14 lg:px-8" >
                     <Link href={"/"}>
                         <Image
                             width={144}
