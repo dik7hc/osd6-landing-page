@@ -1,11 +1,10 @@
 'use client'
-import React, { useState } from 'react';
-import { Button } from '../ui/button';
-import SectionHeader from '../section-header';
-import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
-import StoryCardsSection from '../our-stories/our-stories';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { Button } from '../ui/button';
+import StoryCardsSection from '../story_cards_section';
 
 
 const Highlights = () => {

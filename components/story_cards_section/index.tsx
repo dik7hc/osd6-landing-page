@@ -1,13 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import Image from 'next/image';
-// Assuming Button and cn are imported from your utility files
-// import { Button } from '@/components/ui/button'; 
-// import { cn } from '@/lib/utils'; 
 
-
-
-// Sample data matching the style of the user's image
 const cardData = [
     {
         title: "Lorem ipsum dolor sit amet,",
@@ -58,7 +52,7 @@ const StoryCardsSection = () => {
                                         <ArrowRight size={16} />
                                     </Button>
                                 </div>
-                                
+
                             </div>
                             <Image alt='adsd' width={243} height={98} className="col-span-2 mb-4 h-48 w-full" src="/images/be-likabosch.webp"></Image>
                         </div>

@@ -92,9 +92,12 @@ const Achievements = () => {
             <div className="grid grid-cols-1 gap-1 md:grid-cols-2 ">
                 {/* Left Content */}
                 <div className="flex flex-col gap-4 text-5xl">
-                    <span className=" text-brand-blue font-light">Our</span>
-                    <h2 className=" font-extrabold text-gray-900">
-                        ACHIEVEMENTS
+                    <h2>
+
+                        <span className=" text-brand-blue font-light">Our</span>
+                        <span className=" font-extrabold text-gray-900 block mt-4">
+                            ACHIEVEMENTS
+                        </span>
                     </h2>
                     <p className="mt-10 text-lg text-gray-600">
                         We strive to continuously improve every year with a focus on standardization, cost-out, expanding logical capabilities, and maximizing service quality.
