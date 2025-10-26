@@ -1,18 +1,44 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button';
-import { ChevronUp } from 'lucide-react';
+import { ArrowUp, ChevronUp } from 'lucide-react';
 
 const BackToTopBtn = () => {
-    const scrollToTop = () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    const [isVisible, setIsVisible] = useState(false);
+
+    const toggleVisibility = () => {
+        if (window.scrollY > 500) {
+            setIsVisible(true);
+        } else {
+            setIsVisible(false);
+        }
     };
-    return (
-        <Button size={'icon'} className="absolute -top-4 right-0 rounded-full bg-gray-700 p-1"
-            aria-label="Scroll to top" onClick={scrollToTop}>
-            <ChevronUp size={20} />
-        </Button>
-    )
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisibility);
+        return () => {
+            window.removeEventListener('scroll', toggleVisibility);
+        };
+    }, []);
+
+    return <div className="fixed bottom-6 right-6 z-50">
+        {isVisible && (
+            <button
+                onClick={scrollToTop}
+                className="rounded-full bg-gray-700 p-3 text-white shadow-lg transition-all hover:bg-gray-900"
+                aria-label="Scroll to top"
+            >
+                <ArrowUp size={20} />
+            </button>
+        )}
+    </div>
 }
 
 export default BackToTopBtn

@@ -1,7 +1,6 @@
 import Achievements from "@/components/achivements";
-import Header from "@/components/header";
 import HeroSection from "@/components/hero";
-import Highlights from "@/components/hightlights/highlights";
+import Highlights from "@/components/hightlights";
 import Opex from "@/components/opex";
 import PortfolioTabs from "@/components/portfolios-tabs";
 import { Metadata } from "next";
