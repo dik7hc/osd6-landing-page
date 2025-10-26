@@ -94,8 +94,8 @@ const Achievements = () => {
                 <div className="flex flex-col gap-4 text-5xl">
                     <h2>
 
-                        <span className=" text-brand-blue font-light">Our</span>
-                        <span className=" font-extrabold text-gray-900 block mt-4">
+                        <span className="font-light">Our</span>
+                        <span className=" mt-4 block font-extrabold text-gray-900">
                             ACHIEVEMENTS
                         </span>
                     </h2>

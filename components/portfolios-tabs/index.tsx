@@ -65,7 +65,7 @@ const TabContent: React.FC<TabContentProps> = ({ image, description, color }) =>
             className=" object-cover"
         />
         <div>
-            <p className="text-gray-700 mb-3">{description} + {color}</p>
+            <p className="mb-3 text-gray-700">{description} + {color}</p>
             <Button
                 style={
                     {
@@ -96,8 +96,8 @@ const PortfolioTabs: React.FC = () => {
     return (
         <>
 
-            <nav className="border-b border-gray-200 -mb-px mt-20">
-                <div className="flex flex-wrap justify-between items-center gap-2">
+            <nav className="-mb-px mt-20 border-b border-gray-200">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                     {tabsData.map((tab) => (
                         <button
                             key={tab.id}
@@ -107,9 +107,9 @@ const PortfolioTabs: React.FC = () => {
                                 setActiveTab(tab.id)
                             }}
                             onMouseLeave={() => setIsPausing(false)}
-                            className={`py-4 px-8 whitespace-nowrap text-sm font-medium transition-colors border-b-8 ${activeTab === tab.id
+                            className={`whitespace-nowrap border-b-8 px-8 py-4 text-sm font-medium transition-colors ${activeTab === tab.id
                                 ? ''
-                                : 'border-transparent text-gray-900 hover:text-gray-700 hover:border-gray-300'
+                                : 'border-transparent text-gray-900 hover:border-gray-300 hover:text-gray-700'
                                 }`}
                             style={
                                 activeTab === tab.id
@@ -126,7 +126,7 @@ const PortfolioTabs: React.FC = () => {
                 </div>
             </nav>
 
-            <div className="mt-10 relative overflow-hidden">
+            <div className="relative mt-10 overflow-hidden">
                 <div
                     className="flex transition-transform duration-1000 ease-in-out"
                     style={{
@@ -136,7 +136,7 @@ const PortfolioTabs: React.FC = () => {
                     {tabsData.map((tab) => (
                         <div
                             key={tab.id}
-                            className="w-full flex-shrink-0"
+                            className="w-full shrink-0"
                             onMouseEnter={() => {
                                 setIsPausing(true)
                                 setActiveTab(tab.id)

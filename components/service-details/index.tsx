@@ -57,27 +57,27 @@ const ServiceDetails = () => {
     };
 
     return (
-        <div className="flex-grow" id='services'>
+        <div className="grow" id='services'>
             <div >
                 <div className='flex justify-between'>
 
                     <h2 className='text-5xl'>
 
-                        <span className=" text-brand-blue font-light">Our</span>
-                        <span className=" font-extrabold text-gray-900 block mt-4">
+                        <span className=" font-light text-bosch_blue">Our</span>
+                        <span className=" mt-4 block font-extrabold text-gray-900">
                             SERVICES
                         </span>
                     </h2>
                     <div className="flex border-b border-gray-300">
                         <button
                             onClick={() => handleTabChange('OSD3')}
-                            className={`py-2 px-4 text-lg ${activeServiceTab === 'OSD3' ? 'border-b-4 border-bosch_teal text-gray-800' : 'text-gray-500'}`}
+                            className={`px-4 py-2 text-lg ${activeServiceTab === 'OSD3' ? 'border-b-4 border-bosch_teal text-gray-800' : 'text-gray-500'}`}
                         >
                             OSD3 Function
                         </button>
                         <button
                             onClick={() => handleTabChange('OSD6')}
-                            className={`py-2 px-4 text-lg ${activeServiceTab === 'OSD6' ? 'border-b-4 border-bosch_teal text-gray-800' : 'text-gray-500'}`}
+                            className={`px-4 py-2 text-lg ${activeServiceTab === 'OSD6' ? 'border-b-4 border-bosch_teal text-gray-800' : 'text-gray-500'}`}
                         >
                             OSD6 Function
                         </button>
@@ -94,7 +94,7 @@ const ServiceDetails = () => {
                         <button
                             key={service.title}
                             onClick={() => setActiveService(service.title)}
-                            className={`w-full text-left p-3 block border-b ${activeService === service.title
+                            className={`block w-full border-b p-3 text-left ${activeService === service.title
                                 ? 'bg-bosch_teal text-white'
                                 : 'text-gray-700 hover:bg-gray-100'
                                 }`}
@@ -103,11 +103,11 @@ const ServiceDetails = () => {
                         </button>
                     ))}
                 </div>
-                <div className="w-full sm:w-2/3 bg-bosch_teal text-white p-6 relative min-h-[200px]">
+                <div className="relative min-h-[200px] w-full bg-bosch_teal p-6 text-white sm:w-2/3">
                     <p>{currentService?.description}</p>
                     <div className="absolute bottom-4 right-4 flex gap-2">
-                        <ChevronUp className="h-5 w-5 cursor-pointer" />
-                        <ChevronDown className="h-5 w-5 cursor-pointer" />
+                        <ChevronUp className="size-5 cursor-pointer" />
+                        <ChevronDown className="size-5 cursor-pointer" />
                     </div>
                 </div>
             </div>

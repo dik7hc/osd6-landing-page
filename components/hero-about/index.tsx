@@ -9,7 +9,7 @@ const HeroAboutSection = () => {
                     <h1 className="text-5xl font-semibold text-gray-900">
                         ABOUT
                     </h1>
-                    <Logo className='-mt-20 -ml-20 -mb-20' />
+                    <Logo className='-my-20 -ml-20' />
                     <div className='pt-12'>
                         <p className="text-lg text-gray-600">
                             GS/OSD3 & GS/OSD6 Vietnam teams are parts of the GS/OSD organization, specialized in Global Transportation and Planning services.

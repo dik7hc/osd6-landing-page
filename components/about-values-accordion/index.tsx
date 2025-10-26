@@ -23,17 +23,17 @@ const accordionItems: AccordionItemData[] = [
     { id: "item-5", title: "Lorem ipsum dolor sit amet", content: "Content for item 5." },
 ];
 
-const BlackSquare: React.FC = () => <div className="w-4 h-4 bg-black mr-4 flex-shrink-0"></div>;
+const BlackSquare: React.FC = () => <div className="mr-4 size-4 shrink-0 bg-black"></div>;
 
 const AboutValuesAccordion = () => {
     return (
         <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
             {accordionItems.map(item => (
                 <AccordionItem key={item.id} value={item.id} className="border-b border-gray-300">
-                    <AccordionTrigger className="text-left hover:no-underline py-4">
+                    <AccordionTrigger className="py-4 text-left hover:no-underline">
                         <div className="flex items-center">
                             <BlackSquare />
-                            <span className="flex-grow">{item.title}</span>
+                            <span className="grow">{item.title}</span>
                         </div>
                     </AccordionTrigger>
                     <AccordionContent className="bg-gray-200 p-4 text-gray-700">
