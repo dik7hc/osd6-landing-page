@@ -136,7 +136,7 @@ const Opex = () => {
                                 onClick={() => !isOpen && setOpenStoryIndex(index)}
                             >
                                 {isOpen ? (
-                                    <div className="animate-fadeIn flex gap-6 overflow-hidden">
+                                    <div className=" flex gap-6 overflow-hidden">
                                         <div className="min-w-0 flex-1">
                                             <div
                                                 className={cn(

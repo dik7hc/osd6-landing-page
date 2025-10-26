@@ -1,5 +1,4 @@
 import { SolutionProps } from "@/app/service-portfolio/page"
-import { NewsProps } from "@/components/news-card/news-card"
 import { StoryProps } from "@/components/story-card/story-card"
 
 const Solutions: SolutionProps[] = [
@@ -80,7 +79,7 @@ const Stories: StoryProps[] = [
   }
 ]
 
-const News: NewsProps[] = [
+const News: any[] = [
   {
     img: "https://www.bosch.com.vn/media/vn/news/bosch_relies_on_its_strengths_as_a_technology_leader/1920x1080_main_res_400x225.webp",
     imageAlt: "Description for image 1",
