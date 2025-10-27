@@ -1,6 +1,5 @@
-import { User } from 'lucide-react';
-import SectionHeader from '../section-header';
 import Image from 'next/image';
+import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
 
 // Available SVG icons from public/svg folder
 const svgIcons = [
@@ -12,19 +11,18 @@ const svgIcons = [
     '/svg/icon 6 - color.svg',
 ];
 
-// Randomly shuffle and assign icons to stats
 const shuffledIcons = [...svgIcons].sort(() => Math.random() - 0.5);
 
 const stats = [
-    { value: "80+", label: "Associates", icon: shuffledIcons[0] },
+    { value: "80+", label: "Associates", icon: '/svg/icon 1 - color.svg' },
     { value: ">30%", label: "OTS Saved", icon: shuffledIcons[1] },
     { value: "20+", label: "Projects", icon: shuffledIcons[2] },
-    { value: ">4.5", label: "voC Rating", icon: shuffledIcons[3] },
-    { value: ">5K", label: "Euro Savings", icon: shuffledIcons[4] },
+    { value: ">4.5", label: "VoC Rating", icon: shuffledIcons[3] },
+    { value: ">5K", label: "Euro Savings", icon: '/svg/icon 5 - color.svg' },
     { value: "+30%", label: "Productivity", icon: shuffledIcons[5] },
 ];
 const StatCard = ({ value, label, icon }: { value: string, label: string, icon: string }) => (
-    <div className="flex items-center justify-between border border-gray-200 p-4  shadow-sm">
+    <div className="flex items-center justify-between border border-gray-200 p-4 shadow-sm">
         <div>
             <div className="text-3xl font-bold text-gray-900">{value}</div>
             <div className="text-sm text-gray-500">{label}</div>
@@ -42,21 +40,21 @@ const StatCard = ({ value, label, icon }: { value: string, label: string, icon: 
 );
 
 const testimonials = [
-    { quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla.", author: "J.S. Country" },
-    { quote: "Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit. Praesent vitae nisl nec erat.", author: "A.B. Country" },
-    { quote: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", author: "C.D. Country" },
-    { quote: "Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.", author: "E.F. Country" },
-    { quote: "Ut at dolor ac erat slagittis consecteur. Curabitur vel egestas dolor.", author: "G.H. Country" },
+    { quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla.", name: "J.S. Country" },
+    { quote: "Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit. Praesent vitae nisl nec erat.", name: "A.B. Country" },
+    { quote: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", name: "C.D. Country" },
+    { quote: "Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.", name: "E.F. Country" },
+    { quote: "Ut at dolor ac erat slagittis consecteur. Curabitur vel egestas dolor.", name: "G.H. Country" },
 ];
 
 interface TestimonialCardProps {
     quote: string;
-    author: string;
+    name: string;
     role?: string;
     company?: string;
 }
 
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, role = "Role", company = "Company" }) => (
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name: author, role = "Role", company = "Company" }) => (
     <div className="flex w-72 shrink-0 flex-col justify-between bg-gray-200 p-6 shadow-md transition-shadow duration-300 hover:shadow-lg">
 
         <blockquote className="mb-4 text-sm italic text-gray-600">
@@ -79,11 +77,12 @@ const Testimonial = () => {
         </div>
         <p className="mx-auto mb-8 max-w-5xl text-center text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit            </p>
-        <div className="flex space-x-6 overflow-x-hidden pb-4 ">
-            {testimonials.map((item, index) => (
-                <TestimonialCard key={index} quote={item.quote} author={item.author} />
-            ))}
-        </div>
+                 
+            <InfiniteMovingCards
+                items={testimonials}
+                direction="left"
+                speed="slow"
+            />
     </section>
 }
 const Achievements = () => {

@@ -40,7 +40,7 @@ const Highlights = () => {
 
 
 
-                    <Image alt='adsd' width={373} height={320} className="order-first h-80 w-full md:order-none" src="/images/be-likabosch.webp" />
+                    <Image alt='adsd' width={373} height={320} className="order-first object-center h-80 w-full md:order-none" src="/images/be-likabosch.webp" />
 
 
                     <div className="flex flex-col">
