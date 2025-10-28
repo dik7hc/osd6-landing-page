@@ -87,23 +87,23 @@ export const InfiniteMovingCards = ({
             >
                 {items.map((item, idx) => (
                     <li
-                        className="relative shrink-0 border border-b-0 border-zinc-200 bg-gray-200 px-8 py-6 md:w-72 dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
+                        className="relative shrink-0 border border-b-0 border-zinc-200 bg-gray-200 px-8 py-6 dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)] md:w-72"
                         key={idx}
                     >
-                        <blockquote className="flex flex-col h-full">
+                        <blockquote className="flex h-full flex-col">
                             <div
                                 aria-hidden="true"
-                                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                                className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 size-[calc(100%_+_4px)]"
                             ></div>
-                            <span className="relative z-20 text-sm leading-[1.6] font-normal italic text-neutral-800 dark:text-gray-100">
+                            <span className="relative z-20 text-sm font-normal italic leading-[1.6] text-neutral-800 dark:text-gray-100">
                                 &ldquo;{item.quote}&rdquo;
                             </span>
                             <div className="relative z-20 mt-auto flex flex-row justify-end">
                                 <span className="flex flex-col gap-1 text-right">
-                                    <span className="text-sm leading-[1.6] font-semibold text-neutral-500 dark:text-gray-400">
+                                    <span className="text-sm font-semibold leading-[1.6] text-neutral-500 dark:text-gray-400">
                                         {item.name}
                                     </span>
-                                    <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                                    <span className="text-sm font-normal leading-[1.6] text-neutral-500 dark:text-gray-400">
                                         {item.dept}
                                     </span>
                                 </span>

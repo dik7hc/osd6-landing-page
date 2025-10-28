@@ -38,7 +38,7 @@ const StoryCardsSection = () => {
                         </div>
 
                         <div className="grid grid-cols-3 gap-5">
-                            <div className='col-span-1 flex flex-col h-full'> <div className="my-4 flex flex-col gap-4 text-xs font-semibold text-gray-500 grow"> {card.tags.map((tag, i) => (
+                            <div className='col-span-1 flex h-full flex-col'> <div className="my-4 flex grow flex-col gap-4 text-xs font-semibold text-gray-500"> {card.tags.map((tag, i) => (
                                 <span key={i}>{tag}</span>
                             ))}
                             </div>
@@ -51,7 +51,7 @@ const StoryCardsSection = () => {
                                 </div>
 
                             </div>
-                            <Image alt='adsd' width={243} height={98} className="col-span-2 mb-4 h-48 w-full" src="https://res.cloudinary.com/dr9bxbmwi/image/upload/v1757663285/be-likabosch_yet7y1.webp"></Image>
+                            <Image alt='be-likabosch' width={243} height={98} quality={50} className="col-span-2 mb-4 h-48 w-full" src="https://res.cloudinary.com/dr9bxbmwi/image/upload/v1757663285/be-likabosch_yet7y1.webp"></Image>
                         </div>
                     </div>
                 ))}

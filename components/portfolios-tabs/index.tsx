@@ -9,7 +9,7 @@ const tabsData = [
     {
         id: 1,
         label: 'TRANSPORTATION',
-        image: '/images/Digi.png',
+        image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761670951/Digi_xybaxs.png',
         description:
             'The Transportation (International & Overland) function manages international and regional logistics operations, ensuring efficient booking, routing, and delivery performance. Acting as a central coordination hub, it drives cost control, LSP performance, and network optimization across all transport modes.',
         color: 'bosch-green',
@@ -17,7 +17,7 @@ const tabsData = [
     {
         id: 2,
         label: 'LOGISTICS COST CENTER',
-        image: '/images/Digi.png',
+        image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761670951/Digi_xybaxs.png',
         description:
             'LCC APAC2 serves as the regional logistics cost management hub.It operates as a logistics cost data center, ensuring transparency, compliance, and accuracy, while driving cost forecasting and steering to support strategic decision-making.',
         color: 'bosch-teal',
@@ -25,7 +25,7 @@ const tabsData = [
     {
         id: 3,
         label: 'CORE SERVICES',
-        image: '/images/Digi.png',
+        image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761670951/Digi_xybaxs.png',
         description:
             'Core Service provides the structural backbone of APAC2 logistics through standardized LSP management and network design. It enables cost-efficient, reliable, and seamless transport integration across air, sea, and overland networks.',
         color: 'bosch-blue',
@@ -33,7 +33,7 @@ const tabsData = [
     {
         id: 4,
         label: 'PLANNING & CONSULTING',
-        image: '/images/Digi.png',
+        image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761670951/Digi_xybaxs.png',
         description:
             'Combining operational excellence with strategic advisory, this function delivers advanced logistics planning via systems like Kinaxis and S4 Hana while driving process optimization, cost efficiency, and cross-regional alignment.',
         color: 'bosch-purple',
@@ -41,7 +41,7 @@ const tabsData = [
     {
         id: 5,
         label: 'DIGITALIZATION',
-        image: '/images/Digi.png',
+        image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761670951/Digi_xybaxs.png',
         description:
             'Digitization enhances logistics visibility and efficiency through automation, data integration, and real-time analytics—enabling smarter decision-making and continuous performance improvement across all logistics domains.',
         color: 'bosch-teal',
@@ -55,7 +55,7 @@ interface TabContentProps {
 }
 
 const TabContent: React.FC<TabContentProps> = ({ image, description, color }) => (
-    <div className="flex gap-6 justify-between">
+    <div className="flex justify-between gap-6">
         <Image
             src={image}
             alt="Portfolio section"
