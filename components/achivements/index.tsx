@@ -24,7 +24,7 @@ const stats = [
 const StatCard = ({ value, label, icon }: { value: string, label: string, icon: string }) => (
     <div className="flex items-center justify-between border border-gray-200 p-4 shadow-sm">
         <div>
-            <div className="text-3xl font-bold text-gray-900">{value}</div>
+            <div className="text-4xl font-bold text-gray-900">{value}</div>
             <div className="text-sm text-gray-500">{label}</div>
         </div>
         <div className="flex items-center gap-1 text-gray-400">

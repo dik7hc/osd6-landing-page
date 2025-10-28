@@ -7,7 +7,7 @@ const HeroAboutSection = () => {
             <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2">
                 <div className="flex flex-col gap-6 ">
                     <h1 className="text-5xl font-semibold text-gray-900">
-                        ABOUT
+                        ABOUT US
                     </h1>
                     <Logo className='-my-20 -ml-20' />
                     <div className='pt-12'>

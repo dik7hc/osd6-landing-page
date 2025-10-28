@@ -11,8 +11,9 @@ const OurLeaderSection = () => {
         <h4 className="mt-4 text-3xl font-thin">Hu Qian</h4>
         <p className="text-gray-600">Head of Department</p>
         <div className="mt-2 text-sm text-gray-500">
-            <p>Email: Lorem.ipsum@bosch.com</p>
-            <p>Phone: (+12) 123456789</p>
+            <p>Email: Qian.HU@vn.bosch.com</p>
+            <p>Phone: (+84) 28 6285-7453</p>
+            <p>Mobile: (+84) 96 3589727</p>
         </div>
     </>
 }

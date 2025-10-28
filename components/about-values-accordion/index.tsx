@@ -14,13 +14,17 @@ interface AccordionItemData {
 const accordionItems: AccordionItemData[] = [
     {
         id: "item-1",
-        title: "Lorem ipsum dolor sit amet",
-        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh ipsum, sagittis sit amet porta eget, volutpat vitae felis. Donec a erat sit amet mi elementum porta vitae nec massa.",
+        title: "Compliance",
+        content: "We ensure the highest level of compliance to any relevant Bosch and global regulations in our services and operation.",
     },
-    { id: "item-2", title: "Lorem ipsum dolor sit amet", content: "Content for item 2." },
-    { id: "item-3", title: "Lorem ipsum dolor sit amet", content: "Content for item 3." },
-    { id: "item-4", title: "Lorem ipsum dolor sit amet", content: "Content for item 4." },
-    { id: "item-5", title: "Lorem ipsum dolor sit amet", content: "Content for item 5." },
+    {
+        id: "item-2", title: "Customer-centric Innovation", content: "We proactively use our expertise in Planning & Transportation to create tailored solutions for our customers' needs and deliver lasting value." },
+    {
+        id: "item-3", title: "Continuous Improvement", content: "We are dedicated to continuously enhance every aspect of our work. Through regular performance analysis and opportunities identification, we are ensured to always deliver the highest quality and stay ahead of industry standards." },
+    {
+        id: "item-4", title: "Transparent Partnership", content: "We believe in open and honest communication. By providing frameworks for sharing every step of our services, we ensure our clients are always informed and confident in our collaborative work." },
+    {
+        id: "item-5", title: "Result focus", content: "We are the organization driven by measurable results to our customers, with focus on excellent cost savings and extra mile without compromise on our service quality." },
 ];
 
 const BlackSquare: React.FC = () => <div className="mr-4 size-4 shrink-0 bg-black"></div>;

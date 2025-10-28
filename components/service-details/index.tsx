@@ -30,13 +30,17 @@ const services: ServicesData = {
             description: 'Core Service details for OSD3: Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.'
         },
     ],
-    'OSD6': [ 
+    'OSD6': [
         {
-            title: 'Supply Chain Management',
+            title: 'Planning',
             description: 'OSD6 Supply Chain Management: Involves planning, implementing, and controlling all supply chain operations with the goal of being as efficient as possible. SCM includes all processes that turn raw materials into final products.'
         },
         {
-            title: 'Warehouse Solutions',
+            title: 'Consulting',
+            description: 'OSD6 Warehouse Solutions: Comprehensive services for storage, distribution, and inventory management, ensuring optimal stock levels and timely delivery.'
+        },
+        {
+            title: 'Digitalization',
             description: 'OSD6 Warehouse Solutions: Comprehensive services for storage, distribution, and inventory management, ensuring optimal stock levels and timely delivery.'
         },
     ]
@@ -63,7 +67,7 @@ const ServiceDetails = () => {
 
                     <h2 className='text-5xl'>
 
-                        <span className=" font-light text-bosch_blue">Our</span>
+                        <span className=" font-light">Our</span>
                         <span className=" mt-4 block font-extrabold text-gray-900">
                             SERVICES
                         </span>
@@ -83,9 +87,11 @@ const ServiceDetails = () => {
                         </button>
                     </div>
                 </div>
-                <p className="mt-10 text-lg text-gray-600">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit.
-                </p>
+                {activeServiceTab == "OSD3" && <p className="mt-10 text-lg text-gray-600">
+                    OSD3 Vietnam team provides high-quality global transportation services to our GB customers with a diverse service portfolio, including Regional LSP management, Fine Distribution, Overland Transport Management, Control Tower, and Logistics Costing Center.</p>}
+                {activeServiceTab == "OSD6" && <p className="mt-10 text-lg text-gray-600">
+                    As specialists in Planning & Operations for the APAC region, GS/OSD6 delivers a comprehensive suite of services designed to help customers achieve Strategic Logistics Optimization. Our expertise includes Demand & Source Planning, Logistics Operations in Shipment Tracking & Warehousing Support, Digitalization & Consulting - with Expert Service in Kinaxis, Lean, etc.</p>}
+
             </div>
 
             <div className="mt-4 flex flex-col sm:flex-row">
