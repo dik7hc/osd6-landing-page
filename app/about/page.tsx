@@ -6,7 +6,7 @@ const OurLeaderSection = () => {
     return <>
         <h3 className="text-2xl font-semibold text-gray-700">Our Leader</h3>
         <div className="mt-4 h-64 w-full bg-black">
-            <img src="/images/Hu_Qian.png" alt="Head of Department" className="size-full object-cover" />
+            <img src="https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761670506/Hu_Qian_texgl6.jpg" alt="Head of Department" className="size-full object-cover" />
         </div>
         <h4 className="mt-4 text-3xl font-thin">Hu Qian</h4>
         <p className="text-gray-600">Head of Department</p>

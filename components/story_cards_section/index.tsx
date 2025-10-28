@@ -51,7 +51,7 @@ const StoryCardsSection = () => {
                                 </div>
 
                             </div>
-                            <Image alt='adsd' width={243} height={98} className="col-span-2 mb-4 h-48 w-full" src="/images/be-likabosch.webp"></Image>
+                            <Image alt='adsd' width={243} height={98} className="col-span-2 mb-4 h-48 w-full" src="https://res.cloudinary.com/dr9bxbmwi/image/upload/v1757663285/be-likabosch_yet7y1.webp"></Image>
                         </div>
                     </div>
                 ))}

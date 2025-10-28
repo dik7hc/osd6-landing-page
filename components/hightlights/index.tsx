@@ -40,7 +40,7 @@ const Highlights = () => {
 
 
 
-                        <Image alt='adsd' width={373} height={320} className="order-first object-center h-80 w-full md:order-none col-span-7" src="/images/be-likabosch.webp" />
+                        <Image alt='adsd' width={373} height={320} className="order-first object-center h-80 w-full md:order-none col-span-7" src="https://res.cloudinary.com/dr9bxbmwi/image/upload/v1757663285/be-likabosch_yet7y1.webp" />
                     </div>
 
 

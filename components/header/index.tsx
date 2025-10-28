@@ -15,6 +15,7 @@ const Header = () => {
                             height={96}
                             src="/images/bosch_logo_de.svg"
                             alt="Logo"
+                            quality={20}
                             className="scale-75 md:scale-100"
                         />
                     </Link>
