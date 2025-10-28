@@ -16,7 +16,10 @@ const HeroSection = () => {
           <div className='pt-16'>
 
             <p className="text-lg text-gray-600">
-              We engineer the routes where commerce flows freely.
+              We engineer the routes where
+            </p>
+            <p className="text-lg text-gray-600">
+              commerce flows freely.
             </p>
             <Button
               variant={"outline"}

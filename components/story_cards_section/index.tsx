@@ -13,18 +13,18 @@ const cardData = [
         date: "10/25/2025",
         tags: ["#Collaboration", "#OSD6", "#OSD3"]
     },
-    {
-        title: "Lorem ipsum dolor sit amet,",
-        date: "10/25/2025",
-        tags: ["#Collaboration", "#OSD6", "#OSD3"]
-    },
+    // {
+    //     title: "Lorem ipsum dolor sit amet,",
+    //     date: "10/25/2025",
+    //     tags: ["#Collaboration", "#OSD6", "#OSD3"]
+    // },
 ];
 
 const StoryCardsSection = () => {
     return (
         <section className="bg-white py-12">
 
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
                 {cardData.map((card, index) => (
                     <div key={index} className="flex flex-col">
                         {/* Card Content: Title, Date, Tags */}
@@ -38,19 +38,16 @@ const StoryCardsSection = () => {
                         </div>
 
                         <div className="grid grid-cols-3 gap-5">
-                            <div className='col-span-1'>
-                                <div className="mb-4 flex flex-col gap-4 text-xs font-semibold text-gray-500">
-                                    {card.tags.map((tag, i) => (
-                                        <span key={i}>{tag}</span>
-                                    ))}
-                                </div>
-                                <div className='mt-[4.rem] flex h-full'>
-                                    <Button
-                                        className="w-32 px-4 py-2"
-                                    >
-                                        Read More
-                                        <ArrowRight size={16} />
-                                    </Button>
+                            <div className='col-span-1 flex flex-col h-full'> <div className="my-4 flex flex-col gap-4 text-xs font-semibold text-gray-500 grow"> {card.tags.map((tag, i) => (
+                                <span key={i}>{tag}</span>
+                            ))}
+                            </div>
+
+                                <div className='mt-[4.rem] flex items-end'> <Button
+                                    className="w-32 px-4 py-2" >
+                                    Read More
+                                    <ArrowRight size={16} />
+                                </Button>
                                 </div>
 
                             </div>

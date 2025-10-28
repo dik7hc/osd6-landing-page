@@ -24,7 +24,7 @@ const stories = [
     {
         principle: "Principle #1",
         title: "Continuous Improvements",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget elit.",
+        description: "Always better than yesterday.",
         imageSrc: "/images/aQuan.jfif"
     },
     {

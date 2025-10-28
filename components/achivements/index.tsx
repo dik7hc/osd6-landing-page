@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { InfiniteMovingCards } from '../ui/infinite-moving-cards';
+import Mock from '@/lib/mock-data';
 
 // Available SVG icons from public/svg folder
 const svgIcons = [
@@ -15,17 +16,17 @@ const shuffledIcons = [...svgIcons].sort(() => Math.random() - 0.5);
 
 const stats = [
     { value: "80+", label: "Associates", icon: '/svg/icon 1 - color.svg' },
-    { value: ">30%", label: "OTS Saved", icon: shuffledIcons[1] },
-    { value: "20+", label: "Projects", icon: shuffledIcons[2] },
-    { value: ">4.5", label: "VoC Rating", icon: shuffledIcons[3] },
+    { value: ">30%", label: "YTY Growth", icon: "/svg/icon 2 - color.svg" },
+    { value: "20+", label: "Entities", icon: "/svg/icon 3 - color.svg" },
+    { value: ">4.5", label: "VoC Rating", icon: "/svg/icon 4 - color.svg" },
     { value: ">5K", label: "Euro Savings", icon: '/svg/icon 5 - color.svg' },
-    { value: "+30%", label: "Productivity", icon: shuffledIcons[5] },
+    { value: "+30%", label: "Productivity", icon: "/svg/icon 6 - color.svg" },
 ];
 const StatCard = ({ value, label, icon }: { value: string, label: string, icon: string }) => (
     <div className="flex items-center justify-between border border-gray-200 p-4 shadow-sm">
         <div>
-            <div className="text-4xl font-bold text-gray-900">{value}</div>
-            <div className="text-sm text-gray-500">{label}</div>
+            <div className="text-4xl font-semibold text-gray-700">{value}</div>
+            <div className="text-base text-gray-500">{label}</div>
         </div>
         <div className="flex items-center gap-1 text-gray-400">
             <Image
@@ -33,42 +34,13 @@ const StatCard = ({ value, label, icon }: { value: string, label: string, icon: 
                 alt={`${label} icon`}
                 width={28}
                 height={28}
-                className="size-7"
+                className="size-12"
             />
         </div>
     </div>
 );
 
-const testimonials = [
-    { quote: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla.", name: "J.S. Country" },
-    { quote: "Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit. Praesent vitae nisl nec erat.", name: "A.B. Country" },
-    { quote: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.", name: "C.D. Country" },
-    { quote: "Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula.", name: "E.F. Country" },
-    { quote: "Ut at dolor ac erat slagittis consecteur. Curabitur vel egestas dolor.", name: "G.H. Country" },
-];
 
-interface TestimonialCardProps {
-    quote: string;
-    name: string;
-    role?: string;
-    company?: string;
-}
-
-const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, name: author, role = "Role", company = "Company" }) => (
-    <div className="flex w-72 shrink-0 flex-col justify-between bg-gray-200 p-6 shadow-md transition-shadow duration-300 hover:shadow-lg">
-
-        <blockquote className="mb-4 text-sm italic text-gray-600">
-            &ldquo;{quote}&rdquo;
-        </blockquote>
-
-        <div className="flex justify-end gap-3">
-            <div>
-                <div className="text-sm font-semibold text-gray-900">{author}</div>
-                <div className="text-xs text-gray-500">{role}, {company}</div>
-            </div>
-        </div>
-    </div>
-);
 
 const Testimonial = () => {
     return <section className="mt-6 py-16">
@@ -76,10 +48,9 @@ const Testimonial = () => {
             <h2 className="text-3xl font-bold text-gray-900">Customer Testimonies</h2>
         </div>
         <p className="mx-auto mb-8 max-w-5xl text-center text-gray-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit            </p>
-                 
+            We honor and appreciate our customers’ feedback, which motivates us to continuously improve and serve with excellence.</p>
             <InfiniteMovingCards
-                items={testimonials}
+                items={Mock.Testimonials}
                 direction="left"
                 speed="slow"
             />

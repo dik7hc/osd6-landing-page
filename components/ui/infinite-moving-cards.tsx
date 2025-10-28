@@ -13,7 +13,7 @@ export const InfiniteMovingCards = ({
     items: {
         quote: string;
         name: string;
-        title?: string;
+        dept?: string;
     }[];
     direction?: "left" | "right";
     speed?: "fast" | "normal" | "slow";
@@ -65,7 +65,7 @@ export const InfiniteMovingCards = ({
             } else if (speed === "normal") {
                 containerRef.current.style.setProperty("--animation-duration", "40s");
             } else {
-                containerRef.current.style.setProperty("--animation-duration", "20s");
+                containerRef.current.style.setProperty("--animation-duration", "100s");
             }
         }
     };
@@ -90,7 +90,7 @@ export const InfiniteMovingCards = ({
                         className="relative shrink-0 border border-b-0 border-zinc-200 bg-gray-200 px-8 py-6 md:w-72 dark:border-zinc-700 dark:bg-[linear-gradient(180deg,#27272a,#18181b)]"
                         key={idx}
                     >
-                        <blockquote>
+                        <blockquote className="flex flex-col h-full">
                             <div
                                 aria-hidden="true"
                                 className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
@@ -98,13 +98,13 @@ export const InfiniteMovingCards = ({
                             <span className="relative z-20 text-sm leading-[1.6] font-normal italic text-neutral-800 dark:text-gray-100">
                                 &ldquo;{item.quote}&rdquo;
                             </span>
-                            <div className="relative z-20 mt-6 flex flex-row justify-end">
-                                <span className="flex flex-col gap-1">
+                            <div className="relative z-20 mt-auto flex flex-row justify-end">
+                                <span className="flex flex-col gap-1 text-right">
                                     <span className="text-sm leading-[1.6] font-semibold text-neutral-500 dark:text-gray-400">
                                         {item.name}
                                     </span>
                                     <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                                        {item.title}
+                                        {item.dept}
                                     </span>
                                 </span>
                             </div>

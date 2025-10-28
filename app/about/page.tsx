@@ -32,8 +32,8 @@ const AboutUsPage = () => {
                                     VALUES
                                 </span>
                             </h2>
-                            <p className="mt-10 text-lg text-gray-600">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nibh ipsum, sagittis sit amet porta eget, volutpat vitae felis.
+                            <p className="mt-10 text-lg tracking-wide text-gray-600">
+                                At Bosch, our values guide everything we do. In our team, we bring these principles to life through five core beliefs — driving integrity, innovation, continuous growth, transparency, and impactful results in everything we deliver.
                             </p>
                         </div>
                         <div className='col-span-2'>

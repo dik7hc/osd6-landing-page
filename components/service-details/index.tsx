@@ -1,4 +1,5 @@
 'use client'
+import { cn } from '@/lib/utils';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 
@@ -15,33 +16,33 @@ const services: ServicesData = {
     'OSD3': [
         {
             title: 'Logistics Cost Center',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque erat ipsum, maximus et nulla eu, accumsan vehicula nulla. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget velit. Suspendisse commodo ligula vitae justo mattis gravida. Aenean eu ultricies nibh. Fusce sagittis nulla eget nunc consequat molestie. Donec aliquet justo sed metus finibus, interdum pharetra sed nulla. Aenean vehicula et ante sit amet tincidunt. Morbi egestas sed diam sed laoreet.'
+            description: 'The LCC team is the financial hub of APAC2 logistics, managing LSP billing verification, cost booking, accrual, and forecasting. Acting as one face to the customer on cost matters, the team ensures full transparency and compliance. By applying the 4-Eyes Principle in billing verification, LCC safeguards financial accuracy and governance. As the Logistics Cost Data Center, it provides insights for cost optimization and steering, enabling data-driven decisions and sustainable cost efficiency across APAC.'
         },
         {
             title: 'International Transport',
-            description: 'International Transport details for OSD3: Curabitur nibh ipsum, sagittis sit amet porta eget, volutpat vitae felis. Donec a erat sit amet mi elementum porta vitae nec massa. Sed euismod, nisl vitae aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl nisl eget nisl.'
+            description: 'The International Transport team oversees Air, Courier, and Sea shipments, ensuring smooth and timely international logistics. Acting as a Control Tower and focal contact point for all shipment inquiries, the team coordinates booking, tracking, and performance monitoring across regions. Through strong LSP management and network optimization, they enhance cost control, service reliability, and visibility. Their proactive support ensures seamless cross-border operations and customer satisfaction throughout the APAC region.'
         },
         {
             title: 'Overland Transport',
-            description: 'Overland Transport details for OSD3: Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.'
+            description: 'The Overland Transport team manages regional road logistics across APAC, handling daily shipment assignments, urgent requests, and LSP performance. Using the NGTM system, they automate and standardize bookings for greater accuracy and visibility. The team ensures persistent cycle storage for consistent shipment traceability and data reliability. Focused on continuous improvement, Overland Transport delivers safe, efficient, and cost-effective deliveries that strengthen APAC’s regional logistics performance.'
         },
         {
             title: 'Core Service',
-            description: 'Core Service details for OSD3: Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.'
+            description: 'The Core Service team forms the backbone of APAC2 logistics, ensuring standardized LSP management and network design across Air, Courier, Sea, and Truck. Acting as the focal point for Network Design, they collaborate closely with all logistics teams to align service standards and optimize routes. Their efforts ensure consistent quality, cost efficiency, and process harmonization, building a strong, connected, and future-ready logistics network across the region.'
         },
     ],
     'OSD6': [
         {
             title: 'Planning',
-            description: 'OSD6 Supply Chain Management: Involves planning, implementing, and controlling all supply chain operations with the goal of being as efficient as possible. SCM includes all processes that turn raw materials into final products.'
+            description: 'Planning as a Service (PaaS) provides end-to-end support in demand forecasting, supply planning, and inventory optimization to ensure seamless operations. The service delivers data-driven planning solutions tailored to business needs, enhancing visibility and responsiveness. Besides that, we provide expert services such as Kinaxis, S4 HANA, and logistics operations. Our customers include MA APAC, JP-PS, VM, MF, DC, MA, and PT via GS OSD1 and AU-HC.'
         },
         {
             title: 'Consulting',
-            description: 'OSD6 Warehouse Solutions: Comprehensive services for storage, distribution, and inventory management, ensuring optimal stock levels and timely delivery.'
+            description: 'As consultants, the team offers strategic guidance to improve processes, strengthen collaboration, and drive sustainable performance.'
         },
         {
             title: 'Digitalization',
-            description: 'OSD6 Warehouse Solutions: Comprehensive services for storage, distribution, and inventory management, ensuring optimal stock levels and timely delivery.'
+            description: 'The Digital Portfolio showcases the suite of digital tools and technologies adopted within OSD6 to enhance efficiency, automation, and data-driven decision-making. It covers both IT development and non-development tools across the full digital process—from requirement analysis, project planning, and design to data handling and automation.\nKey tools include Excel, Power Query, Power BI, SQL, and Python, each evaluated by their features, data- handling capacity, and adoption effort. Together, these tools form a practical ecosystem that supports continuous improvement and fosters a digital mindset across teams.'
         },
     ]
 };
@@ -52,7 +53,14 @@ const ServiceDetails = () => {
     const [activeService, setActiveService] = useState<string>('Logistics Cost Center');
     const currentService: ServiceData | undefined = services[activeServiceTab].find(s => s.title === activeService);
 
-    // Handle tab switching and reset the active service
+    const service = (function () {
+        const currentServiceIndex = services[activeServiceTab].findIndex(s => s.title === activeService)
+        if (currentServiceIndex == -1) return undefined
+        const nextServiceIndex = currentServiceIndex == services[activeServiceTab].length - 1 ? 0 : currentServiceIndex + 1
+        const prevServiceIndex = currentServiceIndex == 0 ? services[activeServiceTab].length - 1 : currentServiceIndex - 1
+        return { nextService: services[activeServiceTab][nextServiceIndex] , prevService: services[activeServiceTab][prevServiceIndex]}
+    })();;
+
     const handleTabChange = (tab: ServiceTab) => {
         setActiveServiceTab(tab);
         if (services[tab].length > 0) {
@@ -81,7 +89,7 @@ const ServiceDetails = () => {
                         </button>
                         <button
                             onClick={() => handleTabChange('OSD6')}
-                            className={`px-4 py-2 text-lg ${activeServiceTab === 'OSD6' ? 'border-b-4 border-bosch_teal text-gray-800' : 'text-gray-500'}`}
+                            className={`px-4 py-2 text-lg ${activeServiceTab === 'OSD6' ? 'border-b-4 border-bosch_blue text-gray-800' : 'text-gray-500'}`}
                         >
                             OSD6 Function
                         </button>
@@ -96,24 +104,35 @@ const ServiceDetails = () => {
 
             <div className="mt-4 flex flex-col sm:flex-row">
                 <div className="w-full sm:w-1/3 ">
-                    {services[activeServiceTab].map(service => (
+                    {services[activeServiceTab].map((service, index) => (
                         <button
                             key={service.title}
                             onClick={() => setActiveService(service.title)}
-                            className={`block w-full border-b p-3 text-left ${activeService === service.title
-                                ? 'bg-bosch_teal text-white'
-                                : 'text-gray-700 hover:bg-gray-100'
-                                }`}
+                            className={cn(
+                                "block w-full border-b p-3 text-left",
+                                {
+                                    "text-gray-700 hover:bg-gray-100": activeService !== service.title,
+                                    "text-white": activeService === service.title,
+                                    "bg-bosch_teal": activeService === service.title && activeServiceTab === "OSD3",
+                                    "bg-bosch_blue": activeService === service.title && activeServiceTab !== "OSD3",
+                                }
+                            )}
                         >
                             {service.title}
                         </button>
                     ))}
                 </div>
-                <div className="relative min-h-[200px] w-full bg-bosch_teal p-6 text-white sm:w-2/3">
+                <div className={cn("relative min-h-[200px] w-full bg-bosch_teal p-6 text-white sm:w-2/3" ,
+                    { "bg-bosch_blue": activeServiceTab == "OSD6" }
+                )} >
                     <p>{currentService?.description}</p>
                     <div className="absolute bottom-4 right-4 flex gap-2">
-                        <ChevronUp className="size-5 cursor-pointer" />
-                        <ChevronDown className="size-5 cursor-pointer" />
+                        <ChevronUp className="size-5 cursor-pointer" onClick={() => {
+                            if (service?.nextService.title) setActiveService(service.prevService.title)
+                        }} />
+                        <ChevronDown className="size-5 cursor-pointer" onClick={() => {
+                            if (service?.nextService.title) setActiveService(service.nextService.title)
+                        }}/>
                     </div>
                 </div>
             </div>
