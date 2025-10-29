@@ -16,7 +16,7 @@ const Header = () => {
                             src="/images/bosch_logo_de.svg"
                             alt="Logo"
                             quality={20}
-                            className="scale-75 md:scale-100"
+                            className="scale-75"
                         />
                     </Link>
                     {/* <Divider orientation="vertical" className="bg-[#7cb305] h-8" /> */}
@@ -34,7 +34,7 @@ const Header = () => {
 
 const HeaderBg = () => {
     return (<div
-        className=" h-4 w-full bg-[url('/images/header-cover.svg')] bg-cover bg-center bg-no-repeat"
+        className=" h-2 w-full bg-[url('/images/header-cover.svg')] bg-cover bg-center bg-no-repeat"
     />)
 }
 

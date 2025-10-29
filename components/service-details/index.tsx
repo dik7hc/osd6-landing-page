@@ -42,7 +42,7 @@ const services: ServicesData = {
         },
         {
             title: 'Digitalization',
-            description: 'The Digital Portfolio showcases the suite of digital tools and technologies adopted within OSD6 to enhance efficiency, automation, and data-driven decision-making. It covers both IT development and non-development tools across the full digital process—from requirement analysis, project planning, and design to data handling and automation.\nKey tools include Excel, Power Query, Power BI, SQL, and Python, each evaluated by their features, data- handling capacity, and adoption effort. Together, these tools form a practical ecosystem that supports continuous improvement and fosters a digital mindset across teams.'
+            description: "Our Digital Portfolio represents Bosch’s commitment to driving digital transformation through innovation and excellence. It encompasses a suite of data-driven, automated, and user-centric solutions designed to optimize processes and enhance business performance. The Digital Team integrates multidisciplinary expertise in project management, supply chain operations, business analysis, SAP systems, software engineering, UX/UI design, and data management to deliver impactful, scalable solutions. Through these initiatives, we enable greater transparency, agility, and efficiency across the value chain."
         },
     ]
 };

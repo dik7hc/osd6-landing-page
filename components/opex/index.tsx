@@ -25,49 +25,57 @@ const stories = [
         principle: "Principle #1",
         title: "Continuous Improvements",
         description: "Always better than yesterday.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669913/image-aQ_ckmp8x.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669913/image-aQ_ckmp8x.jpg",
+        author: "Ngo Anh Quan GS/OSD6 - APAC23"
     },
     {
         principle: "Principle #2",
         title: "Leadership",
         description: "Leadership - Empowering Excellence, Embracing Diversity, and Driving Sustainability.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669717/image-cH_luvvw3.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669717/image-cH_luvvw3.jpg",
+        author: "Pham Thuy Hang GS/OSD6 - APAC21 & APAC22"
     },
     {
         principle: "Principle #3",
         title: "Process Orientation",
         description: "Think in processes, deliver with purpose.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/aHung_o8ookh.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/aHung_o8ookh.jpg",
+        author: "Truong Quoc Hung GS/OSD6 - APAC2"
     },
     {
         principle: "Principle #4",
         title: "Service Mindset",
         description: "Listening to customers is key to building trust and driving reliability.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669713/cMy_z3vuva.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669713/cMy_z3vuva.jpg",
+        author: "Huynh Mai Nga My GS/OSD3 - APAC21"
     },
     {
         principle: "Principle #5",
         title: "Accountability",
         description: "I would rather lose money than trust.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cDung_rsi5u9.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cDung_rsi5u9.jpg",
+        author: "Nguyen Thi Hoang Dung GS/OSD3 - APAC21"
     },
     {
         principle: "Principle #6",
         title: "Transparency",
         description: "Transparency-Driven Excellence: Clear Steps, Shared Knowledge, Continuous Growth!",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/image-bv_oa9xpc.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/image-bv_oa9xpc.jpg",
+        author: "Tran Le Bao Vy GS/OSD3 - APAC21"
     },
     {
         principle: "Principle #7",
         title: "Collaboration",
         description: "If you want to go fast, go alone. If you want to go far, go together.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg",
+        author: "Ly My Han GS/OSD6 - APAC23"
     },
     {
         principle: "Principle #8",
         title: "Standardization",
         description: "Standardization – Your Path to Precision and Progress.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669714/aTung_g1uep9.jpg"
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669714/aTung_g1uep9.jpg",
+        author: "Nguyen Thanh Tung GS/OSD6A - APAC22 & GS/OSD3 - APAC21"
     },
 ];
 const Opex = () => {
@@ -146,8 +154,11 @@ const Opex = () => {
                                                 )}
                                             >{story.principle}</div>
                                             <h4 className="mb-4 text-2xl font-bold text-gray-900">{story.title}</h4>
+                                            <p className="text-sm text-gray-700 italic font-semibold">
+                                                &ldquo;{story.description}&rdquo;
+                                            </p>
                                             <p className="mb-6 text-sm text-gray-600">
-                                                {story.description}
+                                                {story.author}
                                             </p>
                                             <a
                                                 href="#"
