@@ -28,7 +28,7 @@ const tabsData = [
         image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761705126/Core_Service_-_Landing_oqjlyv.png',
         description:
             'Core Service provides the structural backbone of APAC2 logistics through standardized LSP management and network design. It enables cost-efficient, reliable, and seamless transport integration across air, sea, and overland networks.',
-        color: 'bosch-green',
+        color: 'bosch-dark-green',
     },
     {
         id: 4,
@@ -61,7 +61,7 @@ const TabContent: React.FC<TabContentProps> = ({ image, description, color }) =>
             alt="Portfolio section"
             width={360}
             height={192}
-            className=" object-cover"
+            className="w-[360px] h-[192px] object-cover"
         />
         <div className="flex flex-col justify-between">
             <p className="mb-3 text-gray-700">{description}</p>

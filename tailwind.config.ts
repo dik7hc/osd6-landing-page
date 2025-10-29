@@ -72,6 +72,9 @@ export default {
         bosch_green: {
           DEFAULT: "hsl(var(--bosch-green))"
         },
+        bosch_dark_green: {
+          DEFAULT: "hsl(var(--bosch-dark-green))"
+        },
         bosch_teal: {
           DEFAULT: "hsl(var(--bosch-teal))"
         },
