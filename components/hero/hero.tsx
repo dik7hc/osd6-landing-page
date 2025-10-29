@@ -7,20 +7,23 @@ const HeroSection = () => {
   return (
     <section >
       <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-        <Logo className="absolute left-10 top-0" />
-        <div className="flex flex-col gap-6 ">
+        <Logo className="absolute left-10 -top-8" />
+        <div className="flex flex-col justify-center">
           <h1 className="text-5xl font-semibold text-gray-900">
-            <div> Welcome to</div><div>GS.</div>
-
+            <div>Welcome to</div>
+            <div>GS.</div>
           </h1>
-          <div className='pt-16'>
 
-            <p className="text-lg text-gray-600">
-              We engineer the routes where
-            </p>
-            <p className="text-lg text-gray-600">
-              commerce flows freely.
-            </p>
+          <div className="space-y-10 mt-24">
+            <div>
+              <p className="text-xl tracking-wide text-gray-600">
+                We engineer the routes where
+              </p>
+              <p className="text-xl tracking-wide text-gray-600">
+                commerce flows freely.
+              </p>
+            </div>
+
             <Button
               variant={"outline"}
               className="flex w-1/3 items-center gap-2 border-bosch_blue bg-white font-semibold text-bosch_blue hover:bg-bosch_blue hover:text-white"
@@ -30,7 +33,8 @@ const HeroSection = () => {
             </Button>
           </div>
         </div>
-        <div className="h-80 w-full rounded-lg bg-gray-200">
+
+        <div className="h-80 w-full bg-gray-200">
           <Image
             alt='bosch-hero-section'
             src={'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1757663285/be-likabosch_yet7y1.webp'}

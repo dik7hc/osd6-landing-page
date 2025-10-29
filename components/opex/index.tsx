@@ -30,43 +30,43 @@ const stories = [
     {
         principle: "Principle #2",
         title: "Leadership",
-        description: "A description for Scalability. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget elit.",
+        description: "Leadership - Empowering Excellence, Embracing Diversity, and Driving Sustainability.",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669717/image-cH_luvvw3.jpg"
     },
     {
         principle: "Principle #3",
         title: "Process Orientation",
-        description: "A description for Process Orientation. Quisque erat ipsum, maximus et nulla, accumsan vehicula nulla.",
+        description: "Think in processes, deliver with purpose.",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/aHung_o8ookh.jpg"
     },
     {
         principle: "Principle #4",
         title: "Service Mindset",
-        description: "A description for Service Mindset. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget elit.",
+        description: "Listening to customers is key to building trust and driving reliability.",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669713/cMy_z3vuva.jpg"
     },
     {
         principle: "Principle #5",
         title: "Accountability",
-        description: "A description for Accountability. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "I would rather lose money than trust.",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cDung_rsi5u9.jpg"
     },
     {
         principle: "Principle #6",
         title: "Transparency",
-        description: "A description for Transparency. Quisque erat ipsum, maximus et nulla, accumsan vehicula nulla.",
+        description: "Transparency-Driven Excellence: Clear Steps, Shared Knowledge, Continuous Growth!",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/image-bv_oa9xpc.jpg"
     },
     {
         principle: "Principle #7",
         title: "Collaboration",
-        description: "A description for Collaboration goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        description: "If you want to go fast, go alone. If you want to go far, go together.",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg"
     },
     {
         principle: "Principle #8",
         title: "Standardization",
-        description: "A description for Standardization. Donec nunc leo, eleifend sit amet fringilla aliquam, molestie eget elit.",
+        description: "Standardization – Your Path to Precision and Progress.",
         imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669714/aTung_g1uep9.jpg"
     },
 ];
