@@ -9,7 +9,7 @@ const Footer = () => {
 
                 <div className="flex items-center gap-6">
 
-                    <Image src={'/svg/logoWithGeneralService.svg'} alt='General Service Logo' width={298} height={100} />
+                    <Image src={'/svg/Logo with GS.svg'} alt='General Service Logo' width={298} height={100} />
 
                     <p className="mt-6 max-w-xs text-lg leading-relaxed text-gray-700">
                         We Engineer the Routes where <br /> Commerce Flows Freely

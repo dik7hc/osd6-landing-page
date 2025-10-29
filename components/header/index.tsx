@@ -8,7 +8,7 @@ const Header = () => {
         <div className="sticky top-0 z-50 shadow-sm">
             <HeaderBg />
             <header className="relative mx-auto max-w-7xl bg-background ">
-                <div className="flex h-5 w-full flex-row-reverse items-center justify-between gap-4 px-4 sm:px-6 md:h-20  lg:px-8" >
+                <div className="flex h-5 w-full flex-row-reverse items-center justify-between gap-4 px-4 sm:px-6 md:h-14 lg:px-8" >
                     <Link href={"/"}>
                         <Image
                             width={144}

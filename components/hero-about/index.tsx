@@ -35,7 +35,7 @@ const HeroAboutSection = () => {
 const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
     return (
         <img
-            src={"/svg/logoWithGeneralService.svg"}
+            src={"/svg/Logo with GS.svg"}
             alt="Company Logo"
             className={"h-64 w-auto " + className}
         />

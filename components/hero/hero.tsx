@@ -53,7 +53,7 @@ const HeroSection = () => {
 const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
   return (
     <img
-      src={"/svg/Logo.svg"}
+      src={"/svg/Logo without GS.svg"}
       alt="Company Logo"
       className={"h-64 w-auto " + className}
     />
