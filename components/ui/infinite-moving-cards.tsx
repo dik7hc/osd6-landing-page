@@ -3,6 +3,16 @@
 import { cn } from "@/lib/utils";
 import React, { useEffect, useState } from "react";
 
+const processBoldText = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={index} className="font-bold">{part.slice(2, -2)}</strong>;
+        }
+        return part;
+    });
+};
+
 export const InfiniteMovingCards = ({
     items,
     direction = "left",
@@ -69,6 +79,10 @@ export const InfiniteMovingCards = ({
             }
         }
     };
+
+    items.map(item => {
+        console.log(processBoldText(item.quote))
+    })
     return (
         <div
             ref={containerRef}
@@ -96,7 +110,7 @@ export const InfiniteMovingCards = ({
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 size-[calc(100%_+_4px)]"
                             ></div>
                             <span className="relative z-20 text-sm font-normal italic leading-[1.6] text-neutral-800 dark:text-gray-100">
-                                &ldquo;{item.quote}&rdquo;
+                                &ldquo;{processBoldText(item.quote)}&rdquo;
                             </span>
                             <div className="relative z-20 mt-auto flex flex-row justify-end">
                                 <span className="flex flex-col gap-1 text-right">

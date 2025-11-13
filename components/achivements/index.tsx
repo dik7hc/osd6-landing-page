@@ -38,8 +38,7 @@ const StatCard = ({ value, label, icon }: { value: string, label: string, icon: 
             />
         </div>
     </div>
-);
-
+)
 
 
 const Testimonial = () => {
