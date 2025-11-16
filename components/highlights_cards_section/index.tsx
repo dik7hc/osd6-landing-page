@@ -20,7 +20,7 @@ const cardData = [
     // },
 ];
 
-const StoryCardsSection = () => {
+const HighlightsCardsSection = () => {
     return (
         <section className="bg-white py-12">
 
@@ -60,4 +60,4 @@ const StoryCardsSection = () => {
     );
 };
 
-export default StoryCardsSection;
+export default HighlightsCardsSection;

@@ -12,8 +12,6 @@ const svgIcons = [
     '/svg/icon 6 - color.svg',
 ];
 
-const shuffledIcons = [...svgIcons].sort(() => Math.random() - 0.5);
-
 const stats = [
     { value: "80+", label: "Associates", icon: '/svg/icon 1 - color.svg' },
     { value: ">30%", label: "YTY Growth", icon: "/svg/icon 2 - color.svg" },
@@ -41,7 +39,7 @@ const StatCard = ({ value, label, icon }: { value: string, label: string, icon: 
 )
 
 
-const Testimonial = () => {
+const Testimonials = () => {
     return <section className="mt-6 py-16">
         <div className="mb-4 text-center">
             <h2 className="text-3xl font-bold text-gray-900">Customer Testimonies</h2>
@@ -78,7 +76,7 @@ const Achievements = () => {
                     ))}
                 </div>
             </div>
-            <Testimonial />
+            <Testimonials />
         </section>
     );
 };

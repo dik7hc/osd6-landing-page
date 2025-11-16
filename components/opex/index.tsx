@@ -3,6 +3,7 @@ import { cn } from '@/lib/utils';
 import { ArrowRight, ArrowUp, ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Opex2 from '../news';
 
 const getPrincipleColor = (index: number) => {
     const colorIndex = index % 4;
@@ -113,7 +114,7 @@ const Opex = () => {
                     <h2 className="text-5xl text-gray-900">
                         Our Stories in <span className="block font-extrabold">OPEX</span>
                     </h2>
-                    <div className="flex gap-2">
+                    {/* <div className="flex gap-2">
                         <button
                             onClick={prevStorySlide}
                             className="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
@@ -126,10 +127,10 @@ const Opex = () => {
                         >
                             <ChevronRight size={20} />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
-
-                <div className="flex h-[390px] gap-4">
+                <Opex2 />
+                {/* <div className="flex h-[390px] gap-4">
                     {visibleStories.map((story, index) => {
                         const isOpen = openStoryIndex === index;
 
@@ -170,7 +171,7 @@ const Opex = () => {
                                         </div>
                                         <div className="shrink-0">
                                             {/* <div className={`h-[311px] w-[212px] ${story.imageSrc} `}></div> */}
-                                            <Image src={story.imageSrc} width={212} height={311} alt={story.principle} />
+                                            {/* <Image src={story.imageSrc} width={212} height={311} alt={story.principle} />
                                         </div>
                                     </div>
                                 ) : (
@@ -190,7 +191,7 @@ const Opex = () => {
                             </div>
                         );
                     })}
-                </div>
+                </div>  */}
             </section>
         </>
     )
