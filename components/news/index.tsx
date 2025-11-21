@@ -1,16 +1,17 @@
 'use client'
 import { cn } from "@/lib/utils";
+import { X } from "lucide-react";
 import { useState } from "react";
 
 const coreValues = [
-    { id: 1, title: 'Continuous Improvements', image: '/images/Rectangle24.png', color: 'bg-indigo-500' },
-    { id: 2, title: 'Transparency', image: '/images/Rectangle24.png', color: 'bg-green-500' },
-    { id: 3, title: 'Process Orientation', image: '/images/Rectangle24.png', color: 'bg-fuchsia-500' },
-    { id: 4, title: 'Service Mindset', image: '/images/Rectangle24.png', color: 'bg-teal-500' },
-    { id: 5, title: 'Leadership', image: '/images/Rectangle24.png', color: 'bg-indigo-500' },
-    { id: 6, title: 'Integrity', image: '/images/Rectangle24.png', color: 'bg-fuchsia-500' },
-    { id: 7, title: 'Collaboration', image: '/images/Rectangle24.png', color: 'bg-green-500' },
-    { id: 8, title: 'Accountability', image: '/images/Rectangle24.png', color: 'bg-teal-500' },
+    { id: 1, title: 'Continuous Improvements', image: '/images/Rectangle24.png', color: 'bg-bosch_blue' },
+    { id: 2, title: 'Transparency', image: '/images/Rectangle24.png', color: 'bg-bosch_green' },
+    { id: 3, title: 'Process Orientation', image: '/images/Rectangle24.png', color: 'bg-bosch_purple' },
+    { id: 4, title: 'Service Mindset', image: '/images/Rectangle24.png', color: 'bg-bosch_teal' },
+    { id: 5, title: 'Leadership', image: '/images/Rectangle24.png', color: 'bg-bosch_blue' },
+    { id: 6, title: 'Integrity', image: '/images/Rectangle24.png', color: 'bg-bosch_purple' },
+    { id: 7, title: 'Collaboration', image: '/images/Rectangle24.png', color: 'bg-bosch_green' },
+    { id: 8, title: 'Accountability', image: '/images/Rectangle24.png', color: 'bg-bosch_teal' },
 ];
 
 
@@ -69,28 +70,74 @@ const Opex2 = () => {
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {coreValues.map(({color, id, image, title}) => (
-                <div className={cn("relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:scale-[1.01]", {
-                        "col-span-3" : selectedId == id,
+                <div className={cn("relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-2xl cursor-pointer", {
+                        "col-span-3 hover:scale-[1]" : selectedId == id,
                         "hidden": shouldHide(selectedId, id),
                 })} key={id} onClick={handleOnclick(id)}>
-                    <img
-                        src={image}
-                        alt={title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                    {
+                        selectedId !== id ? (
+                            <>
+                                <img
+                                    src={image}
+                                    alt={title}
+                                    className="absolute inset-0 w-full h-full object-cover"
 
-                    />
+                                />
 
-                    <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div>
+                                <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div>
 
-                    <div className="absolute inset-0 flex items-center justify-center p-4 z-10">
-                        <p className="text-white text-xl md:text-2xl font-bold tracking-wider text-center drop-shadow-lg leading-tight">
-                            {title}
-                        </p>
-                    </div>
+                                <div className="absolute inset-0 flex items-center justify-center p-4 z-10">
+                                    <p className="text-white text-xl md:text-2xl font-bold tracking-wider text-center drop-shadow-lg leading-tight">
+                                        {title}
+                                    </p>
+                                </div>
+                            </>
+                        ) : (
+                                <OpexImageCardSelected key={id} color={color} image={image} title={title} isReversed={id == 3 || id == 4 || id == 7 || id == 8} />
+                        )
+                    }
+                    
                 </div>
             ))}
         </section>
     )
 }
 
+const OpexImageCardSelected = ({ image, color, title, isReversed }: { image :string, color :string, title :string, isReversed: boolean }) => {
+
+    return (
+        <div className={`flex w-full max-w-5xl mx-auto shadow-lg h-[400px] ${isReversed && "flex-row-reverse"}` }>
+            {/* Left Side: Image Area */}
+            <div className="relative w-[30.5%] h-full bg-gray-900">
+                <img
+                    src={image}
+                    alt="Portrait"
+                    className="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+                />
+            </div>
+
+            <div className={`relative w-[69.5%] h-full ${color} text-white p-10 flex flex-col`}>
+                <button className="absolute top-8 right-8 hover:opacity-80 transition-opacity">
+                    <X size={40} strokeWidth={1} />
+                </button>
+
+                <div className="mt-4">
+                    <h2 className="text-2xl font-thin leading-tight mb-8 tracking-wide">
+                        {title}
+                    </h2>
+
+                    <p className="text-xl leading-snug font-light opacity-95 pr-8">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla vehicula ante metus, nec tempor odio tristique ut.
+                        Sed in lorem nulla. Duis eget erat in ipsum posuere
+                        convallis sit amet non risus. In sollicitudin ligula a ligula
+                        pellentesque, eu auctor sem semper. Nulla placerat
+                        facilisis dui in porttitor. Fusce consequat suscipit elit nec
+                        pharetra.
+                    </p>
+                </div>
+            </div>
+        </div>
+    )
+}
 export default Opex2
