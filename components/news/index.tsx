@@ -2,16 +2,17 @@
 import { cn } from "@/lib/utils";
 import { X } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 
 const coreValues = [
-    { id: 1, title: 'Continuous Improvements', image: '/images/Rectangle24.png', color: 'bg-bosch_blue' },
-    { id: 2, title: 'Transparency', image: '/images/Rectangle24.png', color: 'bg-bosch_green' },
-    { id: 3, title: 'Process Orientation', image: '/images/Rectangle24.png', color: 'bg-bosch_purple' },
-    { id: 4, title: 'Service Mindset', image: '/images/Rectangle24.png', color: 'bg-bosch_teal' },
-    { id: 5, title: 'Leadership', image: '/images/Rectangle24.png', color: 'bg-bosch_blue' },
-    { id: 6, title: 'Integrity', image: '/images/Rectangle24.png', color: 'bg-bosch_purple' },
-    { id: 7, title: 'Collaboration', image: '/images/Rectangle24.png', color: 'bg-bosch_green' },
-    { id: 8, title: 'Accountability', image: '/images/Rectangle24.png', color: 'bg-bosch_teal' },
+    { id: 1, title: 'Continuous Improvements', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669913/image-aQ_ckmp8x.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue' },
+    { id: 2, title: 'Leadership', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669717/image-cH_luvvw3.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal' },
+    { id: 3, title: 'Transparency', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/image-bv_oa9xpc.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green' },
+    { id: 4, title: 'Process Orientation', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/aHung_o8ookh.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple' },
+    { id: 5, title: 'Service Mindset', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669713/cMy_z3vuva.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal' },
+    { id: 6, title: 'Standardization', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669714/aTung_g1uep9.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple' },
+    { id: 7, title: 'Collaboration', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green' },
+    { id: 8, title: 'Accountability', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cDung_rsi5u9.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal' },
 ];
 
 
@@ -36,11 +37,11 @@ const shouldHide = (selectedId?: number, currentId?: number) => {
 const ValueCard = ({ title, image, color, onClick }: any) => {
     return (
         <div className="relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:scale-[1.01]" onClick={onClick}>
-            <img
+            <Image
                 src={image}
                 alt={title}
-                className="absolute inset-0 w-full h-full object-cover"
-                
+                fill
+                className="object-cover"
             />
 
             <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div>
@@ -58,8 +59,8 @@ const Opex2 = () => {
     const [selectedId, setSelectedId] = useState<number | undefined>()
 
     const handleOnclick = (id: number) => {
-        return function() {
-            if(id == selectedId) {
+        return function () {
+            if (id == selectedId) {
                 setSelectedId(undefined)
                 return
             }
@@ -69,50 +70,51 @@ const Opex2 = () => {
 
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
-            {coreValues.map(({color, id, image, title}) => (
+            {coreValues.map(({ color, id, image, title, textColor }) => (
                 <div className={cn("relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-2xl cursor-pointer", {
-                        "col-span-3 hover:scale-[1]" : selectedId == id,
-                        "hidden": shouldHide(selectedId, id),
+                    "col-span-3 hover:scale-[1]": selectedId == id,
+                    "hidden": shouldHide(selectedId, id),
                 })} key={id} onClick={handleOnclick(id)}>
                     {
                         selectedId !== id ? (
                             <>
-                                <img
+                                <Image
                                     src={image}
                                     alt={title}
-                                    className="absolute inset-0 w-full h-full object-cover"
-
+                                    fill
+                                    className="object-cover  grayscale opacity-90"
                                 />
 
                                 <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div>
 
-                                <div className="absolute inset-0 flex items-center justify-center p-4 z-10">
-                                    <p className="text-white text-xl md:text-2xl font-bold tracking-wider text-center drop-shadow-lg leading-tight">
+                                <div className="absolute inset-0 flex items-end justify-center p-4 pb-16 z-10">
+                                    <p className={`text-white text-xl md:text-2xl ${textColor} font-bold tracking-wider text-center drop-shadow-lg leading-tight`}>
                                         {title}
                                     </p>
                                 </div>
                             </>
                         ) : (
-                                <OpexImageCardSelected key={id} color={color} image={image} title={title} isReversed={id == 3 || id == 4 || id == 7 || id == 8} />
+                            <OpexImageCardSelected key={id} color={color} image={image} title={title} isReversed={id == 3 || id == 4 || id == 7 || id == 8} />
                         )
                     }
-                    
+
                 </div>
             ))}
         </section>
     )
 }
 
-const OpexImageCardSelected = ({ image, color, title, isReversed }: { image :string, color :string, title :string, isReversed: boolean }) => {
+const OpexImageCardSelected = ({ image, color, title, isReversed }: { image: string, color: string, title: string, isReversed: boolean }) => {
 
     return (
-        <div className={`flex w-full max-w-5xl mx-auto shadow-lg h-[400px] ${isReversed && "flex-row-reverse"}` }>
+        <div className={`flex w-full max-w-5xl mx-auto shadow-lg h-[400px] ${isReversed && "flex-row-reverse"}`}>
             {/* Left Side: Image Area */}
             <div className="relative w-[30.5%] h-full bg-gray-900">
-                <img
+                <Image
                     src={image}
                     alt="Portrait"
-                    className="absolute inset-0 w-full h-full object-cover grayscale opacity-90"
+                    fill
+                    className="object-cover"
                 />
             </div>
 
