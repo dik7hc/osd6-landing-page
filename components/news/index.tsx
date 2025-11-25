@@ -82,7 +82,7 @@ const Opex2 = () => {
                                     src={image}
                                     alt={title}
                                     fill
-                                    className="object-cover  grayscale opacity-90"
+                                    className="object-cover  opacity-90"
                                 />
 
                                 {/* <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div> */} 
