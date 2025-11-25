@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 const coreValues = [
-    { id: 1, title: 'Continuous Improvements', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669913/image-aQ_ckmp8x.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue' },
+    { id: 1, title: 'Continuous Improvements', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764055824/image-aQ_ckmp8x.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue' },
     { id: 2, title: 'Leadership', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669717/image-cH_luvvw3.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal' },
     { id: 3, title: 'Transparency', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/image-bv_oa9xpc.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green' },
     { id: 4, title: 'Process Orientation', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/aHung_o8ookh.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple' },
