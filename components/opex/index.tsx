@@ -40,7 +40,7 @@ const stories = [
         principle: "Principle #3",
         title: "Process Orientation",
         description: "Think in processes, deliver with purpose.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/aHung_o8ookh.jpg",
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764122166/aHung_o8ookh.jpg",
         author: "Truong Quoc Hung GS/OSD6 - APAC2"
     },
     {
@@ -54,14 +54,14 @@ const stories = [
         principle: "Principle #5",
         title: "Accountability",
         description: "I would rather lose money than trust.",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cDung_rsi5u9.jpg",
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764122140/cDung_rsi5u9.jpg",
         author: "Nguyen Thi Hoang Dung GS/OSD3 - APAC21"
     },
     {
         principle: "Principle #6",
         title: "Transparency",
         description: "Transparency-Driven Excellence: Clear Steps, Shared Knowledge, Continuous Growth!",
-        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/image-bv_oa9xpc.jpg",
+        imageSrc: "https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764122155/image-bv_oa9xpc.jpg",
         author: "Tran Le Bao Vy GS/OSD3 - APAC21"
     },
     {
