@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const coreValues = [
     { id: 1, title: 'Continuous Improvements', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764055824/image-aQ_ckmp8x.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue', gradientColor: 'from-bosch_blue' },
-    { id: 2, title: 'Leadership', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059282/image-cH_luvvw3.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_teal' },
-    { id: 3, title: 'Transparency', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059375/image-bv_oa9xpc.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green', gradientColor: 'from-bosch_green' },
-    { id: 4, title: 'Process Orientation', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059338/aHung_o8ookh.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple', gradientColor: 'from-bosch_purple' },
+    { id: 2, title: 'Leadership', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059282/image-cH_luvvw3.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_green' },
+    { id: 3, title: 'Transparency', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059375/image-bv_oa9xpc.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_green', gradientColor: 'from-bosch_purple' },
+    { id: 4, title: 'Process Orientation', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059338/aHung_o8ookh.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_purple', gradientColor: 'from-bosch_teal' },
     { id: 5, title: 'Service Mindset', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764060051/cMy_z3vuva.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_teal' },
     { id: 6, title: 'Standardization', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764060015/aTung_g1uep9.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple', gradientColor: 'from-bosch_purple' },
     { id: 7, title: 'Collaboration', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green', gradientColor: 'from-bosch_green' },
@@ -85,7 +85,7 @@ const Opex2 = () => {
                                     className="object-cover  opacity-90"
                                 />
 
-                                <div className={`absolute bottom-0 h-[40%] w-full bg-gradient-to-t ${gradientColor} to-transparent opacity-80 mix-blend-multiply`}></div>
+                                <div className={`absolute bottom-0 h-[45%] w-full bg-gradient-to-t ${gradientColor} to-transparent  mix-blend-multiply`}></div>
 
                                 <div className="absolute inset-0 flex items-end justify-center p-4 pb-16 z-10">
                                     <p className={`text-white text-xl md:text-2xl ${textColor} font-bold tracking-wider text-center drop-shadow-lg leading-tight`}>
