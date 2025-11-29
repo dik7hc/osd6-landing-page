@@ -58,7 +58,7 @@ const ServiceDetails = () => {
         if (currentServiceIndex == -1) return undefined
         const nextServiceIndex = currentServiceIndex == services[activeServiceTab].length - 1 ? 0 : currentServiceIndex + 1
         const prevServiceIndex = currentServiceIndex == 0 ? services[activeServiceTab].length - 1 : currentServiceIndex - 1
-        return { nextService: services[activeServiceTab][nextServiceIndex] , prevService: services[activeServiceTab][prevServiceIndex]}
+        return { nextService: services[activeServiceTab][nextServiceIndex], prevService: services[activeServiceTab][prevServiceIndex] }
     })();;
 
     const handleTabChange = (tab: ServiceTab) => {
@@ -95,9 +95,9 @@ const ServiceDetails = () => {
                         </button>
                     </div>
                 </div>
-                {activeServiceTab == "OSD3" && <p className="mt-10 text-lg text-gray-600">
+                {activeServiceTab == "OSD3" && <p className="mt-10 text-lg text-bosch_green">
                     OSD3 Vietnam team provides high-quality global transportation services to our GB customers with a diverse service portfolio, including Regional LSP management, Fine Distribution, Overland Transport Management, Control Tower, and Logistics Costing Center.</p>}
-                {activeServiceTab == "OSD6" && <p className="mt-10 text-lg text-gray-600">
+                {activeServiceTab == "OSD6" && <p className="mt-10 text-lg text-bosch_blue">
                     As specialists in Planning & Operations for the APAC region, GS/OSD6 delivers a comprehensive suite of services designed to help customers achieve Strategic Logistics Optimization. Our expertise includes Demand & Source Planning, Logistics Operations in Shipment Tracking & Warehousing Support, Digitalization & Consulting - with Expert Service in Kinaxis, Lean, etc.</p>}
 
             </div>
@@ -122,7 +122,7 @@ const ServiceDetails = () => {
                         </button>
                     ))}
                 </div>
-                <div className={cn("relative min-h-[200px] w-full bg-bosch_teal p-6 text-white sm:w-2/3" ,
+                <div className={cn("relative min-h-[200px] w-full bg-bosch_teal p-6 text-white sm:w-2/3",
                     { "bg-bosch_blue": activeServiceTab == "OSD6" }
                 )} >
                     <p>{currentService?.description}</p>
@@ -132,7 +132,7 @@ const ServiceDetails = () => {
                         }} />
                         <ChevronDown className="size-5 cursor-pointer" onClick={() => {
                             if (service?.nextService.title) setActiveService(service.nextService.title)
-                        }}/>
+                        }} />
                     </div>
                 </div>
             </div>

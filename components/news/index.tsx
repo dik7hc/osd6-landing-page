@@ -71,7 +71,7 @@ const Opex2 = () => {
     return (
         <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {coreValues.map(({ color, id, image, title, textColor, gradientColor }) => (
-                <div className={cn("relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-2xl cursor-pointer", {
+                <div className={cn("relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer", {
                     "col-span-3 hover:scale-[1]": selectedId == id,
                     "hidden": shouldHide(selectedId, id),
                 })} key={id} onClick={handleOnclick(id)}>
@@ -85,7 +85,7 @@ const Opex2 = () => {
                                     className="object-cover  opacity-90"
                                 />
 
-                                <div className={`absolute bottom-0 h-[45%] w-full bg-gradient-to-t ${gradientColor} to-transparent  mix-blend-multiply`}></div>
+                                <div className={`absolute bottom-0 h-[45%] w-full bg-gradient-to-t ${gradientColor} to-transparent `}></div>
 
                                 <div className="absolute inset-0 flex items-end justify-center p-4 pb-16 z-10">
                                     <p className={`text-white text-xl md:text-2xl ${textColor} font-bold tracking-wider text-center drop-shadow-lg leading-tight`}>
@@ -107,7 +107,7 @@ const Opex2 = () => {
 const OpexImageCardSelected = ({ image, color, title, isReversed }: { image: string, color: string, title: string, isReversed: boolean }) => {
 
     return (
-        <div className={`flex w-full max-w-5xl mx-auto shadow-lg h-[400px] ${isReversed && "flex-row-reverse"}`}>
+        <div className={`flex w-full max-w-5xl mx-auto h-[400px] ${isReversed && "flex-row-reverse"}`}>
             {/* Left Side: Image Area */}
             <div className="relative w-[30.5%] h-full bg-gray-900">
                 <Image

@@ -4,6 +4,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from '@/components/ui/accordion';
+import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
 interface AccordionItemData {
@@ -57,7 +58,12 @@ const AboutValuesAccordion = () => {
                             <span className="ml-2 grow">{item.title}</span>
                         </div>
                     </AccordionTrigger>
-                    <AccordionContent className="bg-gray-200 p-4 text-gray-700">
+                    <AccordionContent className={cn("bg-bosch_blue p-4 text-white", {
+                        "bg-bosch_purple": item.id === "item-2",
+                        "bg-bosch_teal": item.id === "item-3",
+                        "bg-bosch_green": item.id === "item-4",
+                        "bg-bosch_blue": item.id === "item-5",
+                    })}>
                         {item.content}
                     </AccordionContent>
                 </AccordionItem>

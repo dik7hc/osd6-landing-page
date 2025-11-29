@@ -1,6 +1,28 @@
 import AboutValuesAccordion from '@/components/about-values-accordion';
 import HeroAboutSection from '@/components/hero-about';
 import ServiceDetails from '@/components/service-details';
+import {
+    Breadcrumb,
+    BreadcrumbItem,
+    BreadcrumbLink,
+    BreadcrumbList,
+    BreadcrumbPage,
+    BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+
+const PageBreadCrumb = () => {
+    return (<Breadcrumb className="mb-6">
+        <BreadcrumbList>
+            <BreadcrumbItem>
+                <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+                <BreadcrumbPage>About Us</BreadcrumbPage>
+            </BreadcrumbItem>
+        </BreadcrumbList>
+    </Breadcrumb>)
+}
 
 const OurLeaderSection = () => {
     return <>
@@ -22,6 +44,7 @@ const AboutUsPage = () => {
     return (
         <div className="bg-white font-sans text-gray-800">
             <main className="mx-auto max-w-7xl px-8 pt-16">
+                <PageBreadCrumb />
                 <HeroAboutSection />
                 <section className="py-16 pt-32">
                     <div className="grid grid-cols-1 gap-16 md:grid-cols-3">

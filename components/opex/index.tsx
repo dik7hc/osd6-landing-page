@@ -114,84 +114,8 @@ const Opex = () => {
                     <h2 className="text-5xl text-gray-900">
                         Our Stories in <span className="block font-extrabold">OPEX</span>
                     </h2>
-                    {/* <div className="flex gap-2">
-                        <button
-                            onClick={prevStorySlide}
-                            className="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                            <ChevronLeft size={20} />
-                        </button>
-                        <button
-                            onClick={nextStorySlide}
-                            className="rounded-full border border-gray-300 p-2 text-gray-600 hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                            <ChevronRight size={20} />
-                        </button>
-                    </div> */}
                 </div>
                 <Opex2 />
-                {/* <div className="flex h-[390px] gap-4">
-                    {visibleStories.map((story, index) => {
-                        const isOpen = openStoryIndex === index;
-
-                        return (
-                            <div
-                                key={story.title + index}
-                                className={cn(
-                                    " p-6 transition-all duration-500 ease-in-out",
-                                    isOpen ?
-                                        "grow-[4] bg-gray-100" :
-                                        "grow cursor-pointer bg-gray-200 hover:bg-gray-300"
-                                )}
-                                onClick={() => !isOpen && setOpenStoryIndex(index)}
-                            >
-                                {isOpen ? (
-                                    <div className=" flex gap-6 overflow-hidden">
-                                        <div className="min-w-0 flex-1">
-                                            <div
-                                                className={cn(
-                                                    "mb-1 text-xs font-semibold",
-                                                    getPrincipleColor(index)
-                                                )}
-                                            >{story.principle}</div>
-                                            <h4 className="mb-4 text-2xl font-bold text-gray-900">{story.title}</h4>
-                                            <p className="text-sm text-gray-700 italic font-semibold">
-                                                &ldquo;{story.description}&rdquo;
-                                            </p>
-                                            <p className="mb-6 text-sm text-gray-600">
-                                                {story.author}
-                                            </p>
-                                            <a
-                                                href="#"
-                                                className="flex w-32 items-center justify-between border border-gray-400 px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-50"
-                                            >
-                                                Read More
-                                                <ArrowRight size={16} />
-                                            </a>
-                                        </div>
-                                        <div className="shrink-0">
-                                            {/* <div className={`h-[311px] w-[212px] ${story.imageSrc} `}></div> */}
-                                            {/* <Image src={story.imageSrc} width={212} height={311} alt={story.principle} />
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="flex h-full flex-col justify-between">
-                                        <div>
-                                            <div
-                                                className={cn(
-                                                    "mb-1 text-xs font-semibold",
-                                                    getPrincipleColor(index)
-                                                )}
-                                            >{story.principle}</div>
-                                            <h4 className="text-xl font-bold text-gray-900">{story.title}</h4>
-                                        </div>
-                                        <ArrowRight size={24} className="self-end text-gray-700" />
-                                    </div>
-                                )}
-                            </div>
-                        );
-                    })}
-                </div>  */}
             </section>
         </>
     )
