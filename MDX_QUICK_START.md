@@ -42,10 +42,12 @@ This file handles:
 
 Key functions:
 - `getAllServiceHighlightSlugs()` - Get all MDX file slugs for SSG (applies slug transformation to filenames)
-- `getServiceHighlightBySlug(slug)` - Fetch specific MDX file by slug (expects slug-formatted filename)
+- `getServiceHighlightBySlug(slug)` - Fetch specific MDX file by slug (looks up file directly by slug)
 - `getAllServiceHighlights()` - Get all published content, sorted by date
 
-**Important:** MDX filenames should already be in slug format (kebab-case) to match the slug lookup. For example: `my-blog-post.mdx` not `My Blog Post.mdx`.
+**CRITICAL:** There's a mismatch in the implementation - `getAllServiceHighlightSlugs()` applies `generateSlug()` but `getServiceHighlightBySlug()` doesn't reverse it. This ONLY works if filenames are already in slug format (kebab-case). 
+
+**Always name MDX files in kebab-case:** `my-blog-post.mdx` not `My Blog Post.mdx` or `my_blog_post.mdx`.
 
 ### 3. Define MDX Components (`mdx-components.tsx`)
 

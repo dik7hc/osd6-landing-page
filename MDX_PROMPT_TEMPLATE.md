@@ -83,13 +83,14 @@ I need to implement MDX (Markdown + JSX) support in my Next.js 15+ project with 
    b. `getAllContentSlugs(): string[]`
       - Returns array of all MDX file slugs
       - Used by `generateStaticParams()`
-      - Applies slug transformation to filenames
+      - **IMPORTANT:** If applying slug transformation to filenames, ensure file lookup also uses same transformation
    
    c. `getContentBySlug(slug: string): ContentItem | null`
       - Reads specific MDX file by slug
       - Parses frontmatter with gray-matter
       - Returns object with `{ slug, frontmatter, content }`
       - Returns null if file doesn't exist
+      - **IMPORTANT:** File lookup method must be consistent with slug generation in getAllContentSlugs()
    
    d. `getAllContent(): ContentItem[]`
       - Gets all content items
@@ -223,7 +224,8 @@ Please provide:
 
 ### Critical Implementation Notes
 
-- **File naming:** MDX filenames should be in kebab-case (slug format) to match URL slugs
+- **File naming:** MDX filenames MUST be in kebab-case (slug format) to match URL slugs. This is REQUIRED for the implementation to work correctly.
+- **Slug consistency:** Ensure `getAllContentSlugs()` and `getContentBySlug()` use consistent slug transformation. If one applies slug generation, the other must reverse it, OR files must be pre-named in slug format.
 - **Image grid detection:** The custom `<p>` component must check if children are ONLY images
 - **Server-only:** File system operations must never run on client
 - **Static generation:** All routes must be pre-rendered at build time

@@ -756,12 +756,17 @@ Always include these required fields:
 
 ### 4. File Naming
 
-Use kebab-case for MDX filenames to match URL slugs:
+**CRITICAL:** MDX filenames MUST already be in slug format (kebab-case):
 - ✅ `my-awesome-post.mdx` → `/service/my-awesome-post/`
-- ❌ `MyAwesomePost.mdx` → Would need transformation
-- ❌ `my_awesome_post.mdx` → Would need transformation
+- ❌ `MyAwesomePost.mdx` → Won't work! File lookup will fail
+- ❌ `my_awesome_post.mdx` → Won't work! File lookup will fail
 
-**Important:** The implementation applies `generateSlug()` to filenames, but for best results, name your MDX files in slug format from the start. This ensures the filename matches the expected slug in `getServiceHighlightBySlug()`.
+**Why?** The implementation has a mismatch:
+- `getAllServiceHighlightSlugs()` applies `generateSlug()` to filenames
+- `getServiceHighlightBySlug()` looks up files by the slug directly
+- This only works if filenames are already in slug format
+
+**Best practice:** Name your MDX files in kebab-case from the start, so `generateSlug()` returns the same value (making it a no-op).
 
 ### 5. Security
 
