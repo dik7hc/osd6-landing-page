@@ -79,10 +79,6 @@ export const InfiniteMovingCards = ({
             }
         }
     };
-
-    items.map(item => {
-        console.log(processBoldText(item.quote))
-    })
     return (
         <div
             ref={containerRef}

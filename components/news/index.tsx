@@ -12,7 +12,7 @@ const coreValues = [
     { id: 5, title: 'Service Mindset', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764060051/cMy_z3vuva.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_teal' },
     { id: 6, title: 'Standardization', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764060015/aTung_g1uep9.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple', gradientColor: 'from-bosch_purple' },
     { id: 7, title: 'Collaboration', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green', gradientColor: 'from-bosch_green' },
-    { id: 8, title: 'Accountability', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059425/cDung_rsi5u9.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_teal' },
+    { id: 8, title: 'Accountability', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059425/cDung_rsi5u9.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue', gradientColor: 'from-bosch_blue' },
 ];
 
 
@@ -36,7 +36,7 @@ const shouldHide = (selectedId?: number, currentId?: number) => {
 
 const ValueCard = ({ title, image, color, onClick }: any) => {
     return (
-        <div className="relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-2xl hover:scale-[1.01]" onClick={onClick}>
+        <div className="relative h-96 w-full overflow-hidden transition-shadow duration-300 hover:scale-[1.01] hover:shadow-2xl" onClick={onClick}>
             <Image
                 src={image}
                 alt={title}
@@ -46,8 +46,8 @@ const ValueCard = ({ title, image, color, onClick }: any) => {
 
             <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div>
 
-            <div className="absolute inset-0 flex items-center justify-center p-4 z-10">
-                <p className="text-white text-xl md:text-2xl font-bold tracking-wider text-center drop-shadow-lg leading-tight">
+            <div className="absolute inset-0 z-10 flex items-center justify-center p-4">
+                <p className="text-center text-xl font-bold leading-tight tracking-wider text-white drop-shadow-lg md:text-2xl">
                     {title}
                 </p>
             </div>
@@ -69,9 +69,9 @@ const Opex2 = () => {
     }
 
     return (
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
+        <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-10 lg:grid-cols-4">
             {coreValues.map(({ color, id, image, title, textColor, gradientColor }) => (
-                <div className={cn("relative w-full h-96 overflow-hidden transition-shadow duration-300 hover:shadow-xl cursor-pointer", {
+                <div className={cn("relative h-96 w-full cursor-pointer overflow-hidden transition-shadow duration-300 hover:shadow-xl", {
                     "col-span-3 hover:scale-[1]": selectedId == id,
                     "hidden": shouldHide(selectedId, id),
                 })} key={id} onClick={handleOnclick(id)}>
@@ -87,8 +87,8 @@ const Opex2 = () => {
 
                                 <div className={`absolute bottom-0 h-[45%] w-full bg-gradient-to-t ${gradientColor} to-transparent `}></div>
 
-                                <div className="absolute inset-0 flex items-end justify-center p-4 pb-16 z-10">
-                                    <p className={`text-white text-xl md:text-2xl ${textColor} font-bold tracking-wider text-center drop-shadow-lg leading-tight`}>
+                                <div className="absolute inset-0 z-10 flex items-end justify-center p-4 pb-16">
+                                    <p className={`text-xl text-white md:text-2xl ${textColor} text-center font-bold leading-tight tracking-wider drop-shadow-lg`}>
                                         {title}
                                     </p>
                                 </div>
@@ -107,9 +107,9 @@ const Opex2 = () => {
 const OpexImageCardSelected = ({ image, color, title, isReversed }: { image: string, color: string, title: string, isReversed: boolean }) => {
 
     return (
-        <div className={`flex w-full max-w-5xl mx-auto h-[400px] ${isReversed && "flex-row-reverse"}`}>
+        <div className={`mx-auto flex h-[400px] w-full max-w-5xl ${isReversed && "flex-row-reverse"}`}>
             {/* Left Side: Image Area */}
-            <div className="relative w-[30.5%] h-full bg-gray-900">
+            <div className="relative h-full w-[30.5%] bg-gray-900">
                 <Image
                     src={image}
                     alt="Portrait"
@@ -118,17 +118,17 @@ const OpexImageCardSelected = ({ image, color, title, isReversed }: { image: str
                 />
             </div>
 
-            <div className={`relative w-[69.5%] h-full ${color} text-white p-10 flex flex-col`}>
-                <button className="absolute top-8 right-8 hover:opacity-80 transition-opacity">
+            <div className={`relative h-full w-[69.5%] ${color} flex flex-col p-10 text-white`}>
+                <button className="absolute right-8 top-8 transition-opacity hover:opacity-80">
                     <X size={40} strokeWidth={1} />
                 </button>
 
                 <div className="mt-4">
-                    <h2 className="text-2xl font-thin leading-tight mb-8 tracking-wide">
+                    <h2 className="mb-8 text-2xl font-thin leading-tight tracking-wide">
                         {title}
                     </h2>
 
-                    <p className="text-xl leading-snug font-light opacity-95 pr-8">
+                    <p className="pr-8 text-xl font-light leading-snug opacity-95">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nulla vehicula ante metus, nec tempor odio tristique ut.
                         Sed in lorem nulla. Duis eget erat in ipsum posuere

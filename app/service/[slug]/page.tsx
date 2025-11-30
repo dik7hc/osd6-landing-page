@@ -1,58 +1,81 @@
-const ServiceHighlightPage = () => {
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { getAllServiceHighlightSlugs, getServiceHighlightBySlug } from '@/lib/mdx';
+import { getMDXComponents } from '@/mdx-components';
+
+interface ServiceHighlightPageProps {
+    params: Promise<{ slug: string }>;
+}
+
+const mdxComponents = getMDXComponents({});
+
+export async function generateStaticParams() {
+    const slugs = getAllServiceHighlightSlugs();
+    return slugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: ServiceHighlightPageProps): Promise<Metadata> {
+    const { slug } = await params;
+    const highlight = getServiceHighlightBySlug(slug);
+
+    if (!highlight) {
+        return {
+            title: 'GS/OSD | Bosch tại Việt Nam',
+        };
+    }
+
+    return {
+        title: `${highlight.frontmatter.title} | GS/OSD | Bosch tại Việt Nam`,
+        description: highlight.frontmatter.description,
+    };
+}
+
+const ServiceHighlightPage = async ({ params }: ServiceHighlightPageProps) => {
+    const { slug } = await params;
+    const highlight = getServiceHighlightBySlug(slug);
+
+    if (!highlight) {
+        notFound();
+    }
+
+    const { frontmatter, content } = highlight;
+
     return (
         <>
             <div className="my-8 flex items-start justify-between">
                 <div>
-                    <h1 className="text-5xl font-bold">Title</h1>
+                    <h1 className="text-5xl font-bold">{frontmatter.title}</h1>
                     <p className="mt-4 text-lg tracking-tight text-gray-600">
-                        GS/OSD3 & GS/OSD6 Vietnam teams are parts of the GS/OSD organization, specialized in Global Transportation and Planning services.
+                        {frontmatter.description}
                     </p>
                 </div>
-                <span className="shrink-0 pt-4 text-gray-500">Date</span>
+                <span className="shrink-0 pt-4 text-gray-500">
+                    {new Date(frontmatter.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                    })}
+                </span>
             </div>
+
             <div className="leading-relaxed text-gray-700">
-                <div className="mb-4 md:float-left md:mr-8 md:w-1/3">
-                    <div className="aspect-[4/3] w-full bg-gray-200">
-                        <img src="https://placehold.co/400x300/e2e8f0/e2e8f0" alt="Service highlight" className="size-full object-cover" />
-                    </div>
-                    <p className="mt-2 text-sm text-gray-500">Photo Description</p>
+                <div className="prose prose-gray max-w-none">
+                    <MDXRemote source={content} components={mdxComponents} />
                 </div>
-                <div className="space-y-4">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id mi neque. Donec id convallis metus, id blandit mauris. Aliquam vel augue sit amet enim varius scelerisque id ut quam. Praesent nec lectus id turpis sollicitudin blandit. Quisque sed lorem sed neque tincidunt lobortis. Aliquam sodales est quis sollicitudin volutpat. Integer eget convallis ex.
-                    </p>
-                    <p>
-                        Nunc molestie consectetur nisi quis lobortis. Duis et egestas orci, eu pellentesque est. Aliquam ultrices tempus tempus. Aenean tempor, arcu vel condimentum ullamcorper, sem neque posuere eros, vitae condimentum turpis lorem eget nisi. Praesent id tincidunt augue. Integer id elit egestas, ornare felis at, egestas massa.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id mi neque. Donec id convallis metus, id blandit mauris. Aliquam vel augue sit amet enim varius scelerisque id ut quam. Praesent nec lectus id turpis sollicitudin blandit. Quisque sed lorem sed neque tincidunt lobortis. Aliquam sodales est quis sollicitudin volutpat. Integer eget convallis ex.
-                    </p>
-                    <p>
-                        Nunc molestie consectetur nisi quis lobortis. Duis et egestas orci, eu pellentesque est. Aliquam ultrices tempus tempus. Aenean tempor, arcu vel condimentum ullamcorper, sem neque posuere eros, vitae condimentum turpis lorem eget nisi. Praesent id tincidunt augue. Integer id elit egestas, ornare felis at, egestas massa. Etiam scelerisque a risus tristique placerat. Donec risus felis, bibendum vitae vehicula sed, ultricies a dolor. Fusce et mollis arcu. Praesent rhoncus dolor ac vestibulum maximus. Donec porta lorem nec diam bibendum tempus. Aenean blandit nulla eget nunc vulputate, in facilisis odio dignissim. Sed rhoncus diam at egestas sollicitudin. Mauris id porta est. Suspendisse nec est ex. Duis vulputate id arcu id finibus.
-                    </p>
-                    <p>
-                        Cras porttitor pharetra turpis ut egestas. In hac habitasse platea dictumst. Sed consequat tortor urna, eu dapibus quam consequat tristique. Fusce iaculis faucibus magna et accumsan. Maecenas laoreet quis nibh ac venenatis. Donec in nisl id ligula lobortis consequat. Proin vitae condimentum ligula.
-                    </p>
-                </div>
+
                 <div className="clear-both"></div>
             </div>
-            <div className="my-12 grid grid-cols-2 gap-4 md:grid-cols-4">
-                {[1, 2, 3, 4].map(i => (
-                    <div key={i} className="aspect-square bg-gray-200">
-                        <img src={`https://placehold.co/300x300/e2e8f0/e2e8f0?text=Image+${i}`} alt={`Gallery image ${i}`} className="size-full object-cover" />
-                    </div>
-                ))}
-            </div>
-            <p className="leading-relaxed text-gray-700">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin id mi neque. Donec id convallis metus, id blandit mauris. Aliquam vel augue sit amet enim varius scelerisque id ut quam. Praesent nec lectus id turpis sollicitudin blandit. Quisque sed lorem sed neque tincidunt lobortis. Aliquam sodales est quis sollicitudin volutpat. Integer eget convallis ex.
-            </p>
+
             <div className="mt-12 flex items-center justify-between border-t border-gray-200 pt-4">
-                <p className="text-gray-600">Author</p>
-                <div className="flex gap-4 text-gray-500">
-                    <span>#hashtags</span>
-                    <span>#hashtags</span>
-                    <span>#hashtags</span>
-                </div>
+                <p className="text-gray-600">{frontmatter.author || 'GS/OSD Team'}</p>
+                {frontmatter.tags && frontmatter.tags.length > 0 && (
+                    <div className="flex gap-4 text-gray-500">
+                        {frontmatter.tags.map((tag, i) => (
+                            <span key={i}>#{tag}</span>
+                        ))}
+                    </div>
+                )}
             </div>
         </>
     );

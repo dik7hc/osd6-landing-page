@@ -61,7 +61,7 @@ const TabContent: React.FC<TabContentProps> = ({ image, description, color }) =>
             alt="Portfolio section"
             width={360}
             height={192}
-            className="w-[360px] h-[192px] object-cover"
+            className="h-[192px] w-[360px] object-cover"
         />
         <div className="flex flex-col justify-between">
             <p className="mb-3 text-gray-700">{description}</p>

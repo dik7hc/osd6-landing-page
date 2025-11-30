@@ -7,14 +7,14 @@ const HeroSection = () => {
   return (
     <section >
       <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-        <Logo className="absolute left-10 -top-8" />
+        <Logo className="absolute -top-8 left-10" />
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl font-semibold text-gray-900">
             <div>Welcome to</div>
             <div>GS.</div>
           </h1>
 
-          <div className="space-y-10 mt-24">
+          <div className="mt-24 space-y-10">
             <div>
               <p className="text-xl tracking-wide text-gray-600">
                 We engineer the routes where

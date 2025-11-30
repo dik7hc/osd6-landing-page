@@ -3,6 +3,7 @@ import HeroSection from "@/components/hero";
 import Highlights from "@/components/hightlights";
 import Opex from "@/components/opex";
 import PortfolioTabs from "@/components/portfolios-tabs";
+import { getAllServiceHighlights } from "@/lib/mdx";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
       },
     ],
     type: "website",
-    locale: "vi_VN",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
@@ -31,7 +32,10 @@ export const metadata: Metadata = {
   },
 };
 
+const highlights = getAllServiceHighlights();
+
 export default function Home() {
+
   return (
     <main>
       <div className="mx-auto mb-0 max-w-7xl px-4 py-16 sm:px-6 md:mb-10 lg:px-8 ">
@@ -42,7 +46,7 @@ export default function Home() {
         <Achievements />
       </div>
       <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-        <Highlights />
+        <Highlights highlights={highlights} />
       </div>
       <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" >
         <Opex />

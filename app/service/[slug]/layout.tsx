@@ -28,6 +28,16 @@ const ServiceHighlightsLayout = async ({
     params: Promise<{ slug: string }>;
 }>) => {
     const { slug } = await params;
+
+    // Load highlights data server-side using dynamic import
+    const { getAllServiceHighlights } = await import('@/lib/mdx');
+    const allHighlights = getAllServiceHighlights();
+
+    // Filter out current page and limit to 3
+    const highlights = allHighlights
+        .filter(h => h.slug !== slug)
+        .slice(0, 3);
+
     return (
         <main className="mx-auto max-w-7xl bg-white px-4 py-12 font-sans text-gray-800 sm:px-6 lg:px-8">
             <PageBreadcrumb slug={slug} />
@@ -49,9 +59,9 @@ const ServiceHighlightsLayout = async ({
                     </button>
                 </div>
             </div>
-            <HighlightsCardsSection amount={3} />
+            <HighlightsCardsSection amount={3} highlights={highlights} />
         </main>
     )
 }
 
-export default ServiceHighlightsLayout
+export default ServiceHighlightsLayout;
