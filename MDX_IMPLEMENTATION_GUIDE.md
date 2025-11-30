@@ -234,9 +234,9 @@ export function getAllServiceHighlights(): ServiceHighlight[] {
  */
 export function getServiceHighlightsTags(): string[] {
     const highlights = getAllServiceHighlights();
-    const tags: string[] = []
+    const tags: string[] = [];
     highlights.forEach(highlight => tags.push(...highlight.frontmatter.tags || []));
-    return [...new Set(tags)]
+    return [...new Set(tags)];
 }
 ```
 
@@ -304,7 +304,7 @@ export function getMDXComponents(components: MDXComponents): MDXComponents {
 
             if (onlyImages) {
                 const images = children.filter(isImageElement);
-                const imageCount = images.length
+                const imageCount = images.length;
 
                 if (imageCount === 0) {
                     return <p className="mb-4 leading-relaxed" {...props} />;
