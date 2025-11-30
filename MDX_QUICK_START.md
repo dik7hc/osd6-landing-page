@@ -41,9 +41,11 @@ This file handles:
 - Filtering published vs draft content
 
 Key functions:
-- `getAllServiceHighlightSlugs()` - Get all MDX file slugs for SSG
-- `getServiceHighlightBySlug(slug)` - Fetch specific MDX file
+- `getAllServiceHighlightSlugs()` - Get all MDX file slugs for SSG (applies slug transformation to filenames)
+- `getServiceHighlightBySlug(slug)` - Fetch specific MDX file by slug (expects slug-formatted filename)
 - `getAllServiceHighlights()` - Get all published content, sorted by date
+
+**Important:** MDX filenames should already be in slug format (kebab-case) to match the slug lookup. For example: `my-blog-post.mdx` not `My Blog Post.mdx`.
 
 ### 3. Define MDX Components (`mdx-components.tsx`)
 

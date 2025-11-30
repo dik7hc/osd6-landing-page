@@ -168,6 +168,7 @@ export function generateSlug(title: string): string {
 
 /**
  * Get all service highlight slugs for static generation
+ * Note: Applies generateSlug() to ensure URL-safe slugs, even if filenames are already in slug format
  */
 export function getAllServiceHighlightSlugs(): string[] {
     if (!fs.existsSync(contentDirectory)) {
@@ -183,6 +184,9 @@ export function getAllServiceHighlightSlugs(): string[] {
 
 /**
  * Get a single service highlight by slug
+ * Note: Expects the slug to match the filename. If filenames are already in slug format,
+ * this works seamlessly. If you use non-slug filenames, ensure getAllServiceHighlightSlugs()
+ * and this function use matching transformation logic.
  */
 export function getServiceHighlightBySlug(slug: string): ServiceHighlight | null {
     try {
@@ -752,10 +756,12 @@ Always include these required fields:
 
 ### 4. File Naming
 
-Use kebab-case for MDX filenames:
-- ✅ `my-awesome-post.mdx`
-- ❌ `MyAwesomePost.mdx`
-- ❌ `my_awesome_post.mdx`
+Use kebab-case for MDX filenames to match URL slugs:
+- ✅ `my-awesome-post.mdx` → `/service/my-awesome-post/`
+- ❌ `MyAwesomePost.mdx` → Would need transformation
+- ❌ `my_awesome_post.mdx` → Would need transformation
+
+**Important:** The implementation applies `generateSlug()` to filenames, but for best results, name your MDX files in slug format from the start. This ensures the filename matches the expected slug in `getServiceHighlightBySlug()`.
 
 ### 5. Security
 
