@@ -17,7 +17,6 @@ const Highlights = ({ highlights }: HighlightsProps) => {
         <>
             <section>
                 <div className="flex flex-col gap-8 md:flex-row">
-                    <LastestHighlight latestPost={highlights[0]} />
 
                     <div className="flex w-full flex-col md:w-1/3">
                         <h3 className="text-5xl font-light text-gray-900">
@@ -42,6 +41,8 @@ const Highlights = ({ highlights }: HighlightsProps) => {
                             <span className="text-lg font-bold">+</span>
                         </Button>
                     </div>
+                    <LastestHighlight latestPost={highlights[0]} />
+
                 </div>
             </section>
 

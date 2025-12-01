@@ -12,6 +12,17 @@ const LastestHighlight = ({ latestPost }: LatestHighlightProps) => {
 
     return (
         <div className='grid w-full grid-cols-1 items-start gap-6 md:w-2/3 md:grid-cols-12 md:gap-4'>
+         
+
+            <div className="order-first col-span-12 md:order-none md:col-span-8">
+                <Image
+                    alt='TransPlan Hub Experience Day'
+                    width={640}
+                    height={320}
+                    className="h-80 w-full object-cover object-center"
+                    src={latestPost.frontmatter.featuredImage || ''}
+                />
+            </div>
             <div className="col-span-12 flex h-full flex-col md:col-span-4">
                 <div className="mb-3 flex flex-col items-start justify-between">
                     <h3 className="max-w-[250px] text-2xl font-bold leading-tight text-gray-900">
@@ -42,16 +53,6 @@ const LastestHighlight = ({ latestPost }: LatestHighlightProps) => {
                         </Button>
                     </Link>
                 </div>
-            </div>
-
-            <div className="order-first col-span-12 md:order-none md:col-span-8">
-                <Image
-                    alt='TransPlan Hub Experience Day'
-                    width={640}
-                    height={320}
-                    className="h-80 w-full object-cover object-center"
-                    src={latestPost.frontmatter.featuredImage || ''}
-                />
             </div>
         </div>
     )
