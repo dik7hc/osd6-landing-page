@@ -122,7 +122,8 @@ const ServiceHighlightsPage = async ({ searchParams }: ServiceHighlightsPageProp
             : [];
 
     return (
-        <div className="px-4 py-6 md:px-6 md:py-8 xl:px-20 xl:py-10 2xl:px-96 3xl:px-[40rem]">
+        // <div className="px-4 py-6 md:px-6 md:py-8 xl:px-20 xl:py-10 2xl:px-96 3xl:px-[40rem]">
+        <div className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8" >
             <PagerBreadCrumb />
             <section className='mb-12 text-left text-foreground'>
                 <h1 className="mb-4 text-5xl font-bold leading-tight">
