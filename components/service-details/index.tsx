@@ -1,7 +1,8 @@
 'use client'
 import { cn } from '@/lib/utils';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { useState } from 'react';
+import { useState, Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 interface ServiceData {
     title: string;
@@ -48,9 +49,20 @@ const services: ServicesData = {
 };
 
 
-const ServiceDetails = () => {
-    const [activeServiceTab, setActiveServiceTab] = useState<ServiceTab>('OSD3');
-    const [activeService, setActiveService] = useState<string>('Logistics Cost Center');
+const ServiceDetailsContent = () => {
+    const searchParams = useSearchParams();
+    
+    const tabParam = searchParams.get('activeServiceTab') as ServiceTab;
+    const serviceParam = searchParams.get('activeService');
+    
+    const initialTab: ServiceTab = (tabParam === 'OSD3' || tabParam === 'OSD6') ? tabParam : 'OSD3';
+    
+    const isServiceAvailable = serviceParam && services[initialTab].some(s => s.title === serviceParam);
+    const initialService = isServiceAvailable ? serviceParam : services[initialTab][0].title;
+    
+    const [activeServiceTab, setActiveServiceTab] = useState<ServiceTab>(initialTab);
+    const [activeService, setActiveService] = useState<string>(initialService);
+
     const currentService: ServiceData | undefined = services[activeServiceTab].find(s => s.title === activeService);
 
     const service = (function () {
@@ -138,6 +150,14 @@ const ServiceDetails = () => {
             </div>
         </div>
     )
+}
+
+const ServiceDetails = () => {
+    return (
+        <Suspense fallback={<div className="grow" id='services'><div className="text-center py-10">Loading...</div></div>}>
+            <ServiceDetailsContent />
+        </Suspense>
+    );
 }
 
 export default ServiceDetails

@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import Link from 'next/link';
 
 // ===== Tab Data =====
 const tabsData = [
@@ -13,6 +14,8 @@ const tabsData = [
         description:
             'The Transportation (International & Overland) function manages international and regional logistics operations, ensuring efficient booking, routing, and delivery performance. Acting as a central coordination hub, it drives cost control, LSP performance, and network optimization across all transport modes.',
         color: 'bosch-green',
+        serviceTab: 'OSD3' as const,
+        serviceName: 'International Transport',
     },
     {
         id: 2,
@@ -21,6 +24,8 @@ const tabsData = [
         description:
             'LCC APAC2 serves as the regional logistics cost management hub.It operates as a logistics cost data center, ensuring transparency, compliance, and accuracy, while driving cost forecasting and steering to support strategic decision-making.',
         color: 'bosch-teal',
+        serviceTab: 'OSD3' as const,
+        serviceName: 'Logistics Cost Center',
     },
     {
         id: 3,
@@ -29,6 +34,8 @@ const tabsData = [
         description:
             'Core Service provides the structural backbone of APAC2 logistics through standardized LSP management and network design. It enables cost-efficient, reliable, and seamless transport integration across air, sea, and overland networks.',
         color: 'bosch-dark-green',
+        serviceTab: 'OSD3' as const,
+        serviceName: 'Core Service',
     },
     {
         id: 4,
@@ -37,6 +44,8 @@ const tabsData = [
         description:
             'Combining operational excellence with strategic advisory, this function delivers advanced logistics planning via systems like Kinaxis and S4 Hana while driving process optimization, cost efficiency, and cross-regional alignment.',
         color: 'bosch-blue',
+        serviceTab: 'OSD6' as const,
+        serviceName: 'Planning',
     },
     {
         id: 5,
@@ -45,6 +54,8 @@ const tabsData = [
         description:
             'Digitization enhances logistics visibility and efficiency through automation, data integration, and real-time analytics—enabling smarter decision-making and continuous performance improvement across all logistics domains.',
         color: 'bosch-purple',
+        serviceTab: 'OSD6' as const,
+        serviceName: 'Digitalization',
     },
 ];
 
@@ -52,9 +63,11 @@ interface TabContentProps {
     image: string;
     description: string;
     color: string;
+    serviceTab: 'OSD3' | 'OSD6';
+    serviceName: string;
 }
 
-const TabContent: React.FC<TabContentProps> = ({ image, description, color }) => (
+const TabContent: React.FC<TabContentProps> = ({ image, description, color, serviceTab, serviceName }) => (
     <div className="flex justify-between gap-6">
         <Image
             src={image}
@@ -65,6 +78,9 @@ const TabContent: React.FC<TabContentProps> = ({ image, description, color }) =>
         />
         <div className="flex flex-col justify-between">
             <p className="mb-3 text-gray-700">{description}</p>
+            <Link
+                href={`/about?activeServiceTab=${serviceTab}&activeService=${encodeURIComponent(serviceName)}#services`}
+            >
             <Button
                 style={
                     {
@@ -75,6 +91,8 @@ const TabContent: React.FC<TabContentProps> = ({ image, description, color }) =>
             >
                 Learn More →
             </Button>
+            </Link>
+
         </div>
     </div>
 );
@@ -99,9 +117,10 @@ const PortfolioTabs: React.FC = () => {
             <nav className="-mb-px mt-20 border-b border-gray-200">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                     {tabsData.map((tab) => (
+                      
                         <button
-                            key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
+                            key={tab.id}
                             onMouseEnter={() => {
                                 setIsPausing(true)
                                 setActiveTab(tab.id)
@@ -147,6 +166,8 @@ const PortfolioTabs: React.FC = () => {
                                 image={tab.image}
                                 description={tab.description}
                                 color={tab.color}
+                                serviceTab={tab.serviceTab}
+                                serviceName={tab.serviceName}
                             />
                         </div>
                     ))}

@@ -26,7 +26,7 @@ const HeroSection = () => {
 
             <Button
               variant={"outline"}
-              className="flex w-1/3 items-center gap-2 border-bosch_blue bg-white font-semibold text-bosch_blue hover:bg-bosch_blue hover:text-white"
+              className="flex w-1/3 items-center gap-2 border-bosch_blue hover:bg-white font-semibold hover:text-bosch_blue bg-bosch_blue text-white"
               asChild
             >
               <Link href={'/about'}>About Us <ArrowRight size={18} /></Link>

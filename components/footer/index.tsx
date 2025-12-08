@@ -21,10 +21,10 @@ const Footer = () => {
                     </Link>
                     <div className='flex items-center gap-8'>
 
-                        <Link href="/about#services" className="text-gray-700 transition-colors hover:text-gray-900">
+                        <Link href="/about?activeServiceTab=OSD3#services" className="text-gray-700 transition-colors hover:text-gray-900">
                             OSD3
                         </Link>
-                        <Link href="/about" className="text-gray-700 transition-colors hover:text-gray-900">
+                        <Link href="/about?activeServiceTab=OSD6#services" className="text-gray-700 transition-colors hover:text-gray-900">
                             OSD6
                         </Link>
                         <Link href="/about#services2" className="text-gray-700 transition-colors hover:text-gray-900">
