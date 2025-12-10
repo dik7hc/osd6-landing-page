@@ -1,19 +1,11 @@
 'use client'
 import { cn } from "@/lib/utils";
-import { X } from "lucide-react";
+import { ArrowRight, ChevronRight, Quote, X } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
-
-const coreValues = [
-    { id: 1, title: 'Continuous Improvements', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764055824/image-aQ_ckmp8x.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue', gradientColor: 'from-bosch_blue' },
-    { id: 2, title: 'Leadership', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059282/image-cH_luvvw3.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_green' },
-    { id: 3, title: 'Transparency', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059375/image-bv_oa9xpc.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_green', gradientColor: 'from-bosch_purple' },
-    { id: 4, title: 'Process Orientation', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059338/aHung_o8ookh.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_purple', gradientColor: 'from-bosch_teal' },
-    { id: 5, title: 'Service Mindset', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764060051/cMy_z3vuva.jpg', color: 'bg-bosch_teal', textColor: 'text-bosch_teal', gradientColor: 'from-bosch_teal' },
-    { id: 6, title: 'Standardization', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764060015/aTung_g1uep9.jpg', color: 'bg-bosch_purple', textColor: 'text-bosch_purple', gradientColor: 'from-bosch_purple' },
-    { id: 7, title: 'Collaboration', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1761669712/cHan_xg3px7.jpg', color: 'bg-bosch_green', textColor: 'text-bosch_green', gradientColor: 'from-bosch_green' },
-    { id: 8, title: 'Accountability', image: 'https://res.cloudinary.com/dr9bxbmwi/image/upload/v1764059425/cDung_rsi5u9.jpg', color: 'bg-bosch_blue', textColor: 'text-bosch_blue', gradientColor: 'from-bosch_blue' },
-];
+import { Button } from "../ui/button";
+import Link from "next/link";
+import { OpexCoreValue } from "@/lib/opex-mdx";
 
 
 
@@ -34,28 +26,7 @@ const shouldHide = (selectedId?: number, currentId?: number) => {
     return idsToHide ? idsToHide.includes(currentId) : false;
 };
 
-const ValueCard = ({ title, image, color, onClick }: any) => {
-    return (
-        <div className="relative h-96 w-full overflow-hidden transition-shadow duration-300 hover:scale-[1.01] hover:shadow-2xl" onClick={onClick}>
-            <Image
-                src={image}
-                alt={title}
-                fill
-                className="object-cover"
-            />
-
-            <div className={`absolute inset-0 ${color} opacity-80 mix-blend-multiply`}></div>
-
-            <div className="absolute inset-0 z-10 flex items-center justify-center p-4">
-                <p className="text-center text-xl font-bold leading-tight tracking-wider text-white drop-shadow-lg md:text-2xl">
-                    {title}
-                </p>
-            </div>
-        </div>
-    );
-};
-
-const Opex2 = () => {
+const Opex2 = ({ coreValues } : {coreValues :OpexCoreValue[]}) => {
     const [selectedId, setSelectedId] = useState<number | undefined>()
 
     const handleOnclick = (id: number) => {
@@ -67,10 +38,11 @@ const Opex2 = () => {
             setSelectedId(id)
         }
     }
+    const selectedCoreValue = selectedId ? coreValues[selectedId - 1] : null
 
     return (
         <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-10 lg:grid-cols-4">
-            {coreValues.map(({ color, id, image, title, textColor, gradientColor }) => (
+            {coreValues.map(({ frontmatter: { color, id, image, title, textColor, gradientColor } }) => (
                 <div className={cn("relative h-96 w-full cursor-pointer overflow-hidden transition-shadow duration-300 hover:shadow-xl", {
                     "col-span-3 hover:scale-[1]": selectedId == id,
                     "hidden": shouldHide(selectedId, id),
@@ -94,7 +66,7 @@ const Opex2 = () => {
                                 </div>
                             </>
                         ) : (
-                            <OpexImageCardSelected key={id} color={color} image={image} title={title} isReversed={id == 3 || id == 4 || id == 7 || id == 8} />
+                                <OpexImageCardSelected coreValue={selectedCoreValue!} isReversed={id == 3 || id == 4 || id == 7 || id == 8} />
                         )
                     }
 
@@ -104,7 +76,10 @@ const Opex2 = () => {
     )
 }
 
-const OpexImageCardSelected = ({ image, color, title, isReversed }: { image: string, color: string, title: string, isReversed: boolean }) => {
+const OpexImageCardSelected = ({ coreValue, isReversed, }: { isReversed: boolean, coreValue: OpexCoreValue }) => {
+    const { image, color, title, textColor, quote, description } = coreValue.frontmatter;
+
+    const slug = title.split(' ').join("-").toLowerCase()
 
     return (
         <div className={`mx-auto flex h-[400px] w-full max-w-5xl ${isReversed && "flex-row-reverse"}`}>
@@ -123,20 +98,34 @@ const OpexImageCardSelected = ({ image, color, title, isReversed }: { image: str
                     <X size={40} strokeWidth={1} />
                 </button>
 
-                <div className="mt-4">
-                    <h2 className="mb-8 text-2xl font-thin leading-tight tracking-wide">
+                <div className="mt-4 flex flex-col gap-8">
+                    <h2 className=" text-2xl font-semibold leading-tight tracking-wide">
                         {title}
                     </h2>
 
-                    <p className="pr-8 text-xl font-light leading-snug opacity-95">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Nulla vehicula ante metus, nec tempor odio tristique ut.
-                        Sed in lorem nulla. Duis eget erat in ipsum posuere
-                        convallis sit amet non risus. In sollicitudin ligula a ligula
-                        pellentesque, eu auctor sem semper. Nulla placerat
-                        facilisis dui in porttitor. Fusce consequat suscipit elit nec
-                        pharetra.
+                    <p className="font-light leading-snug opacity-95">
+                        &ldquo;{quote}&rdquo;
                     </p>
+
+                    <p className="font-light leading-snug opacity-95">
+                        {description}
+                    </p>
+                    <div className=" flex gap-8">
+                        <Button
+                            variant={"outline"}
+                            className={`border-bosch_blue bg-white ${textColor} hover:bg-transparent hover:text-white hover:border-white `}
+                            asChild
+                        >
+                            <Link href={'/opex/' + slug}>Read Story <ChevronRight size={18} /></Link>
+                        </Button>
+                        <Button
+                            variant={"outline"}
+                            className={`border-white hover:bg-white  bg-transparent text-white hover:${textColor} `}
+                            asChild
+                        >
+                            <Link href={'/about'}>See More <ChevronRight size={18} /></Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
