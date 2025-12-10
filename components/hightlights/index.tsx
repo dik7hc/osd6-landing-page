@@ -30,7 +30,7 @@ const Highlights = ({ highlights }: HighlightsProps) => {
                         </p>
                         <Button
                             variant={'outline'}
-                            className="mt-auto w-32 px-4 py-2 border-bosch_blue hover:bg-white hover:text-bosch_blue bg-bosch_blue text-white"
+                            className="mt-auto w-32 border-bosch_blue bg-bosch_blue px-4 py-2 text-white hover:bg-white hover:text-bosch_blue"
                             onClick={() => {
                                 if (sliceIndex < highlights.length) {
                                     setSliceIndex(sliceIndex + 3)

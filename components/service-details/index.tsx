@@ -154,7 +154,7 @@ const ServiceDetailsContent = () => {
 
 const ServiceDetails = () => {
     return (
-        <Suspense fallback={<div className="grow" id='services'><div className="text-center py-10">Loading...</div></div>}>
+        <Suspense fallback={<div className="grow" id='services'><div className="py-10 text-center">Loading...</div></div>}>
             <ServiceDetailsContent />
         </Suspense>
     );

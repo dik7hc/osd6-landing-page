@@ -113,14 +113,14 @@ const OpexImageCardSelected = ({ coreValue, isReversed, }: { isReversed: boolean
                     <div className=" flex gap-8">
                         <Button
                             variant={"outline"}
-                            className={`border-bosch_blue bg-white ${textColor} hover:bg-transparent hover:text-white hover:border-white `}
+                            className={`border-bosch_blue bg-white ${textColor} hover:border-white hover:bg-transparent hover:text-white `}
                             asChild
                         >
                             <Link href={'/opex/' + slug}>Read Story <ChevronRight size={18} /></Link>
                         </Button>
                         <Button
                             variant={"outline"}
-                            className={`border-white hover:bg-white  bg-transparent text-white hover:${textColor} `}
+                            className={`hover: border-white  bg-transparent text-white hover:bg-white${textColor} `}
                             asChild
                         >
                             <Link href={'/about'}>See More <ChevronRight size={18} /></Link>
