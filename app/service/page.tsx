@@ -73,6 +73,8 @@ const LatestHightlight = () => {
                         alt="Featured highlight"
                         width={320}
                         height={200}
+                        quality={100}
+                        fetchPriority='high'
                         className="h-[265px] w-full object-cover"
                         src={latestPost.frontmatter.featuredImage || ''}
                     />
