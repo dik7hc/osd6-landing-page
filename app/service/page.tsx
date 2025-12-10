@@ -22,7 +22,7 @@ const { getAllServiceHighlights } = await import('@/lib/mdx');
 const allHighlights = getAllServiceHighlights();
 
 const PagerBreadCrumb = () => {
-    return (<Breadcrumb className="mb-8">
+    return (<Breadcrumb className="pt-12 mb-8">
         <BreadcrumbList>
             <BreadcrumbItem>
                 <BreadcrumbLink asChild>

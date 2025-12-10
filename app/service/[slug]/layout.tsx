@@ -2,7 +2,7 @@ import HighlightsCardsSection from '@/components/highlights_cards_section';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const PageBreadcrumb = ({ slug }: { slug: string }) => {
+const PageBreadcrumb = ({ title }: { title: string }) => {
     return <Breadcrumb>
         <BreadcrumbList>
             <BreadcrumbItem>
@@ -14,7 +14,7 @@ const PageBreadcrumb = ({ slug }: { slug: string }) => {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-                <BreadcrumbPage>Title</BreadcrumbPage>
+                <BreadcrumbPage>{title}</BreadcrumbPage>
             </BreadcrumbItem>
         </BreadcrumbList>
     </Breadcrumb>
@@ -30,7 +30,7 @@ const ServiceHighlightsLayout = async ({
     const { slug } = await params;
 
     // Load highlights data server-side using dynamic import
-    const { getAllServiceHighlights } = await import('@/lib/mdx');
+    const { getAllServiceHighlights, getServiceHighlightBySlug } = await import('@/lib/mdx');
     const allHighlights = getAllServiceHighlights();
 
     // Filter out current page and limit to 3
@@ -40,7 +40,7 @@ const ServiceHighlightsLayout = async ({
 
     return (
         <main className="mx-auto max-w-7xl bg-white px-4 py-12 font-sans text-gray-800 sm:px-6 lg:px-8">
-            <PageBreadcrumb slug={slug} />
+            <PageBreadcrumb title={getServiceHighlightBySlug(slug)?.frontmatter.title || "Title"} />
             {children}
             <div className="mt-20">
                 <h2 className="mb-4 text-center text-3xl font-bold">Explore More</h2>
