@@ -20,6 +20,8 @@ const LastestHighlight = ({ latestPost }: LatestHighlightProps) => {
                     width={640}
                     height={320}
                     className="h-80 w-full object-cover object-center"
+                    quality={100}
+                    fetchPriority='high'
                     src={latestPost.frontmatter.featuredImage || ''}
                 />
             </div>
