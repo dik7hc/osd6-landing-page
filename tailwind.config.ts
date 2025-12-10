@@ -13,7 +13,19 @@ export default {
     'grid-cols-1',
     'grid-cols-2', 
     'grid-cols-3',
-    'grid-cols-4'
+    'grid-cols-4',
+    'bg-bosch_blue',
+    'bg-bosch_green',
+    'bg-bosch_purple',
+    'bg-bosch_teal',
+    'text-bosch_blue',
+    'text-bosch_green',
+    'text-bosch_purple',
+    'text-bosch_teal',
+    'from-bosch_blue',
+    'from-bosch_green',
+    'from-bosch_purple',
+    'from-bosch_teal',
   ],
   theme: {
     container: {
