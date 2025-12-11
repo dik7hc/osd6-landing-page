@@ -2,12 +2,14 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
+import Logo from '../svgs/logo';
 
 const HeroSection = () => {
   return (
     <section >
       <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-        <Logo className="absolute -top-8 left-10" />
+        {/* <Logo className="absolute -top-8 left-10" /> */}
+        <Logo className="absolute size-96 -top-14 left-10" />
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl font-semibold text-gray-900">
             <div>Welcome to</div>
@@ -50,13 +52,13 @@ const HeroSection = () => {
 };
 
 
-const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
-  return (
-    <img
-      src={"/svg/Logo without GS.svg"}
-      alt="Company Logo"
-      className={"h-64 w-auto " + className}
-    />
-  );
-};
+// const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
+//   return (
+//     <img
+//       src={"/svg/Logo without GS.svg"}
+//       alt="Company Logo"
+//       className={"h-64 w-auto " + className}
+//     />
+//   );
+// };
 export default HeroSection
