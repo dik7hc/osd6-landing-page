@@ -1,23 +1,26 @@
-import Image from "next/image";
-import { Button } from "../ui/button";
 import { Menu } from "lucide-react";
 import Link from "next/link";
+import Svg from "../svgs";
+import { Button } from "../ui/button";
 
 const Header = () => {
     return (
         <div className="sticky top-0 z-50 shadow-sm">
             <HeaderBg />
+
             <header className="relative mx-auto max-w-7xl bg-background ">
                 <div className="flex h-5 w-full flex-row-reverse items-center justify-between gap-4 px-4 sm:px-6 md:h-14 lg:px-8" >
+
                     <Link href={"/"}>
-                        <Image
+                        <Svg.BoschLogo className="size-28" />
+                        {/* <Image
                             width={144}
                             height={96}
                             src="/images/bosch_logo_de.svg"
                             alt="Logo"
                             quality={20}
                             className="scale-75"
-                        />
+                        /> */}
                     </Link>
                     {/* <Divider orientation="vertical" className="bg-[#7cb305] h-8" /> */}
                     <Button variant="ghost" size="icon" className="size-9 md:hidden">
