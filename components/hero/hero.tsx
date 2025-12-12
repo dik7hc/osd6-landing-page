@@ -2,14 +2,14 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import Link from 'next/link';
-import Logo from '../svgs/logo';
+import Svg from '../svgs';
 
 const HeroSection = () => {
   return (
     <section >
       <div className="relative grid grid-cols-1 items-center gap-12 md:grid-cols-2">
         {/* <Logo className="absolute -top-8 left-10" /> */}
-        <Logo className="absolute size-96 -top-14 left-10" />
+        <Svg.Logo className="absolute size-80 -top-6 left-20" />
         <div className="flex flex-col justify-center">
           <h1 className="text-5xl font-semibold text-gray-900">
             <div>Welcome to</div>
@@ -28,7 +28,7 @@ const HeroSection = () => {
 
             <Button
               variant={"outline"}
-              className="flex w-1/3 items-center gap-2 border-bosch_blue bg-bosch_blue font-semibold text-white hover:bg-white hover:text-bosch_blue"
+              className="flex w-1/3 items-center gap-2 border-bosch_purple bg-bosch_purple font-semibold text-white hover:bg-white hover:text-bosch_purple"
               asChild
             >
               <Link href={'/about'}>About Us <ArrowRight size={18} /></Link>

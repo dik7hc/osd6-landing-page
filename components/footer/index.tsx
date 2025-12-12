@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import BackToTopBtn from '../back-to-top-btn';
 import Link from 'next/link';
+import BackToTopBtn from '../back-to-top-btn';
+import Svg from '../svgs';
 
 const Footer = () => {
     return (<>
@@ -8,8 +8,9 @@ const Footer = () => {
             <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
 
                 <div className="flex items-center gap-6">
+                    <Svg.LogoWithGS className='size-40' />
 
-                    <Image src={'/svg/Logo with GS.svg'} alt='General Service Logo' width={298} height={100} />
+                    {/* <Image src={'/svg/Logo with GS.svg'} alt='General Service Logo' width={298} height={100} /> */}
 
                     <p className="mt-6 max-w-xs text-lg leading-relaxed text-gray-700">
                         We Engineer the Routes where <br /> Commerce Flows Freely

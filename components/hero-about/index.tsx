@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import Svg from '../svgs';
 const HeroAboutSection = () => {
     return (
         <section >
@@ -9,8 +10,11 @@ const HeroAboutSection = () => {
                     <h1 className="text-5xl font-semibold text-gray-900">
                         ABOUT US
                     </h1>
-                    <Logo className='-my-20 -ml-20' />
-                    <div className='pt-12'>
+                    <div className='flex justify-center'>
+
+                        <Svg.LogoWithGS className='size-50'/>
+                    </div>
+                    <div className=''>
                         <p className="text-lg text-gray-600">
                             GS/OSD3 & GS/OSD6 Vietnam teams are parts of the GS/OSD organization, specialized in Global Transportation and Planning services.
                         </p>
@@ -32,13 +36,13 @@ const HeroAboutSection = () => {
 };
 
 
-const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
-    return (
-        <img
-            src={"/svg/Logo with GS.svg"}
-            alt="Company Logo"
-            className={"h-64 w-auto " + className}
-        />
-    );
-};
+// const Logo: React.FC<{ className?: string }> = ({ className = '' }) => {
+//     return (
+//         <img
+//             src={"/svg/Logo with GS.svg"}
+//             alt="Company Logo"
+//             className={"h-64 w-auto " + className}
+//         />
+//     );
+// };
 export default HeroAboutSection
